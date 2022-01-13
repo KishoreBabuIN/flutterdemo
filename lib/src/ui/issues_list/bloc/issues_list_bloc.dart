@@ -1,8 +1,12 @@
+import 'dart:developer';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_demo/src/data/github_issues_repository.dart';
 import 'package:flutter_demo/src/ui/issues_list/bloc/issues_list_event.dart';
 import 'package:flutter_demo/src/ui/issues_list/bloc/issues_list_state.dart';
+import 'package:injectable/injectable.dart';
 
+@injectable
 class IssuesListBloc extends Bloc<IssuesListEvent, IssuesListState> {
   IssuesListBloc({
     required this.repository,
@@ -21,6 +25,7 @@ class IssuesListBloc extends Bloc<IssuesListEvent, IssuesListState> {
 
     try {
       final issues = await repository.getAllIssues("flutter", "flutter");
+      log("[LOG] Fetched issues: ${issues.length}");
       emit(IssuesListState.content(issues: issues));
     } on Exception catch (e) {
       emit(IssuesListState.error(exception: e));

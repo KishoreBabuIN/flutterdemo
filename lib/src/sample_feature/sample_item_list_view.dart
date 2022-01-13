@@ -14,13 +14,11 @@ class SampleItemListView extends StatelessWidget {
   const SampleItemListView({
     Key? key,
     this.items = const [SampleItem(1), SampleItem(2), SampleItem(3)],
-    this.issues = const [],
   }) : super(key: key);
 
   static const routeName = '/';
 
   final List<SampleItem> items;
-  final List<Issue> issues;
 
   @override
   Widget build(BuildContext context) {

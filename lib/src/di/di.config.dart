@@ -10,7 +10,9 @@ import 'package:injectable/injectable.dart' as _i2;
 
 import '../data/github_issues_repository.dart' as _i5;
 import '../network/api/github_api.dart' as _i4;
-import '../network/client.dart' as _i6; // ignore_for_file: unnecessary_lambdas
+import '../network/client.dart' as _i7;
+import '../ui/issues_list/bloc/issues_list_bloc.dart'
+    as _i6; // ignore_for_file: unnecessary_lambdas
 
 // ignore_for_file: lines_longer_than_80_chars
 /// initializes the registration of provided dependencies inside of [GetIt]
@@ -27,7 +29,9 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
   gh.lazySingleton<_i4.GithubApi>(() => _i4.GithubApi(get<_i3.Dio>()));
   gh.lazySingleton<_i5.GithubIssuesRepository>(
       () => _i5.GithubIssuesRepository(api: get<_i4.GithubApi>()));
+  gh.factory<_i6.IssuesListBloc>(
+      () => _i6.IssuesListBloc(repository: get<_i5.GithubIssuesRepository>()));
   return get;
 }
 
-class _$ApiClientModule extends _i6.ApiClientModule {}
+class _$ApiClientModule extends _i7.ApiClientModule {}
