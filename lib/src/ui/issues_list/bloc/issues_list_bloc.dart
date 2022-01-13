@@ -6,7 +6,7 @@ import 'package:flutter_demo/src/ui/issues_list/bloc/issues_list_event.dart';
 import 'package:flutter_demo/src/ui/issues_list/bloc/issues_list_state.dart';
 import 'package:injectable/injectable.dart';
 
-@injectable
+@lazySingleton
 class IssuesListBloc extends Bloc<IssuesListEvent, IssuesListState> {
   IssuesListBloc({
     required this.repository,
@@ -34,4 +34,16 @@ class IssuesListBloc extends Bloc<IssuesListEvent, IssuesListState> {
 
   //todo
   _onRetryFetch(Emitter<IssuesListState> emit, e) {}
+
+  // @override
+  // void onEvent(IssuesListEvent event) {
+  //   super.onEvent(event);
+  //   log("[LOG] OnEvent $event");
+  // }
+
+  // @override
+  // void onTransition(Transition<IssuesListEvent, IssuesListState> transition) {
+  //   super.onTransition(transition);
+  //   log("[LOG] OnTransition ${transition.currentState} ${transition.nextState}");
+  // }
 }

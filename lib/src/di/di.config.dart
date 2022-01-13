@@ -29,7 +29,7 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
   gh.lazySingleton<_i4.GithubApi>(() => _i4.GithubApi(get<_i3.Dio>()));
   gh.lazySingleton<_i5.GithubIssuesRepository>(
       () => _i5.GithubIssuesRepository(api: get<_i4.GithubApi>()));
-  gh.factory<_i6.IssuesListBloc>(
+  gh.lazySingleton<_i6.IssuesListBloc>(
       () => _i6.IssuesListBloc(repository: get<_i5.GithubIssuesRepository>()));
   return get;
 }
