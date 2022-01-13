@@ -21,7 +21,7 @@ abstract class ApiClientModule {
       Dio(
         BaseOptions(
           baseUrl: url,
-          headers: {_authHeaderName: githubToken},
+          headers: {_authHeaderName: "Basic $githubToken"},
         ),
       );
 }
