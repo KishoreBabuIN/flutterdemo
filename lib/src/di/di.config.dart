@@ -19,8 +19,11 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
   final gh = _i2.GetItHelper(get, environment, environmentFilter);
   final apiClientModule = _$ApiClientModule();
   gh.factory<String>(() => apiClientModule.baseUrl, instanceName: 'BaseUrl');
-  gh.lazySingleton<_i3.Dio>(
-      () => apiClientModule.dio(get<String>(instanceName: 'BaseUrl')));
+  gh.factory<String>(() => apiClientModule.githubToken,
+      instanceName: 'GithubToken');
+  gh.lazySingleton<_i3.Dio>(() => apiClientModule.dio(
+      get<String>(instanceName: 'BaseUrl'),
+      get<String>(instanceName: 'GithubToken')));
   gh.lazySingleton<_i4.GithubApi>(() => _i4.GithubApi(get<_i3.Dio>()));
   gh.lazySingleton<_i5.GithubIssuesRepository>(
       () => _i5.GithubIssuesRepository(api: get<_i4.GithubApi>()));

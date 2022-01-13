@@ -7,7 +7,11 @@
         {
             "name": "flutter_demo",
             "request": "launch",
-            "type": "dart"
+            "type": "dart",
+            "toolArgs": [
+                "--dart-define",
+                "GITHUB_TOKEN=YOUR_TOKEN_GOES_HERE"
+            ]
         },
         {
             "name": "flutter_demo (profile mode)",
