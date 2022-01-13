@@ -1,6 +1,8 @@
 import 'package:flutter_demo/src/network/api/github_api.dart';
 import 'package:flutter_demo/src/network/model/issue.dart';
+import 'package:injectable/injectable.dart';
 
+@lazySingleton
 class GithubIssuesRepository {
   const GithubIssuesRepository({required this.api});
 

@@ -1,4 +1,9 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_demo/src/data/github_issues_repository.dart';
+import 'package:flutter_demo/src/di/di.dart';
+import 'package:flutter_demo/src/network/model/issue.dart';
 
 import '../settings/settings_view.dart';
 import 'sample_item.dart';
@@ -9,62 +14,78 @@ class SampleItemListView extends StatelessWidget {
   const SampleItemListView({
     Key? key,
     this.items = const [SampleItem(1), SampleItem(2), SampleItem(3)],
+    this.issues = const [],
   }) : super(key: key);
 
   static const routeName = '/';
 
   final List<SampleItem> items;
+  final List<Issue> issues;
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Sample Items'),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.settings),
-            onPressed: () {
-              // Navigate to the settings page. If the user leaves and returns
-              // to the app after it has been killed while running in the
-              // background, the navigation stack is restored.
-              Navigator.restorablePushNamed(context, SettingsView.routeName);
+    return FutureBuilder<List<Issue>>(
+      future: _fetchIssues(),
+      builder: (BuildContext context, AsyncSnapshot<List<Issue>> snapshot) {
+        return Scaffold(
+          appBar: AppBar(
+            title: const Text('Sample Items'),
+            actions: [
+              IconButton(
+                icon: const Icon(Icons.settings),
+                onPressed: () {
+                  // Navigate to the settings page. If the user leaves and returns
+                  // to the app after it has been killed while running in the
+                  // background, the navigation stack is restored.
+                  Navigator.restorablePushNamed(
+                      context, SettingsView.routeName);
+                },
+              ),
+            ],
+          ),
+
+          // To work with lists that may contain a large number of items, it’s best
+          // to use the ListView.builder constructor.
+          //
+          // In contrast to the default ListView constructor, which requires
+          // building all Widgets up front, the ListView.builder constructor lazily
+          // builds Widgets as they’re scrolled into view.
+          body: ListView.builder(
+            // Providing a restorationId allows the ListView to restore the
+            // scroll position when a user leaves and returns to the app after it
+            // has been killed while running in the background.
+            restorationId: 'sampleItemListView',
+            itemCount: items.length,
+            itemBuilder: (BuildContext context, int index) {
+              final item = items[index];
+
+              return ListTile(
+                  title: Text('SampleItem ${item.id}'),
+                  leading: const CircleAvatar(
+                    // Display the Flutter Logo image asset.
+                    foregroundImage:
+                        AssetImage('assets/images/flutter_logo.png'),
+                  ),
+                  onTap: () {
+                    // Navigate to the details page. If the user leaves and returns to
+                    // the app after it has been killed while running in the
+                    // background, the navigation stack is restored.
+                    Navigator.restorablePushNamed(
+                      context,
+                      SampleItemDetailsView.routeName,
+                    );
+                  });
             },
           ),
-        ],
-      ),
-
-      // To work with lists that may contain a large number of items, it’s best
-      // to use the ListView.builder constructor.
-      //
-      // In contrast to the default ListView constructor, which requires
-      // building all Widgets up front, the ListView.builder constructor lazily
-      // builds Widgets as they’re scrolled into view.
-      body: ListView.builder(
-        // Providing a restorationId allows the ListView to restore the
-        // scroll position when a user leaves and returns to the app after it
-        // has been killed while running in the background.
-        restorationId: 'sampleItemListView',
-        itemCount: items.length,
-        itemBuilder: (BuildContext context, int index) {
-          final item = items[index];
-
-          return ListTile(
-              title: Text('SampleItem ${item.id}'),
-              leading: const CircleAvatar(
-                // Display the Flutter Logo image asset.
-                foregroundImage: AssetImage('assets/images/flutter_logo.png'),
-              ),
-              onTap: () {
-                // Navigate to the details page. If the user leaves and returns to
-                // the app after it has been killed while running in the
-                // background, the navigation stack is restored.
-                Navigator.restorablePushNamed(
-                  context,
-                  SampleItemDetailsView.routeName,
-                );
-              });
-        },
-      ),
+        );
+      },
     );
+  }
+
+  Future<List<Issue>> _fetchIssues() async {
+    final repo = getIt<GithubIssuesRepository>();
+    final issues = await repo.getAllIssues("flutter", "flutter");
+    log("[LOG] Fetched Issues: ${issues.length}");
+    return issues;
   }
 }

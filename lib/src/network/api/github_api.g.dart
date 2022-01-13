@@ -6,6 +6,8 @@ part of 'github_api.dart';
 // RetrofitGenerator
 // **************************************************************************
 
+// ignore_for_file: unnecessary_brace_in_string_interps
+
 class _GithubApi implements GithubApi {
   _GithubApi(this._dio, {this.baseUrl});
 
@@ -14,14 +16,14 @@ class _GithubApi implements GithubApi {
   String? baseUrl;
 
   @override
-  Future<List<Issue>> getAllIssues() async {
+  Future<List<Issue>> getAllIssues(owner, repoName) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<List<dynamic>>(_setStreamType<List<Issue>>(
         Options(method: 'GET', headers: _headers, extra: _extra)
-            .compose(_dio.options, 'repos/flutter/flutter/issues',
+            .compose(_dio.options, '/repos/${owner}/${repoName}/issues',
                 queryParameters: queryParameters, data: _data)
             .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
     var value = _result.data!
