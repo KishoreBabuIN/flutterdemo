@@ -8,6 +8,9 @@ part 'github_api.g.dart';
 abstract class GithubApi {
   factory GithubApi(Dio dio) = _GithubApi;
 
-  @GET("repos/flutter/flutter/issues")
-  Future<List<Issue>> getAllIssues();
+  @GET("repos/{owner}/{repoName}/issues")
+  Future<List<Issue>> getAllIssues(
+    @Path("owner") String owner,
+    @Path("repoName") String repoName,
+  );
 }
