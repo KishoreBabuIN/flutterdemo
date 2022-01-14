@@ -1,5 +1,6 @@
 import 'package:flutter_demo/src/network/api/github_api.dart';
 import 'package:flutter_demo/src/network/model/issue.dart';
+import 'package:flutter_demo/src/network/model/sort_type.dart';
 import 'package:injectable/injectable.dart';
 
 @lazySingleton
@@ -8,16 +9,17 @@ class GithubIssuesRepository {
 
   final GithubApi api;
 
-  Future<List<Issue>> getAllIssues(
+  Future<List<Issue>> getAllIssuesByPage(
     String owner,
     String repoName,
     int pageNum,
+    IssueListSortType sortedBy,
   ) {
     return api.getAllIssues(
       owner,
       repoName,
       pageNum,
-      "created",
+      sortedBy.name,
     );
   }
 

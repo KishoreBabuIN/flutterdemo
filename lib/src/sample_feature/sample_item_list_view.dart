@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_demo/src/data/github_issues_repository.dart';
 import 'package:flutter_demo/src/di/di.dart';
 import 'package:flutter_demo/src/network/model/issue.dart';
+import 'package:flutter_demo/src/network/model/sort_type.dart';
 
 import '../settings/settings_view.dart';
 import 'sample_item.dart';
@@ -78,6 +79,6 @@ class SampleItemListView extends StatelessWidget {
 
   Future<List<Issue>> _fetchIssues() async {
     final repo = getIt<GithubIssuesRepository>();
-    return await repo.getAllIssues("flutter", "flutter", 1);
+    return await repo.getAllIssuesByPage("flutter", "flutter", 1, IssueListSortType.created);
   }
 }
