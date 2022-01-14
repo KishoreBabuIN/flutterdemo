@@ -7,4 +7,5 @@ part 'issues_list_event.freezed.dart';
 class IssuesListEvent with _$IssuesListEvent {
   const factory IssuesListEvent.fetchFirstPage() = _FetchFirstPageIssuesListEvent;
   const factory IssuesListEvent.fetchNextPage() = _FetchNextPageIssuesListEvent;
+  const factory IssuesListEvent.sortBy({required String sortType}) = _FetchSortedIssuesListEvent;
 }
