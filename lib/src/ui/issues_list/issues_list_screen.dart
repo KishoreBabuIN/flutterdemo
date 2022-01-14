@@ -34,7 +34,6 @@ class _IssuesListScreenWidget extends StatelessWidget {
       ),
       body: BlocBuilder<IssuesListBloc, IssuesListState>(
         builder: (context, state) {
-          log("[LOG] State: $state");
           return state.map(
             loading: (state) => const Center(
               child: CircularProgressIndicator(),
