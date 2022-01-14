@@ -15,6 +15,8 @@ abstract class GithubApi {
   Future<List<Issue>> getAllIssues(
     @Path("owner") String owner,
     @Path("repoName") String repoName,
+    @Query("page") int pageNum,
+    @Query("sort") String sortType,
   );
 
   @GET("/repos/{owner}/{repoName}/issues/{id}")

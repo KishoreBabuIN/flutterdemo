@@ -8,8 +8,17 @@ class GithubIssuesRepository {
 
   final GithubApi api;
 
-  Future<List<Issue>> getAllIssues(String owner, String repoName) {
-    return api.getAllIssues(owner, repoName);
+  Future<List<Issue>> getAllIssues(
+    String owner,
+    String repoName,
+    int pageNum,
+  ) {
+    return api.getAllIssues(
+      owner,
+      repoName,
+      pageNum,
+      "created",
+    );
   }
 
   Future<Issue> getIssueDetails(String owner, String repoName, String id) {

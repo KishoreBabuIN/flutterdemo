@@ -18,8 +18,7 @@ class IssuesListBloc extends Bloc<IssuesListEvent, IssuesListState> {
 
   Future<void> _onFetch(Emitter<IssuesListState> emit, e) async {
     try {
-      final issues =
-          await repository.getAllIssues("flutter", "flutter"); //fixme
+      final issues = await repository.getAllIssues("flutter", "flutter", 1); //fixme
       emit(IssuesListState.content(issues: issues));
     } on Exception catch (e) {
       emit(IssuesListState.error(exception: e));
