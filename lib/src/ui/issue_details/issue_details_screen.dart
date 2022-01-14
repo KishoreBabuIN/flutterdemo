@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_demo/src/data/github_issues_repository.dart';
 import 'package:flutter_demo/src/di/di.dart';
 import 'package:flutter_demo/src/ui/issue_details/bloc/issue_details_bloc.dart';
+import 'package:flutter_demo/src/ui/issue_details/bloc/issue_details_event.dart';
 import 'package:flutter_demo/src/ui/issue_details/bloc/issue_details_state.dart';
 
 class IssueDetailsScreen extends StatelessWidget {
@@ -10,15 +12,24 @@ class IssueDetailsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final _args =
+        ModalRoute.of(context)?.settings.arguments as String?;
+
     return BlocProvider(
-      create: (context) => getIt<IssueDetailsBloc>(),
+      create: (context) =>
+          IssueDetailsBloc(repository: getIt<GithubIssuesRepository>())
+            ..add(
+              IssueDetailsEvent.load(_args),
+            ),
       child: const _IssueDetailsScreenWidget(),
     );
   }
 }
 
 class _IssueDetailsScreenWidget extends StatelessWidget {
-  const _IssueDetailsScreenWidget({Key? key}) : super(key: key);
+  const _IssueDetailsScreenWidget({
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

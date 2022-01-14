@@ -33,7 +33,7 @@ class _GithubApi implements GithubApi {
   }
 
   @override
-  Future<Issue> getIssueDetails(id) async {
+  Future<Issue> getIssueDetails(owner, repoName, id) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
@@ -41,7 +41,8 @@ class _GithubApi implements GithubApi {
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<Issue>(
             Options(method: 'GET', headers: _headers, extra: _extra)
-                .compose(_dio.options, '/repos/{owner}/{repoName}/issues/${id}',
+                .compose(
+                    _dio.options, '/repos/${owner}/${repoName}/issues/${id}',
                     queryParameters: queryParameters, data: _data)
                 .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
     final value = Issue.fromJson(_result.data!);

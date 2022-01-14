@@ -12,7 +12,7 @@ class GithubIssuesRepository {
     return api.getAllIssues(owner, repoName);
   }
 
-  Future<Issue> getIssueDetails(String id) {
-    return api.getIssueDetails(id);
+  Future<Issue> getIssueDetails(String owner, String repoName, String id) {
+    return api.getIssueDetails(owner, repoName, id);
   }
 }

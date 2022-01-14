@@ -3,9 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_demo/src/data/github_issues_repository.dart';
 import 'package:flutter_demo/src/ui/issues_list/bloc/issues_list_event.dart';
 import 'package:flutter_demo/src/ui/issues_list/bloc/issues_list_state.dart';
-import 'package:injectable/injectable.dart';
 
-@lazySingleton
 class IssuesListBloc extends Bloc<IssuesListEvent, IssuesListState> {
   IssuesListBloc({
     required this.repository,
@@ -21,7 +19,7 @@ class IssuesListBloc extends Bloc<IssuesListEvent, IssuesListState> {
 
   Future<void> _onFetch(Emitter<IssuesListState> emit, e) async {
     try {
-      final issues = await repository.getAllIssues("flutter", "flutter");
+      final issues = await repository.getAllIssues("flutter", "flutter"); //fixme
       emit(IssuesListState.content(issues: issues));
     } on Exception catch (e) {
       emit(IssuesListState.error(exception: e));

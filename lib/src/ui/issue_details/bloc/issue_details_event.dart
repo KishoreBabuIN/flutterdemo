@@ -4,5 +4,5 @@ part 'issue_details_event.freezed.dart';
 
 @freezed
 class IssueDetailsEvent with _$IssueDetailsEvent {
-  factory IssueDetailsEvent.load() = _LoadIssueDetailsEvent;
+  factory IssueDetailsEvent.load(String? args) = _LoadIssueDetailsEvent;
 }

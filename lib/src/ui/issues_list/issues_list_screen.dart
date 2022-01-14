@@ -1,6 +1,6 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_demo/src/data/github_issues_repository.dart';
 import 'package:flutter_demo/src/di/di.dart';
 import 'package:flutter_demo/src/network/model/issue.dart';
 import 'package:flutter_demo/src/ui/issue_details/issue_details_screen.dart';
@@ -15,7 +15,11 @@ class IssuesListScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => getIt<IssuesListBloc>(),
+      create: (context) =>
+          IssuesListBloc(repository: getIt<GithubIssuesRepository>())
+            ..add(
+              const IssuesListEvent.fetch(),
+            ),
       child: const _IssuesListScreenWidget(),
     );
   }
@@ -26,7 +30,6 @@ class _IssuesListScreenWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    getIt<IssuesListBloc>().add(const IssuesListEvent.fetch());
     return Scaffold(
       appBar: AppBar(
         title: const Text('Issues'),
@@ -63,19 +66,21 @@ class IssueListViewBuilderWidget extends StatelessWidget {
       restorationId: 'issues',
       itemCount: issues.length,
       itemBuilder: (BuildContext context, int index) {
-        final item = issues[index];
+        final issue = issues[index];
 
         return ListTile(
-            title: Text("${item.title}"),
-            // leading: const CircleAvatar(
-            //   foregroundImage: AssetImage('assets/images/flutter_logo.png'),
-            // ),
-            onTap: () {
-              Navigator.restorablePushNamed(
-                context,
-                IssueDetailsScreen.routeName,
-              );
-            });
+          title: Text("${issue.title}"),
+          // leading: const CircleAvatar(
+          //   foregroundImage: AssetImage('assets/images/flutter_logo.png'),
+          // ),
+          onTap: () {
+            Navigator.restorablePushNamed(
+              context,
+              IssueDetailsScreen.routeName,
+              arguments: issue.number?.toString() ?? "",
+            );
+          },
+        );
       },
     );
   }

@@ -18,8 +18,10 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$IssueDetailsEventTearOff {
   const _$IssueDetailsEventTearOff();
 
-  _LoadIssueDetailsEvent load() {
-    return _LoadIssueDetailsEvent();
+  _LoadIssueDetailsEvent load(String? args) {
+    return _LoadIssueDetailsEvent(
+      args,
+    );
   }
 }
 
@@ -28,19 +30,21 @@ const $IssueDetailsEvent = _$IssueDetailsEventTearOff();
 
 /// @nodoc
 mixin _$IssueDetailsEvent {
+  String? get args => throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() load,
+    required TResult Function(String? args) load,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? load,
+    TResult Function(String? args)? load,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? load,
+    TResult Function(String? args)? load,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -60,6 +64,10 @@ mixin _$IssueDetailsEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $IssueDetailsEventCopyWith<IssueDetailsEvent> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -67,6 +75,7 @@ abstract class $IssueDetailsEventCopyWith<$Res> {
   factory $IssueDetailsEventCopyWith(
           IssueDetailsEvent value, $Res Function(IssueDetailsEvent) then) =
       _$IssueDetailsEventCopyWithImpl<$Res>;
+  $Res call({String? args});
 }
 
 /// @nodoc
@@ -77,13 +86,28 @@ class _$IssueDetailsEventCopyWithImpl<$Res>
   final IssueDetailsEvent _value;
   // ignore: unused_field
   final $Res Function(IssueDetailsEvent) _then;
+
+  @override
+  $Res call({
+    Object? args = freezed,
+  }) {
+    return _then(_value.copyWith(
+      args: args == freezed
+          ? _value.args
+          : args // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
 }
 
 /// @nodoc
-abstract class _$LoadIssueDetailsEventCopyWith<$Res> {
+abstract class _$LoadIssueDetailsEventCopyWith<$Res>
+    implements $IssueDetailsEventCopyWith<$Res> {
   factory _$LoadIssueDetailsEventCopyWith(_LoadIssueDetailsEvent value,
           $Res Function(_LoadIssueDetailsEvent) then) =
       __$LoadIssueDetailsEventCopyWithImpl<$Res>;
+  @override
+  $Res call({String? args});
 }
 
 /// @nodoc
@@ -96,51 +120,75 @@ class __$LoadIssueDetailsEventCopyWithImpl<$Res>
 
   @override
   _LoadIssueDetailsEvent get _value => super._value as _LoadIssueDetailsEvent;
+
+  @override
+  $Res call({
+    Object? args = freezed,
+  }) {
+    return _then(_LoadIssueDetailsEvent(
+      args == freezed
+          ? _value.args
+          : args // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$_LoadIssueDetailsEvent implements _LoadIssueDetailsEvent {
-  _$_LoadIssueDetailsEvent();
+  _$_LoadIssueDetailsEvent(this.args);
+
+  @override
+  final String? args;
 
   @override
   String toString() {
-    return 'IssueDetailsEvent.load()';
+    return 'IssueDetailsEvent.load(args: $args)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _LoadIssueDetailsEvent);
+        (other.runtimeType == runtimeType &&
+            other is _LoadIssueDetailsEvent &&
+            const DeepCollectionEquality().equals(other.args, args));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(args));
+
+  @JsonKey(ignore: true)
+  @override
+  _$LoadIssueDetailsEventCopyWith<_LoadIssueDetailsEvent> get copyWith =>
+      __$LoadIssueDetailsEventCopyWithImpl<_LoadIssueDetailsEvent>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() load,
+    required TResult Function(String? args) load,
   }) {
-    return load();
+    return load(args);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? load,
+    TResult Function(String? args)? load,
   }) {
-    return load?.call();
+    return load?.call(args);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? load,
+    TResult Function(String? args)? load,
     required TResult orElse(),
   }) {
     if (load != null) {
-      return load();
+      return load(args);
     }
     return orElse();
   }
@@ -175,5 +223,12 @@ class _$_LoadIssueDetailsEvent implements _LoadIssueDetailsEvent {
 }
 
 abstract class _LoadIssueDetailsEvent implements IssueDetailsEvent {
-  factory _LoadIssueDetailsEvent() = _$_LoadIssueDetailsEvent;
+  factory _LoadIssueDetailsEvent(String? args) = _$_LoadIssueDetailsEvent;
+
+  @override
+  String? get args;
+  @override
+  @JsonKey(ignore: true)
+  _$LoadIssueDetailsEventCopyWith<_LoadIssueDetailsEvent> get copyWith =>
+      throw _privateConstructorUsedError;
 }
