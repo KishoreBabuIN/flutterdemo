@@ -14,74 +14,139 @@ class IssuesListScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) =>
-          IssuesListBloc(repository: getIt<GithubIssuesRepository>())
-            ..add(
-              const IssuesListEvent.fetch(),
-            ),
-      child: const _IssuesListScreenWidget(),
-    );
-  }
-}
-
-class _IssuesListScreenWidget extends StatelessWidget {
-  const _IssuesListScreenWidget({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Issues'),
       ),
-      body: BlocBuilder<IssuesListBloc, IssuesListState>(
-        builder: (context, state) => state.map(
-          loading: (state) => const Center(
-            child: CircularProgressIndicator(),
+      body: BlocProvider(
+        create: (context) => IssuesListBloc(repository: getIt<GithubIssuesRepository>())
+          ..add(
+            const IssuesListEvent.fetchFirstPage(),
           ),
-          content: (state) => IssueListViewBuilderWidget(
-            issues: state.issues,
-          ),
-          error: (state) => Center(
-            child: Text(
-              "Error: ${state.exception.toString()}", //fixme
-            ),
+        child: const _IssuesListScreenWidget(),
+      ),
+    );
+  }
+}
+
+class _IssuesListScreenWidget extends StatefulWidget {
+  const _IssuesListScreenWidget({Key? key}) : super(key: key);
+
+  @override
+  State<_IssuesListScreenWidget> createState() => _IssuesListScreenWidgetState();
+}
+
+class _IssuesListScreenWidgetState extends State<_IssuesListScreenWidget> {
+  final _scrollController = ScrollController();
+
+  @override
+  void initState() {
+    super.initState();
+    _scrollController.addListener(_onScroll);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocBuilder<IssuesListBloc, IssuesListState>(
+      builder: (context, state) => state.map(
+        loading: (state) => const Center(
+          child: CircularProgressIndicator(),
+        ),
+        content: (state) => _IssueListViewBuilderWidget(
+          contentState: state,
+          scrollController: _scrollController,
+        ),
+        error: (state) => Center(
+          child: Text(
+            "Error: ${state.exception.toString()}", //fixme
           ),
         ),
       ),
     );
   }
+
+  @override
+  void dispose() {
+    _scrollController
+      ..removeListener(_onScroll)
+      ..dispose();
+    super.dispose();
+  }
+
+  void _onScroll() {
+    if (_isBottom) context.read<IssuesListBloc>().add(const IssuesListEvent.fetchNextPage());
+  }
+
+  bool get _isBottom {
+    if (!_scrollController.hasClients) return false;
+    final maxScroll = _scrollController.position.maxScrollExtent;
+    final currentScroll = _scrollController.offset;
+    return currentScroll >= (maxScroll * 0.9);
+  }
 }
 
-class IssueListViewBuilderWidget extends StatelessWidget {
-  const IssueListViewBuilderWidget({
+class _IssueListViewBuilderWidget extends StatelessWidget {
+  const _IssueListViewBuilderWidget({
     Key? key,
-    required this.issues,
+    required this.contentState,
+    required this.scrollController,
   }) : super(key: key);
-  final List<Issue> issues;
+  final ContentIssuesListState contentState;
+
+  final ScrollController scrollController;
 
   @override
   Widget build(BuildContext context) {
+    final issues = contentState.issues;
     return ListView.builder(
       restorationId: 'issues',
-      itemCount: issues.length,
+      itemCount: contentState.hasReachedEnd ? issues.length : issues.length + 1,
+      controller: scrollController,
       itemBuilder: (BuildContext context, int index) {
-        final issue = issues[index];
+        return index >= issues.length
+            ? const _BottomLoaderWidget()
+            : _IssueListItemWidget(
+                issue: issues[index],
+              );
+      },
+    );
+  }
+}
 
-        return ListTile(
-          title: Text("${issue.title}"),
-          // leading: const CircleAvatar(
-          //   foregroundImage: AssetImage('assets/images/flutter_logo.png'),
-          // ),
-          onTap: () {
-            Navigator.restorablePushNamed(
-              context,
-              IssueDetailsScreen.routeName,
-              arguments: issue.number?.toString() ?? "",
-            );
-          },
+class _IssueListItemWidget extends StatelessWidget {
+  const _IssueListItemWidget({
+    Key? key,
+    required this.issue,
+  }) : super(key: key);
+
+  final Issue issue;
+
+  @override
+  Widget build(BuildContext context) {
+    return ListTile(
+      title: Text("${issue.title}"),
+      onTap: () {
+        Navigator.restorablePushNamed(
+          context,
+          IssueDetailsScreen.routeName,
+          arguments: issue.number?.toString() ?? "",
         );
       },
+    );
+  }
+}
+
+class _BottomLoaderWidget extends StatelessWidget {
+  const _BottomLoaderWidget({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return const Center(
+      child: SizedBox(
+        height: 24,
+        width: 24,
+        child: CircularProgressIndicator(strokeWidth: 1.5),
+      ),
     );
   }
 }

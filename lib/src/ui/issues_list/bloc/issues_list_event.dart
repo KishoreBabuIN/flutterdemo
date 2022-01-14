@@ -5,6 +5,6 @@ part 'issues_list_event.freezed.dart';
 
 @freezed
 class IssuesListEvent with _$IssuesListEvent {
-  const factory IssuesListEvent.fetch() = _FetchIssuesListEvent;
-  const factory IssuesListEvent.retryFetch() = _RetryFetchIssuesListEvent;
+  const factory IssuesListEvent.fetchFirstPage() = _FetchFirstPageIssuesListEvent;
+  const factory IssuesListEvent.fetchNextPage() = _FetchNextPageIssuesListEvent;
 }

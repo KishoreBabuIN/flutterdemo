@@ -18,12 +18,12 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$IssuesListEventTearOff {
   const _$IssuesListEventTearOff();
 
-  _FetchIssuesListEvent fetch() {
-    return const _FetchIssuesListEvent();
+  _FetchFirstPageIssuesListEvent fetchFirstPage() {
+    return const _FetchFirstPageIssuesListEvent();
   }
 
-  _RetryFetchIssuesListEvent retryFetch() {
-    return const _RetryFetchIssuesListEvent();
+  _FetchNextPageIssuesListEvent fetchNextPage() {
+    return const _FetchNextPageIssuesListEvent();
   }
 }
 
@@ -34,39 +34,41 @@ const $IssuesListEvent = _$IssuesListEventTearOff();
 mixin _$IssuesListEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() fetch,
-    required TResult Function() retryFetch,
+    required TResult Function() fetchFirstPage,
+    required TResult Function() fetchNextPage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? fetch,
-    TResult Function()? retryFetch,
+    TResult Function()? fetchFirstPage,
+    TResult Function()? fetchNextPage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? fetch,
-    TResult Function()? retryFetch,
+    TResult Function()? fetchFirstPage,
+    TResult Function()? fetchNextPage,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_FetchIssuesListEvent value) fetch,
-    required TResult Function(_RetryFetchIssuesListEvent value) retryFetch,
+    required TResult Function(_FetchFirstPageIssuesListEvent value)
+        fetchFirstPage,
+    required TResult Function(_FetchNextPageIssuesListEvent value)
+        fetchNextPage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_FetchIssuesListEvent value)? fetch,
-    TResult Function(_RetryFetchIssuesListEvent value)? retryFetch,
+    TResult Function(_FetchFirstPageIssuesListEvent value)? fetchFirstPage,
+    TResult Function(_FetchNextPageIssuesListEvent value)? fetchNextPage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_FetchIssuesListEvent value)? fetch,
-    TResult Function(_RetryFetchIssuesListEvent value)? retryFetch,
+    TResult Function(_FetchFirstPageIssuesListEvent value)? fetchFirstPage,
+    TResult Function(_FetchNextPageIssuesListEvent value)? fetchNextPage,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -90,161 +92,51 @@ class _$IssuesListEventCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$FetchIssuesListEventCopyWith<$Res> {
-  factory _$FetchIssuesListEventCopyWith(_FetchIssuesListEvent value,
-          $Res Function(_FetchIssuesListEvent) then) =
-      __$FetchIssuesListEventCopyWithImpl<$Res>;
+abstract class _$FetchFirstPageIssuesListEventCopyWith<$Res> {
+  factory _$FetchFirstPageIssuesListEventCopyWith(
+          _FetchFirstPageIssuesListEvent value,
+          $Res Function(_FetchFirstPageIssuesListEvent) then) =
+      __$FetchFirstPageIssuesListEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$FetchIssuesListEventCopyWithImpl<$Res>
+class __$FetchFirstPageIssuesListEventCopyWithImpl<$Res>
     extends _$IssuesListEventCopyWithImpl<$Res>
-    implements _$FetchIssuesListEventCopyWith<$Res> {
-  __$FetchIssuesListEventCopyWithImpl(
-      _FetchIssuesListEvent _value, $Res Function(_FetchIssuesListEvent) _then)
-      : super(_value, (v) => _then(v as _FetchIssuesListEvent));
+    implements _$FetchFirstPageIssuesListEventCopyWith<$Res> {
+  __$FetchFirstPageIssuesListEventCopyWithImpl(
+      _FetchFirstPageIssuesListEvent _value,
+      $Res Function(_FetchFirstPageIssuesListEvent) _then)
+      : super(_value, (v) => _then(v as _FetchFirstPageIssuesListEvent));
 
   @override
-  _FetchIssuesListEvent get _value => super._value as _FetchIssuesListEvent;
+  _FetchFirstPageIssuesListEvent get _value =>
+      super._value as _FetchFirstPageIssuesListEvent;
 }
 
 /// @nodoc
 
-class _$_FetchIssuesListEvent
+class _$_FetchFirstPageIssuesListEvent
     with DiagnosticableTreeMixin
-    implements _FetchIssuesListEvent {
-  const _$_FetchIssuesListEvent();
+    implements _FetchFirstPageIssuesListEvent {
+  const _$_FetchFirstPageIssuesListEvent();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'IssuesListEvent.fetch()';
+    return 'IssuesListEvent.fetchFirstPage()';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'IssuesListEvent.fetch'));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _FetchIssuesListEvent);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() fetch,
-    required TResult Function() retryFetch,
-  }) {
-    return fetch();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? fetch,
-    TResult Function()? retryFetch,
-  }) {
-    return fetch?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? fetch,
-    TResult Function()? retryFetch,
-    required TResult orElse(),
-  }) {
-    if (fetch != null) {
-      return fetch();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_FetchIssuesListEvent value) fetch,
-    required TResult Function(_RetryFetchIssuesListEvent value) retryFetch,
-  }) {
-    return fetch(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_FetchIssuesListEvent value)? fetch,
-    TResult Function(_RetryFetchIssuesListEvent value)? retryFetch,
-  }) {
-    return fetch?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_FetchIssuesListEvent value)? fetch,
-    TResult Function(_RetryFetchIssuesListEvent value)? retryFetch,
-    required TResult orElse(),
-  }) {
-    if (fetch != null) {
-      return fetch(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _FetchIssuesListEvent implements IssuesListEvent {
-  const factory _FetchIssuesListEvent() = _$_FetchIssuesListEvent;
-}
-
-/// @nodoc
-abstract class _$RetryFetchIssuesListEventCopyWith<$Res> {
-  factory _$RetryFetchIssuesListEventCopyWith(_RetryFetchIssuesListEvent value,
-          $Res Function(_RetryFetchIssuesListEvent) then) =
-      __$RetryFetchIssuesListEventCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$RetryFetchIssuesListEventCopyWithImpl<$Res>
-    extends _$IssuesListEventCopyWithImpl<$Res>
-    implements _$RetryFetchIssuesListEventCopyWith<$Res> {
-  __$RetryFetchIssuesListEventCopyWithImpl(_RetryFetchIssuesListEvent _value,
-      $Res Function(_RetryFetchIssuesListEvent) _then)
-      : super(_value, (v) => _then(v as _RetryFetchIssuesListEvent));
-
-  @override
-  _RetryFetchIssuesListEvent get _value =>
-      super._value as _RetryFetchIssuesListEvent;
-}
-
-/// @nodoc
-
-class _$_RetryFetchIssuesListEvent
-    with DiagnosticableTreeMixin
-    implements _RetryFetchIssuesListEvent {
-  const _$_RetryFetchIssuesListEvent();
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'IssuesListEvent.retryFetch()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'IssuesListEvent.retryFetch'));
+    properties
+      ..add(DiagnosticsProperty('type', 'IssuesListEvent.fetchFirstPage'));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _RetryFetchIssuesListEvent);
+            other is _FetchFirstPageIssuesListEvent);
   }
 
   @override
@@ -253,30 +145,30 @@ class _$_RetryFetchIssuesListEvent
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() fetch,
-    required TResult Function() retryFetch,
+    required TResult Function() fetchFirstPage,
+    required TResult Function() fetchNextPage,
   }) {
-    return retryFetch();
+    return fetchFirstPage();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? fetch,
-    TResult Function()? retryFetch,
+    TResult Function()? fetchFirstPage,
+    TResult Function()? fetchNextPage,
   }) {
-    return retryFetch?.call();
+    return fetchFirstPage?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? fetch,
-    TResult Function()? retryFetch,
+    TResult Function()? fetchFirstPage,
+    TResult Function()? fetchNextPage,
     required TResult orElse(),
   }) {
-    if (retryFetch != null) {
-      return retryFetch();
+    if (fetchFirstPage != null) {
+      return fetchFirstPage();
     }
     return orElse();
   }
@@ -284,35 +176,159 @@ class _$_RetryFetchIssuesListEvent
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_FetchIssuesListEvent value) fetch,
-    required TResult Function(_RetryFetchIssuesListEvent value) retryFetch,
+    required TResult Function(_FetchFirstPageIssuesListEvent value)
+        fetchFirstPage,
+    required TResult Function(_FetchNextPageIssuesListEvent value)
+        fetchNextPage,
   }) {
-    return retryFetch(this);
+    return fetchFirstPage(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_FetchIssuesListEvent value)? fetch,
-    TResult Function(_RetryFetchIssuesListEvent value)? retryFetch,
+    TResult Function(_FetchFirstPageIssuesListEvent value)? fetchFirstPage,
+    TResult Function(_FetchNextPageIssuesListEvent value)? fetchNextPage,
   }) {
-    return retryFetch?.call(this);
+    return fetchFirstPage?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_FetchIssuesListEvent value)? fetch,
-    TResult Function(_RetryFetchIssuesListEvent value)? retryFetch,
+    TResult Function(_FetchFirstPageIssuesListEvent value)? fetchFirstPage,
+    TResult Function(_FetchNextPageIssuesListEvent value)? fetchNextPage,
     required TResult orElse(),
   }) {
-    if (retryFetch != null) {
-      return retryFetch(this);
+    if (fetchFirstPage != null) {
+      return fetchFirstPage(this);
     }
     return orElse();
   }
 }
 
-abstract class _RetryFetchIssuesListEvent implements IssuesListEvent {
-  const factory _RetryFetchIssuesListEvent() = _$_RetryFetchIssuesListEvent;
+abstract class _FetchFirstPageIssuesListEvent implements IssuesListEvent {
+  const factory _FetchFirstPageIssuesListEvent() =
+      _$_FetchFirstPageIssuesListEvent;
+}
+
+/// @nodoc
+abstract class _$FetchNextPageIssuesListEventCopyWith<$Res> {
+  factory _$FetchNextPageIssuesListEventCopyWith(
+          _FetchNextPageIssuesListEvent value,
+          $Res Function(_FetchNextPageIssuesListEvent) then) =
+      __$FetchNextPageIssuesListEventCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$FetchNextPageIssuesListEventCopyWithImpl<$Res>
+    extends _$IssuesListEventCopyWithImpl<$Res>
+    implements _$FetchNextPageIssuesListEventCopyWith<$Res> {
+  __$FetchNextPageIssuesListEventCopyWithImpl(
+      _FetchNextPageIssuesListEvent _value,
+      $Res Function(_FetchNextPageIssuesListEvent) _then)
+      : super(_value, (v) => _then(v as _FetchNextPageIssuesListEvent));
+
+  @override
+  _FetchNextPageIssuesListEvent get _value =>
+      super._value as _FetchNextPageIssuesListEvent;
+}
+
+/// @nodoc
+
+class _$_FetchNextPageIssuesListEvent
+    with DiagnosticableTreeMixin
+    implements _FetchNextPageIssuesListEvent {
+  const _$_FetchNextPageIssuesListEvent();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'IssuesListEvent.fetchNextPage()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'IssuesListEvent.fetchNextPage'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _FetchNextPageIssuesListEvent);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() fetchFirstPage,
+    required TResult Function() fetchNextPage,
+  }) {
+    return fetchNextPage();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? fetchFirstPage,
+    TResult Function()? fetchNextPage,
+  }) {
+    return fetchNextPage?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? fetchFirstPage,
+    TResult Function()? fetchNextPage,
+    required TResult orElse(),
+  }) {
+    if (fetchNextPage != null) {
+      return fetchNextPage();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_FetchFirstPageIssuesListEvent value)
+        fetchFirstPage,
+    required TResult Function(_FetchNextPageIssuesListEvent value)
+        fetchNextPage,
+  }) {
+    return fetchNextPage(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_FetchFirstPageIssuesListEvent value)? fetchFirstPage,
+    TResult Function(_FetchNextPageIssuesListEvent value)? fetchNextPage,
+  }) {
+    return fetchNextPage?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_FetchFirstPageIssuesListEvent value)? fetchFirstPage,
+    TResult Function(_FetchNextPageIssuesListEvent value)? fetchNextPage,
+    required TResult orElse(),
+  }) {
+    if (fetchNextPage != null) {
+      return fetchNextPage(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _FetchNextPageIssuesListEvent implements IssuesListEvent {
+  const factory _FetchNextPageIssuesListEvent() =
+      _$_FetchNextPageIssuesListEvent;
 }

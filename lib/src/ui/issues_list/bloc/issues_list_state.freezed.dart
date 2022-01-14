@@ -22,9 +22,11 @@ class _$IssuesListStateTearOff {
     return const LoadingIssuesListState();
   }
 
-  ContentIssuesListState content({required List<Issue> issues}) {
+  ContentIssuesListState content(
+      {required List<Issue> issues, required bool hasReachedEnd}) {
     return ContentIssuesListState(
       issues: issues,
+      hasReachedEnd: hasReachedEnd,
     );
   }
 
@@ -43,21 +45,21 @@ mixin _$IssuesListState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<Issue> issues) content,
+    required TResult Function(List<Issue> issues, bool hasReachedEnd) content,
     required TResult Function(Exception? exception) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<Issue> issues)? content,
+    TResult Function(List<Issue> issues, bool hasReachedEnd)? content,
     TResult Function(Exception? exception)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<Issue> issues)? content,
+    TResult Function(List<Issue> issues, bool hasReachedEnd)? content,
     TResult Function(Exception? exception)? error,
     required TResult orElse(),
   }) =>
@@ -145,7 +147,7 @@ class _$LoadingIssuesListState implements LoadingIssuesListState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<Issue> issues) content,
+    required TResult Function(List<Issue> issues, bool hasReachedEnd) content,
     required TResult Function(Exception? exception) error,
   }) {
     return loading();
@@ -155,7 +157,7 @@ class _$LoadingIssuesListState implements LoadingIssuesListState {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<Issue> issues)? content,
+    TResult Function(List<Issue> issues, bool hasReachedEnd)? content,
     TResult Function(Exception? exception)? error,
   }) {
     return loading?.call();
@@ -165,7 +167,7 @@ class _$LoadingIssuesListState implements LoadingIssuesListState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<Issue> issues)? content,
+    TResult Function(List<Issue> issues, bool hasReachedEnd)? content,
     TResult Function(Exception? exception)? error,
     required TResult orElse(),
   }) {
@@ -219,7 +221,7 @@ abstract class $ContentIssuesListStateCopyWith<$Res> {
   factory $ContentIssuesListStateCopyWith(ContentIssuesListState value,
           $Res Function(ContentIssuesListState) then) =
       _$ContentIssuesListStateCopyWithImpl<$Res>;
-  $Res call({List<Issue> issues});
+  $Res call({List<Issue> issues, bool hasReachedEnd});
 }
 
 /// @nodoc
@@ -236,12 +238,17 @@ class _$ContentIssuesListStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? issues = freezed,
+    Object? hasReachedEnd = freezed,
   }) {
     return _then(ContentIssuesListState(
       issues: issues == freezed
           ? _value.issues
           : issues // ignore: cast_nullable_to_non_nullable
               as List<Issue>,
+      hasReachedEnd: hasReachedEnd == freezed
+          ? _value.hasReachedEnd
+          : hasReachedEnd // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -249,14 +256,17 @@ class _$ContentIssuesListStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$ContentIssuesListState implements ContentIssuesListState {
-  const _$ContentIssuesListState({required this.issues});
+  const _$ContentIssuesListState(
+      {required this.issues, required this.hasReachedEnd});
 
   @override
   final List<Issue> issues;
+  @override
+  final bool hasReachedEnd;
 
   @override
   String toString() {
-    return 'IssuesListState.content(issues: $issues)';
+    return 'IssuesListState.content(issues: $issues, hasReachedEnd: $hasReachedEnd)';
   }
 
   @override
@@ -264,12 +274,16 @@ class _$ContentIssuesListState implements ContentIssuesListState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is ContentIssuesListState &&
-            const DeepCollectionEquality().equals(other.issues, issues));
+            const DeepCollectionEquality().equals(other.issues, issues) &&
+            const DeepCollectionEquality()
+                .equals(other.hasReachedEnd, hasReachedEnd));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(issues));
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(issues),
+      const DeepCollectionEquality().hash(hasReachedEnd));
 
   @JsonKey(ignore: true)
   @override
@@ -281,32 +295,32 @@ class _$ContentIssuesListState implements ContentIssuesListState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<Issue> issues) content,
+    required TResult Function(List<Issue> issues, bool hasReachedEnd) content,
     required TResult Function(Exception? exception) error,
   }) {
-    return content(issues);
+    return content(issues, hasReachedEnd);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<Issue> issues)? content,
+    TResult Function(List<Issue> issues, bool hasReachedEnd)? content,
     TResult Function(Exception? exception)? error,
   }) {
-    return content?.call(issues);
+    return content?.call(issues, hasReachedEnd);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<Issue> issues)? content,
+    TResult Function(List<Issue> issues, bool hasReachedEnd)? content,
     TResult Function(Exception? exception)? error,
     required TResult orElse(),
   }) {
     if (content != null) {
-      return content(issues);
+      return content(issues, hasReachedEnd);
     }
     return orElse();
   }
@@ -347,10 +361,12 @@ class _$ContentIssuesListState implements ContentIssuesListState {
 }
 
 abstract class ContentIssuesListState implements IssuesListState {
-  const factory ContentIssuesListState({required List<Issue> issues}) =
-      _$ContentIssuesListState;
+  const factory ContentIssuesListState(
+      {required List<Issue> issues,
+      required bool hasReachedEnd}) = _$ContentIssuesListState;
 
   List<Issue> get issues;
+  bool get hasReachedEnd;
   @JsonKey(ignore: true)
   $ContentIssuesListStateCopyWith<ContentIssuesListState> get copyWith =>
       throw _privateConstructorUsedError;
@@ -423,7 +439,7 @@ class _$ErrorIssuesListState implements ErrorIssuesListState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<Issue> issues) content,
+    required TResult Function(List<Issue> issues, bool hasReachedEnd) content,
     required TResult Function(Exception? exception) error,
   }) {
     return error(exception);
@@ -433,7 +449,7 @@ class _$ErrorIssuesListState implements ErrorIssuesListState {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<Issue> issues)? content,
+    TResult Function(List<Issue> issues, bool hasReachedEnd)? content,
     TResult Function(Exception? exception)? error,
   }) {
     return error?.call(exception);
@@ -443,7 +459,7 @@ class _$ErrorIssuesListState implements ErrorIssuesListState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<Issue> issues)? content,
+    TResult Function(List<Issue> issues, bool hasReachedEnd)? content,
     TResult Function(Exception? exception)? error,
     required TResult orElse(),
   }) {

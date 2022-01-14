@@ -8,6 +8,7 @@ class IssuesListState with _$IssuesListState {
   const factory IssuesListState.loading() = LoadingIssuesListState;
   const factory IssuesListState.content({
     required List<Issue> issues,
+    required bool hasReachedEnd,
   }) = ContentIssuesListState;
   const factory IssuesListState.error({
     Exception? exception,
