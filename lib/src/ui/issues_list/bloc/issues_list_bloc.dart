@@ -1,4 +1,3 @@
-
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_demo/src/data/github_issues_repository.dart';
 import 'package:flutter_demo/src/ui/issues_list/bloc/issues_list_event.dart';
@@ -19,7 +18,8 @@ class IssuesListBloc extends Bloc<IssuesListEvent, IssuesListState> {
 
   Future<void> _onFetch(Emitter<IssuesListState> emit, e) async {
     try {
-      final issues = await repository.getAllIssues("flutter", "flutter"); //fixme
+      final issues =
+          await repository.getAllIssues("flutter", "flutter"); //fixme
       emit(IssuesListState.content(issues: issues));
     } on Exception catch (e) {
       emit(IssuesListState.error(exception: e));

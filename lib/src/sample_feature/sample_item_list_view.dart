@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/src/data/github_issues_repository.dart';
 import 'package:flutter_demo/src/di/di.dart';

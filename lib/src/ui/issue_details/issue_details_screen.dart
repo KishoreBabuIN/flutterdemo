@@ -12,8 +12,7 @@ class IssueDetailsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _args =
-        ModalRoute.of(context)?.settings.arguments as String?;
+    final _args = ModalRoute.of(context)?.settings.arguments as String?;
 
     return BlocProvider(
       create: (context) =>
