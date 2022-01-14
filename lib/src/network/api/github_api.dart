@@ -16,4 +16,9 @@ abstract class GithubApi {
     @Path("owner") String owner,
     @Path("repoName") String repoName,
   );
+
+  @GET("/repos/{owner}/{repoName}/issues/{id}")
+  Future<Issue> getIssueDetails(
+    @Path("id") String id,
+  );
 }

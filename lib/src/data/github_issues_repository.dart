@@ -11,4 +11,8 @@ class GithubIssuesRepository {
   Future<List<Issue>> getAllIssues(String owner, String repoName) {
     return api.getAllIssues(owner, repoName);
   }
+
+  Future<Issue> getIssueDetails(String id) {
+    return api.getIssueDetails(id);
+  }
 }

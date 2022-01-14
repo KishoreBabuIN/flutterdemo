@@ -1,10 +1,9 @@
-import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_demo/src/di/di.dart';
 import 'package:flutter_demo/src/network/model/issue.dart';
-import 'package:flutter_demo/src/sample_feature/sample_item_details_view.dart';
+import 'package:flutter_demo/src/ui/issue_details/issue_details_screen.dart';
 import 'package:flutter_demo/src/ui/issues_list/bloc/issues_list_bloc.dart';
 import 'package:flutter_demo/src/ui/issues_list/bloc/issues_list_event.dart';
 import 'package:flutter_demo/src/ui/issues_list/bloc/issues_list_state.dart';
@@ -33,21 +32,19 @@ class _IssuesListScreenWidget extends StatelessWidget {
         title: const Text('Issues'),
       ),
       body: BlocBuilder<IssuesListBloc, IssuesListState>(
-        builder: (context, state) {
-          return state.map(
-            loading: (state) => const Center(
-              child: CircularProgressIndicator(),
+        builder: (context, state) => state.map(
+          loading: (state) => const Center(
+            child: CircularProgressIndicator(),
+          ),
+          content: (state) => IssueListViewBuilderWidget(
+            issues: state.issues,
+          ),
+          error: (state) => Center(
+            child: Text(
+              "Error: ${state.exception.toString()}", //fixme
             ),
-            content: (state) => IssueListViewBuilderWidget(
-              issues: state.issues,
-            ),
-            error: (state) => Center(
-              child: Text(
-                "Error: ${state.exception.toString()}", //fixme
-              ),
-            ),
-          );
-        },
+          ),
+        ),
       ),
     );
   }
@@ -76,7 +73,7 @@ class IssueListViewBuilderWidget extends StatelessWidget {
             onTap: () {
               Navigator.restorablePushNamed(
                 context,
-                SampleItemDetailsView.routeName,
+                IssueDetailsScreen.routeName,
               );
             });
       },
