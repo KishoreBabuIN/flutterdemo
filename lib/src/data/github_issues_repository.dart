@@ -1,4 +1,5 @@
 import 'package:flutter_demo/src/network/api/github_api.dart';
+import 'package:flutter_demo/src/network/model/filter_type.dart';
 import 'package:flutter_demo/src/network/model/issue.dart';
 import 'package:flutter_demo/src/network/model/sort_type.dart';
 import 'package:injectable/injectable.dart';
@@ -14,12 +15,14 @@ class GithubIssuesRepository {
     String repoName,
     int pageNum,
     IssuesListSortType sortedBy,
+    IssuesListFilterType filterType,
   ) {
     return api.getAllIssues(
       owner,
       repoName,
       pageNum,
       sortedBy.name,
+      filterType.name,
     );
   }
 

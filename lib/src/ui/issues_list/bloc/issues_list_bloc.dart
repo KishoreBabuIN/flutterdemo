@@ -39,6 +39,7 @@ class IssuesListBloc extends Bloc<IssuesListEvent, IssuesListState> {
         _repoName,
         _currentPage,
         _currentSortType,
+        _currentFilterType,
       );
 
       _issues
@@ -65,6 +66,7 @@ class IssuesListBloc extends Bloc<IssuesListEvent, IssuesListState> {
         _repoName,
         ++_currentPage,
         _currentSortType,
+        _currentFilterType,
       );
       _issues.addAll(nextPageIssues);
 

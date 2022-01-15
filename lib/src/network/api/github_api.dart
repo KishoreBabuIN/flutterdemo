@@ -17,6 +17,7 @@ abstract class GithubApi {
     @Path("repoName") String repoName,
     @Query("page") int pageNum,
     @Query("sort") String sortType,
+    @Query("state") String filterType,
   );
 
   @GET("/repos/{owner}/{repoName}/issues/{id}")

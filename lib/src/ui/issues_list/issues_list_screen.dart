@@ -116,7 +116,8 @@ class _IssuesListScreenWidgetState extends State<_IssuesListScreenWidget> {
 
   @override
   Widget build(BuildContext context) {
-    listenForSortTypeChanges(context);
+    _listenForSortTypeChanges(context);
+    _listenForFilterTypeChanges(context);
 
     return BlocBuilder<IssuesListBloc, IssuesListState>(
       builder: (context, state) => state.map(
@@ -136,11 +137,23 @@ class _IssuesListScreenWidgetState extends State<_IssuesListScreenWidget> {
     );
   }
 
-  void listenForSortTypeChanges(BuildContext context) {
+  void _listenForSortTypeChanges(BuildContext context) {
     switch (context.watch<AppCubit>().state.sortType) {
       case IssuesListSortType.created:
       case IssuesListSortType.updated:
       case IssuesListSortType.comments:
+        context.read<IssuesListBloc>().add(FetchFirstPageIssuesListEvent(
+              appState: context.read<AppCubit>().state,
+            ));
+        break;
+    }
+  }
+
+  void _listenForFilterTypeChanges(BuildContext context) {
+    switch (context.watch<AppCubit>().state.filterType) {
+      case IssuesListFilterType.open:
+      case IssuesListFilterType.closed:
+      case IssuesListFilterType.all:
         context.read<IssuesListBloc>().add(FetchFirstPageIssuesListEvent(
               appState: context.read<AppCubit>().state,
             ));

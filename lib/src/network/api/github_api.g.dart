@@ -16,11 +16,13 @@ class _GithubApi implements GithubApi {
   String? baseUrl;
 
   @override
-  Future<List<Issue>> getAllIssues(owner, repoName, pageNum, sortType) async {
+  Future<List<Issue>> getAllIssues(
+      owner, repoName, pageNum, sortType, filterType) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
       r'page': pageNum,
-      r'sort': sortType
+      r'sort': sortType,
+      r'state': filterType
     };
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
