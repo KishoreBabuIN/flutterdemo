@@ -1,8 +1,11 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_demo/src/data/github_issues_repository.dart';
 import 'package:flutter_demo/src/di/di.dart';
 import 'package:flutter_demo/src/network/model/issue.dart';
+import 'package:flutter_demo/src/network/model/sort_type.dart';
 import 'package:flutter_demo/src/ui/issue_details/issue_details_screen.dart';
 import 'package:flutter_demo/src/ui/issues_list/bloc/issues_list_bloc.dart';
 import 'package:flutter_demo/src/ui/issues_list/bloc/issues_list_event.dart';
@@ -17,6 +20,15 @@ class IssuesListScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Issues'),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.sort),
+            onPressed: () => _showSortTypePicker(
+              context,
+              (sortType) => log("[LOG] SortType selected: ${sortType.name}"),
+            ),
+          ),
+        ],
       ),
       body: BlocProvider(
         create: (context) => IssuesListBloc(repository: getIt<GithubIssuesRepository>())
@@ -24,6 +36,29 @@ class IssuesListScreen extends StatelessWidget {
             const IssuesListEvent.fetchFirstPage(),
           ),
         child: const _IssuesListScreenWidget(),
+      ),
+    );
+  }
+
+  Future<void> _showSortTypePicker(
+    BuildContext context,
+    Function(IssueListSortType) onSortTypeSelected,
+  ) {
+    return showModalBottomSheet(
+      context: context,
+      builder: (context) => Wrap(
+        children: IssueListSortType.values
+            .map(
+              (sortType) => ListTile(
+                title: Text(sortType.name),
+                trailing: const Icon(Icons.check),
+                onTap: () {
+                  onSortTypeSelected(sortType);
+                  Navigator.pop(context);
+                },
+              ),
+            )
+            .toList(),
       ),
     );
   }
