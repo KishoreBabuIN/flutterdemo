@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_demo/src/bloc/app_cubit.dart';
 import 'package:flutter_demo/src/di/di.dart';
 
 import 'src/app.dart';
@@ -19,5 +21,10 @@ void main() async {
   // Run the app and pass in the SettingsController. The app listens to the
   // SettingsController for changes, then passes it further down to the
   // SettingsView.
-  runApp(MyApp(settingsController: settingsController));
+  runApp(
+    BlocProvider(
+      create: (context) => AppCubit(),
+      child: MyApp(settingsController: settingsController),
+    ),
+  );
 }

@@ -1,7 +1,6 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_demo/src/bloc/app_cubit.dart';
 import 'package:flutter_demo/src/data/github_issues_repository.dart';
 import 'package:flutter_demo/src/di/di.dart';
 import 'package:flutter_demo/src/network/model/issue.dart';
@@ -22,10 +21,15 @@ class IssuesListScreen extends StatelessWidget {
         title: const Text('Issues'),
         actions: [
           IconButton(
+            icon: const Icon(Icons.filter_list),
+            onPressed: () => _showFilterPicker(context),
+          ),
+          IconButton(
             icon: const Icon(Icons.sort),
             onPressed: () => _showSortTypePicker(
               context,
-              (sortType) => log("[LOG] SortType selected: ${sortType.name}"),
+              context.read<AppCubit>().state.sortType,
+              (sortType) => context.read<AppCubit>().setSortType(sortType),
             ),
           ),
         ],
@@ -42,6 +46,7 @@ class IssuesListScreen extends StatelessWidget {
 
   Future<void> _showSortTypePicker(
     BuildContext context,
+    IssueListSortType currentSortType,
     Function(IssueListSortType) onSortTypeSelected,
   ) {
     return showModalBottomSheet(
@@ -51,7 +56,7 @@ class IssuesListScreen extends StatelessWidget {
             .map(
               (sortType) => ListTile(
                 title: Text(sortType.name),
-                trailing: const Icon(Icons.check),
+                trailing: sortType == currentSortType ? const Icon(Icons.check) : null,
                 onTap: () {
                   onSortTypeSelected(sortType);
                   Navigator.pop(context);
@@ -60,6 +65,17 @@ class IssuesListScreen extends StatelessWidget {
             )
             .toList(),
       ),
+    );
+  }
+
+  Future<void> _showFilterPicker(
+    BuildContext context,
+  ) {
+    return showModalBottomSheet(
+      context: context,
+      builder: (context) => Wrap(
+          //todo
+          ),
     );
   }
 }
@@ -109,7 +125,11 @@ class _IssuesListScreenWidgetState extends State<_IssuesListScreenWidget> {
   }
 
   void _onScroll() {
-    if (_isBottom) context.read<IssuesListBloc>().add(const IssuesListEvent.fetchNextPage());
+    if (_isBottom) {
+      context.read<IssuesListBloc>().add(
+            const IssuesListEvent.fetchNextPage(),
+          );
+    }
   }
 
   bool get _isBottom {

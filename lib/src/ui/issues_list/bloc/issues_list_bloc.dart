@@ -39,7 +39,11 @@ class IssuesListBloc extends Bloc<IssuesListEvent, IssuesListState> {
         ..clear()
         ..addAll(issues);
 
-      emit(IssuesListState.content(issues: [..._issues], hasReachedEnd: false));
+      emit(IssuesListState.content(
+        issues: [..._issues],
+        hasReachedEnd: false,
+        sortType: _currentSortType,
+      ));
     } on Exception catch (e) {
       emit(IssuesListState.error(exception: e));
     }
@@ -60,7 +64,11 @@ class IssuesListBloc extends Bloc<IssuesListEvent, IssuesListState> {
 
       _hasReachedEnd = nextPageIssues.isEmpty;
 
-      emit(IssuesListState.content(issues: [..._issues], hasReachedEnd: _hasReachedEnd));
+      emit(IssuesListState.content(
+        issues: [..._issues],
+        hasReachedEnd: _hasReachedEnd,
+        sortType: _currentSortType,
+      ));
 
       _isLoadingNextPage = false;
     } on Exception catch (e) {

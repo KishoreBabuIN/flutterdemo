@@ -23,10 +23,13 @@ class _$IssuesListStateTearOff {
   }
 
   ContentIssuesListState content(
-      {required List<Issue> issues, required bool hasReachedEnd}) {
+      {required List<Issue> issues,
+      required bool hasReachedEnd,
+      required IssueListSortType sortType}) {
     return ContentIssuesListState(
       issues: issues,
       hasReachedEnd: hasReachedEnd,
+      sortType: sortType,
     );
   }
 
@@ -45,21 +48,27 @@ mixin _$IssuesListState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<Issue> issues, bool hasReachedEnd) content,
+    required TResult Function(
+            List<Issue> issues, bool hasReachedEnd, IssueListSortType sortType)
+        content,
     required TResult Function(Exception? exception) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<Issue> issues, bool hasReachedEnd)? content,
+    TResult Function(
+            List<Issue> issues, bool hasReachedEnd, IssueListSortType sortType)?
+        content,
     TResult Function(Exception? exception)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<Issue> issues, bool hasReachedEnd)? content,
+    TResult Function(
+            List<Issue> issues, bool hasReachedEnd, IssueListSortType sortType)?
+        content,
     TResult Function(Exception? exception)? error,
     required TResult orElse(),
   }) =>
@@ -147,7 +156,9 @@ class _$LoadingIssuesListState implements LoadingIssuesListState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<Issue> issues, bool hasReachedEnd) content,
+    required TResult Function(
+            List<Issue> issues, bool hasReachedEnd, IssueListSortType sortType)
+        content,
     required TResult Function(Exception? exception) error,
   }) {
     return loading();
@@ -157,7 +168,9 @@ class _$LoadingIssuesListState implements LoadingIssuesListState {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<Issue> issues, bool hasReachedEnd)? content,
+    TResult Function(
+            List<Issue> issues, bool hasReachedEnd, IssueListSortType sortType)?
+        content,
     TResult Function(Exception? exception)? error,
   }) {
     return loading?.call();
@@ -167,7 +180,9 @@ class _$LoadingIssuesListState implements LoadingIssuesListState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<Issue> issues, bool hasReachedEnd)? content,
+    TResult Function(
+            List<Issue> issues, bool hasReachedEnd, IssueListSortType sortType)?
+        content,
     TResult Function(Exception? exception)? error,
     required TResult orElse(),
   }) {
@@ -221,7 +236,8 @@ abstract class $ContentIssuesListStateCopyWith<$Res> {
   factory $ContentIssuesListStateCopyWith(ContentIssuesListState value,
           $Res Function(ContentIssuesListState) then) =
       _$ContentIssuesListStateCopyWithImpl<$Res>;
-  $Res call({List<Issue> issues, bool hasReachedEnd});
+  $Res call(
+      {List<Issue> issues, bool hasReachedEnd, IssueListSortType sortType});
 }
 
 /// @nodoc
@@ -239,6 +255,7 @@ class _$ContentIssuesListStateCopyWithImpl<$Res>
   $Res call({
     Object? issues = freezed,
     Object? hasReachedEnd = freezed,
+    Object? sortType = freezed,
   }) {
     return _then(ContentIssuesListState(
       issues: issues == freezed
@@ -249,6 +266,10 @@ class _$ContentIssuesListStateCopyWithImpl<$Res>
           ? _value.hasReachedEnd
           : hasReachedEnd // ignore: cast_nullable_to_non_nullable
               as bool,
+      sortType: sortType == freezed
+          ? _value.sortType
+          : sortType // ignore: cast_nullable_to_non_nullable
+              as IssueListSortType,
     ));
   }
 }
@@ -257,16 +278,20 @@ class _$ContentIssuesListStateCopyWithImpl<$Res>
 
 class _$ContentIssuesListState implements ContentIssuesListState {
   const _$ContentIssuesListState(
-      {required this.issues, required this.hasReachedEnd});
+      {required this.issues,
+      required this.hasReachedEnd,
+      required this.sortType});
 
   @override
   final List<Issue> issues;
   @override
   final bool hasReachedEnd;
+  @override
+  final IssueListSortType sortType;
 
   @override
   String toString() {
-    return 'IssuesListState.content(issues: $issues, hasReachedEnd: $hasReachedEnd)';
+    return 'IssuesListState.content(issues: $issues, hasReachedEnd: $hasReachedEnd, sortType: $sortType)';
   }
 
   @override
@@ -276,14 +301,16 @@ class _$ContentIssuesListState implements ContentIssuesListState {
             other is ContentIssuesListState &&
             const DeepCollectionEquality().equals(other.issues, issues) &&
             const DeepCollectionEquality()
-                .equals(other.hasReachedEnd, hasReachedEnd));
+                .equals(other.hasReachedEnd, hasReachedEnd) &&
+            const DeepCollectionEquality().equals(other.sortType, sortType));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(issues),
-      const DeepCollectionEquality().hash(hasReachedEnd));
+      const DeepCollectionEquality().hash(hasReachedEnd),
+      const DeepCollectionEquality().hash(sortType));
 
   @JsonKey(ignore: true)
   @override
@@ -295,32 +322,38 @@ class _$ContentIssuesListState implements ContentIssuesListState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<Issue> issues, bool hasReachedEnd) content,
+    required TResult Function(
+            List<Issue> issues, bool hasReachedEnd, IssueListSortType sortType)
+        content,
     required TResult Function(Exception? exception) error,
   }) {
-    return content(issues, hasReachedEnd);
+    return content(issues, hasReachedEnd, sortType);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<Issue> issues, bool hasReachedEnd)? content,
+    TResult Function(
+            List<Issue> issues, bool hasReachedEnd, IssueListSortType sortType)?
+        content,
     TResult Function(Exception? exception)? error,
   }) {
-    return content?.call(issues, hasReachedEnd);
+    return content?.call(issues, hasReachedEnd, sortType);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<Issue> issues, bool hasReachedEnd)? content,
+    TResult Function(
+            List<Issue> issues, bool hasReachedEnd, IssueListSortType sortType)?
+        content,
     TResult Function(Exception? exception)? error,
     required TResult orElse(),
   }) {
     if (content != null) {
-      return content(issues, hasReachedEnd);
+      return content(issues, hasReachedEnd, sortType);
     }
     return orElse();
   }
@@ -363,10 +396,12 @@ class _$ContentIssuesListState implements ContentIssuesListState {
 abstract class ContentIssuesListState implements IssuesListState {
   const factory ContentIssuesListState(
       {required List<Issue> issues,
-      required bool hasReachedEnd}) = _$ContentIssuesListState;
+      required bool hasReachedEnd,
+      required IssueListSortType sortType}) = _$ContentIssuesListState;
 
   List<Issue> get issues;
   bool get hasReachedEnd;
+  IssueListSortType get sortType;
   @JsonKey(ignore: true)
   $ContentIssuesListStateCopyWith<ContentIssuesListState> get copyWith =>
       throw _privateConstructorUsedError;
@@ -439,7 +474,9 @@ class _$ErrorIssuesListState implements ErrorIssuesListState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<Issue> issues, bool hasReachedEnd) content,
+    required TResult Function(
+            List<Issue> issues, bool hasReachedEnd, IssueListSortType sortType)
+        content,
     required TResult Function(Exception? exception) error,
   }) {
     return error(exception);
@@ -449,7 +486,9 @@ class _$ErrorIssuesListState implements ErrorIssuesListState {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<Issue> issues, bool hasReachedEnd)? content,
+    TResult Function(
+            List<Issue> issues, bool hasReachedEnd, IssueListSortType sortType)?
+        content,
     TResult Function(Exception? exception)? error,
   }) {
     return error?.call(exception);
@@ -459,7 +498,9 @@ class _$ErrorIssuesListState implements ErrorIssuesListState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<Issue> issues, bool hasReachedEnd)? content,
+    TResult Function(
+            List<Issue> issues, bool hasReachedEnd, IssueListSortType sortType)?
+        content,
     TResult Function(Exception? exception)? error,
     required TResult orElse(),
   }) {
