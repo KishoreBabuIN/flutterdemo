@@ -10,7 +10,7 @@ class IssuesListState with _$IssuesListState {
   const factory IssuesListState.content({
     required List<Issue> issues,
     required bool hasReachedEnd,
-    required IssueListSortType sortType,
+    required IssuesListSortType sortType,
   }) = ContentIssuesListState;
   const factory IssuesListState.error({
     Exception? exception,

@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_demo/src/bloc/app_cubit.dart';
 import 'package:flutter_demo/src/data/github_issues_repository.dart';
 import 'package:flutter_demo/src/di/di.dart';
+import 'package:flutter_demo/src/network/model/filter_type.dart';
 import 'package:flutter_demo/src/network/model/issue.dart';
 import 'package:flutter_demo/src/network/model/sort_type.dart';
 import 'package:flutter_demo/src/ui/issue_details/issue_details_screen.dart';
@@ -22,13 +23,17 @@ class IssuesListScreen extends StatelessWidget {
         actions: [
           IconButton(
             icon: const Icon(Icons.filter_list),
-            onPressed: () => _showFilterPicker(context),
+            onPressed: () => _showFilterPicker(
+              context,
+              context.read<AppCubit>().currentFilterType,
+              (filterType) => context.read<AppCubit>().setFilterType(filterType),
+            ),
           ),
           IconButton(
             icon: const Icon(Icons.sort),
             onPressed: () => _showSortTypePicker(
               context,
-              context.read<AppCubit>().state.sortType,
+              context.read<AppCubit>().currentSortType,
               (sortType) => context.read<AppCubit>().setSortType(sortType),
             ),
           ),
@@ -46,13 +51,13 @@ class IssuesListScreen extends StatelessWidget {
 
   Future<void> _showSortTypePicker(
     BuildContext context,
-    IssueListSortType currentSortType,
-    Function(IssueListSortType) onSortTypeSelected,
+    IssuesListSortType currentSortType,
+    Function(IssuesListSortType) onSortTypeSelected,
   ) {
     return showModalBottomSheet(
       context: context,
       builder: (context) => Wrap(
-        children: IssueListSortType.values
+        children: IssuesListSortType.values
             .map(
               (sortType) => ListTile(
                 title: Text(sortType.name),
@@ -70,12 +75,25 @@ class IssuesListScreen extends StatelessWidget {
 
   Future<void> _showFilterPicker(
     BuildContext context,
+    IssuesListFilterType currentFilterType,
+    Function(IssuesListFilterType) onFilterTypeSelected,
   ) {
     return showModalBottomSheet(
       context: context,
       builder: (context) => Wrap(
-          //todo
-          ),
+        children: IssuesListFilterType.values
+            .map(
+              (filterType) => ListTile(
+                title: Text(filterType.name),
+                trailing: filterType == currentFilterType ? const Icon(Icons.check) : null,
+                onTap: () {
+                  onFilterTypeSelected(filterType);
+                  Navigator.pop(context);
+                },
+              ),
+            )
+            .toList(),
+      ),
     );
   }
 }

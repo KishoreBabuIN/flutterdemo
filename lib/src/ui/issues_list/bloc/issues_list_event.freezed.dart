@@ -27,7 +27,7 @@ class _$IssuesListEventTearOff {
   }
 
   ChangeSortedByTypeIssuesListEvent changeSortBy(
-      {required IssueListSortType sortType}) {
+      {required IssuesListSortType sortType}) {
     return ChangeSortedByTypeIssuesListEvent(
       sortType: sortType,
     );
@@ -43,21 +43,21 @@ mixin _$IssuesListEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() fetchFirstPage,
     required TResult Function() fetchNextPage,
-    required TResult Function(IssueListSortType sortType) changeSortBy,
+    required TResult Function(IssuesListSortType sortType) changeSortBy,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? fetchFirstPage,
     TResult Function()? fetchNextPage,
-    TResult Function(IssueListSortType sortType)? changeSortBy,
+    TResult Function(IssuesListSortType sortType)? changeSortBy,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? fetchFirstPage,
     TResult Function()? fetchNextPage,
-    TResult Function(IssueListSortType sortType)? changeSortBy,
+    TResult Function(IssuesListSortType sortType)? changeSortBy,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -160,7 +160,7 @@ class _$FetchFirstPageIssuesListEvent
   TResult when<TResult extends Object?>({
     required TResult Function() fetchFirstPage,
     required TResult Function() fetchNextPage,
-    required TResult Function(IssueListSortType sortType) changeSortBy,
+    required TResult Function(IssuesListSortType sortType) changeSortBy,
   }) {
     return fetchFirstPage();
   }
@@ -170,7 +170,7 @@ class _$FetchFirstPageIssuesListEvent
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? fetchFirstPage,
     TResult Function()? fetchNextPage,
-    TResult Function(IssueListSortType sortType)? changeSortBy,
+    TResult Function(IssuesListSortType sortType)? changeSortBy,
   }) {
     return fetchFirstPage?.call();
   }
@@ -180,7 +180,7 @@ class _$FetchFirstPageIssuesListEvent
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? fetchFirstPage,
     TResult Function()? fetchNextPage,
-    TResult Function(IssueListSortType sortType)? changeSortBy,
+    TResult Function(IssuesListSortType sortType)? changeSortBy,
     required TResult orElse(),
   }) {
     if (fetchFirstPage != null) {
@@ -287,7 +287,7 @@ class _$FetchNextPageIssuesListEvent
   TResult when<TResult extends Object?>({
     required TResult Function() fetchFirstPage,
     required TResult Function() fetchNextPage,
-    required TResult Function(IssueListSortType sortType) changeSortBy,
+    required TResult Function(IssuesListSortType sortType) changeSortBy,
   }) {
     return fetchNextPage();
   }
@@ -297,7 +297,7 @@ class _$FetchNextPageIssuesListEvent
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? fetchFirstPage,
     TResult Function()? fetchNextPage,
-    TResult Function(IssueListSortType sortType)? changeSortBy,
+    TResult Function(IssuesListSortType sortType)? changeSortBy,
   }) {
     return fetchNextPage?.call();
   }
@@ -307,7 +307,7 @@ class _$FetchNextPageIssuesListEvent
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? fetchFirstPage,
     TResult Function()? fetchNextPage,
-    TResult Function(IssueListSortType sortType)? changeSortBy,
+    TResult Function(IssuesListSortType sortType)? changeSortBy,
     required TResult orElse(),
   }) {
     if (fetchNextPage != null) {
@@ -363,7 +363,7 @@ abstract class $ChangeSortedByTypeIssuesListEventCopyWith<$Res> {
           ChangeSortedByTypeIssuesListEvent value,
           $Res Function(ChangeSortedByTypeIssuesListEvent) then) =
       _$ChangeSortedByTypeIssuesListEventCopyWithImpl<$Res>;
-  $Res call({IssueListSortType sortType});
+  $Res call({IssuesListSortType sortType});
 }
 
 /// @nodoc
@@ -387,7 +387,7 @@ class _$ChangeSortedByTypeIssuesListEventCopyWithImpl<$Res>
       sortType: sortType == freezed
           ? _value.sortType
           : sortType // ignore: cast_nullable_to_non_nullable
-              as IssueListSortType,
+              as IssuesListSortType,
     ));
   }
 }
@@ -400,7 +400,7 @@ class _$ChangeSortedByTypeIssuesListEvent
   const _$ChangeSortedByTypeIssuesListEvent({required this.sortType});
 
   @override
-  final IssueListSortType sortType;
+  final IssuesListSortType sortType;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -438,7 +438,7 @@ class _$ChangeSortedByTypeIssuesListEvent
   TResult when<TResult extends Object?>({
     required TResult Function() fetchFirstPage,
     required TResult Function() fetchNextPage,
-    required TResult Function(IssueListSortType sortType) changeSortBy,
+    required TResult Function(IssuesListSortType sortType) changeSortBy,
   }) {
     return changeSortBy(sortType);
   }
@@ -448,7 +448,7 @@ class _$ChangeSortedByTypeIssuesListEvent
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? fetchFirstPage,
     TResult Function()? fetchNextPage,
-    TResult Function(IssueListSortType sortType)? changeSortBy,
+    TResult Function(IssuesListSortType sortType)? changeSortBy,
   }) {
     return changeSortBy?.call(sortType);
   }
@@ -458,7 +458,7 @@ class _$ChangeSortedByTypeIssuesListEvent
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? fetchFirstPage,
     TResult Function()? fetchNextPage,
-    TResult Function(IssueListSortType sortType)? changeSortBy,
+    TResult Function(IssuesListSortType sortType)? changeSortBy,
     required TResult orElse(),
   }) {
     if (changeSortBy != null) {
@@ -506,10 +506,10 @@ class _$ChangeSortedByTypeIssuesListEvent
 
 abstract class ChangeSortedByTypeIssuesListEvent implements IssuesListEvent {
   const factory ChangeSortedByTypeIssuesListEvent(
-          {required IssueListSortType sortType}) =
+          {required IssuesListSortType sortType}) =
       _$ChangeSortedByTypeIssuesListEvent;
 
-  IssueListSortType get sortType;
+  IssuesListSortType get sortType;
   @JsonKey(ignore: true)
   $ChangeSortedByTypeIssuesListEventCopyWith<ChangeSortedByTypeIssuesListEvent>
       get copyWith => throw _privateConstructorUsedError;

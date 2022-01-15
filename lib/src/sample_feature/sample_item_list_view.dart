@@ -79,6 +79,6 @@ class SampleItemListView extends StatelessWidget {
 
   Future<List<Issue>> _fetchIssues() async {
     final repo = getIt<GithubIssuesRepository>();
-    return await repo.getAllIssuesByPage("flutter", "flutter", 1, IssueListSortType.created);
+    return await repo.getAllIssuesByPage("flutter", "flutter", 1, IssuesListSortType.created);
   }
 }

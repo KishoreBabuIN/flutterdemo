@@ -18,9 +18,12 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$AppStateTearOff {
   const _$AppStateTearOff();
 
-  _AppState state({required IssueListSortType sortType}) {
+  _AppState state(
+      {required IssuesListSortType sortType,
+      required IssuesListFilterType filterType}) {
     return _AppState(
       sortType: sortType,
+      filterType: filterType,
     );
   }
 }
@@ -30,21 +33,28 @@ const $AppState = _$AppStateTearOff();
 
 /// @nodoc
 mixin _$AppState {
-  IssueListSortType get sortType => throw _privateConstructorUsedError;
+  IssuesListSortType get sortType => throw _privateConstructorUsedError;
+  IssuesListFilterType get filterType => throw _privateConstructorUsedError;
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(IssueListSortType sortType) state,
+    required TResult Function(
+            IssuesListSortType sortType, IssuesListFilterType filterType)
+        state,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(IssueListSortType sortType)? state,
+    TResult Function(
+            IssuesListSortType sortType, IssuesListFilterType filterType)?
+        state,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(IssueListSortType sortType)? state,
+    TResult Function(
+            IssuesListSortType sortType, IssuesListFilterType filterType)?
+        state,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -74,7 +84,7 @@ mixin _$AppState {
 abstract class $AppStateCopyWith<$Res> {
   factory $AppStateCopyWith(AppState value, $Res Function(AppState) then) =
       _$AppStateCopyWithImpl<$Res>;
-  $Res call({IssueListSortType sortType});
+  $Res call({IssuesListSortType sortType, IssuesListFilterType filterType});
 }
 
 /// @nodoc
@@ -88,12 +98,17 @@ class _$AppStateCopyWithImpl<$Res> implements $AppStateCopyWith<$Res> {
   @override
   $Res call({
     Object? sortType = freezed,
+    Object? filterType = freezed,
   }) {
     return _then(_value.copyWith(
       sortType: sortType == freezed
           ? _value.sortType
           : sortType // ignore: cast_nullable_to_non_nullable
-              as IssueListSortType,
+              as IssuesListSortType,
+      filterType: filterType == freezed
+          ? _value.filterType
+          : filterType // ignore: cast_nullable_to_non_nullable
+              as IssuesListFilterType,
     ));
   }
 }
@@ -103,7 +118,7 @@ abstract class _$AppStateCopyWith<$Res> implements $AppStateCopyWith<$Res> {
   factory _$AppStateCopyWith(_AppState value, $Res Function(_AppState) then) =
       __$AppStateCopyWithImpl<$Res>;
   @override
-  $Res call({IssueListSortType sortType});
+  $Res call({IssuesListSortType sortType, IssuesListFilterType filterType});
 }
 
 /// @nodoc
@@ -118,12 +133,17 @@ class __$AppStateCopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? sortType = freezed,
+    Object? filterType = freezed,
   }) {
     return _then(_AppState(
       sortType: sortType == freezed
           ? _value.sortType
           : sortType // ignore: cast_nullable_to_non_nullable
-              as IssueListSortType,
+              as IssuesListSortType,
+      filterType: filterType == freezed
+          ? _value.filterType
+          : filterType // ignore: cast_nullable_to_non_nullable
+              as IssuesListFilterType,
     ));
   }
 }
@@ -131,14 +151,16 @@ class __$AppStateCopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_AppState implements _AppState {
-  _$_AppState({required this.sortType});
+  _$_AppState({required this.sortType, required this.filterType});
 
   @override
-  final IssueListSortType sortType;
+  final IssuesListSortType sortType;
+  @override
+  final IssuesListFilterType filterType;
 
   @override
   String toString() {
-    return 'AppState.state(sortType: $sortType)';
+    return 'AppState.state(sortType: $sortType, filterType: $filterType)';
   }
 
   @override
@@ -146,12 +168,16 @@ class _$_AppState implements _AppState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _AppState &&
-            const DeepCollectionEquality().equals(other.sortType, sortType));
+            const DeepCollectionEquality().equals(other.sortType, sortType) &&
+            const DeepCollectionEquality()
+                .equals(other.filterType, filterType));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(sortType));
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(sortType),
+      const DeepCollectionEquality().hash(filterType));
 
   @JsonKey(ignore: true)
   @override
@@ -161,27 +187,33 @@ class _$_AppState implements _AppState {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(IssueListSortType sortType) state,
+    required TResult Function(
+            IssuesListSortType sortType, IssuesListFilterType filterType)
+        state,
   }) {
-    return state(sortType);
+    return state(sortType, filterType);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(IssueListSortType sortType)? state,
+    TResult Function(
+            IssuesListSortType sortType, IssuesListFilterType filterType)?
+        state,
   }) {
-    return state?.call(sortType);
+    return state?.call(sortType, filterType);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(IssueListSortType sortType)? state,
+    TResult Function(
+            IssuesListSortType sortType, IssuesListFilterType filterType)?
+        state,
     required TResult orElse(),
   }) {
     if (state != null) {
-      return state(sortType);
+      return state(sortType, filterType);
     }
     return orElse();
   }
@@ -216,10 +248,14 @@ class _$_AppState implements _AppState {
 }
 
 abstract class _AppState implements AppState {
-  factory _AppState({required IssueListSortType sortType}) = _$_AppState;
+  factory _AppState(
+      {required IssuesListSortType sortType,
+      required IssuesListFilterType filterType}) = _$_AppState;
 
   @override
-  IssueListSortType get sortType;
+  IssuesListSortType get sortType;
+  @override
+  IssuesListFilterType get filterType;
   @override
   @JsonKey(ignore: true)
   _$AppStateCopyWith<_AppState> get copyWith =>

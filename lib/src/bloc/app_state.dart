@@ -1,3 +1,4 @@
+import 'package:flutter_demo/src/network/model/filter_type.dart';
 import 'package:flutter_demo/src/network/model/sort_type.dart';
 
 // class AppState {
@@ -10,5 +11,8 @@ part 'app_state.freezed.dart';
 
 @freezed
 class AppState with _$AppState {
-  factory AppState.state({required IssueListSortType sortType}) = _AppState;
+  factory AppState.state({
+    required IssuesListSortType sortType,
+    required IssuesListFilterType filterType,
+  }) = _AppState;
 }

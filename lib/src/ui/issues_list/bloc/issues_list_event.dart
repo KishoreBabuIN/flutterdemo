@@ -8,5 +8,6 @@ part 'issues_list_event.freezed.dart';
 class IssuesListEvent with _$IssuesListEvent {
   const factory IssuesListEvent.fetchFirstPage() = FetchFirstPageIssuesListEvent;
   const factory IssuesListEvent.fetchNextPage() = FetchNextPageIssuesListEvent;
-  const factory IssuesListEvent.changeSortBy({required IssueListSortType sortType}) = ChangeSortedByTypeIssuesListEvent;
+  const factory IssuesListEvent.changeSortBy({required IssuesListSortType sortType}) =
+      ChangeSortedByTypeIssuesListEvent;
 }

@@ -13,7 +13,7 @@ class GithubIssuesRepository {
     String owner,
     String repoName,
     int pageNum,
-    IssueListSortType sortedBy,
+    IssuesListSortType sortedBy,
   ) {
     return api.getAllIssues(
       owner,

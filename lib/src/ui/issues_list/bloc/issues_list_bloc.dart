@@ -24,7 +24,7 @@ class IssuesListBloc extends Bloc<IssuesListEvent, IssuesListState> {
   bool _hasReachedEnd = false;
   bool _isLoadingNextPage = false;
   int _currentPage = 1;
-  IssueListSortType _currentSortType = IssueListSortType.created;
+  IssuesListSortType _currentSortType = IssuesListSortType.created;
 
   Future<void> _onFetch(Emitter<IssuesListState> emit, e) async {
     try {

@@ -1,4 +1,4 @@
-enum IssueListSortType {
+enum IssuesListSortType {
   created,
   updated,
   comments,
