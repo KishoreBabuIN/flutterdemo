@@ -1,5 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_demo/src/data/github_issues_repository.dart';
+import 'package:flutter_demo/src/network/model/filter_type.dart';
 import 'package:flutter_demo/src/network/model/issue.dart';
 import 'package:flutter_demo/src/network/model/sort_type.dart';
 import 'package:flutter_demo/src/ui/issues_list/bloc/issues_list_event.dart';
@@ -13,7 +14,6 @@ class IssuesListBloc extends Bloc<IssuesListEvent, IssuesListState> {
       (event, emit) => event.map(
         fetchFirstPage: (e) => _onFetch(emit, e),
         fetchNextPage: (e) => _fetchNextPage(emit, e),
-        changeSortBy: (e) => _onSortTypeChange(emit, e),
       ),
     );
   }
@@ -25,8 +25,14 @@ class IssuesListBloc extends Bloc<IssuesListEvent, IssuesListState> {
   bool _isLoadingNextPage = false;
   int _currentPage = 1;
   IssuesListSortType _currentSortType = IssuesListSortType.created;
+  IssuesListFilterType _currentFilterType = IssuesListFilterType.open;
 
-  Future<void> _onFetch(Emitter<IssuesListState> emit, e) async {
+  Future<void> _onFetch(Emitter<IssuesListState> emit, FetchFirstPageIssuesListEvent e) async {
+    _currentSortType = e.appState.sortType;
+    _currentFilterType = e.appState.filterType;
+
+    emit(const IssuesListState.loading());
+
     try {
       final issues = await repository.getAllIssuesByPage(
         _ownerName,
@@ -75,13 +81,5 @@ class IssuesListBloc extends Bloc<IssuesListEvent, IssuesListState> {
       emit(IssuesListState.error(exception: e));
       _isLoadingNextPage = false;
     }
-  }
-
-  _onSortTypeChange(Emitter<IssuesListState> emit, ChangeSortedByTypeIssuesListEvent e) {
-    if (_currentSortType == e.sortType) return;
-
-    _currentSortType = e.sortType;
-    emit(const LoadingIssuesListState());
-    _onFetch(emit, e);
   }
 }

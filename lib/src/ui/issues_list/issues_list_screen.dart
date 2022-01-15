@@ -42,7 +42,7 @@ class IssuesListScreen extends StatelessWidget {
       body: BlocProvider(
         create: (context) => IssuesListBloc(repository: getIt<GithubIssuesRepository>())
           ..add(
-            const IssuesListEvent.fetchFirstPage(),
+            IssuesListEvent.fetchFirstPage(appState: context.read<AppCubit>().state),
           ),
         child: const _IssuesListScreenWidget(),
       ),
@@ -116,6 +116,8 @@ class _IssuesListScreenWidgetState extends State<_IssuesListScreenWidget> {
 
   @override
   Widget build(BuildContext context) {
+    listenForSortTypeChanges(context);
+
     return BlocBuilder<IssuesListBloc, IssuesListState>(
       builder: (context, state) => state.map(
         loading: (state) => const Center(
@@ -134,6 +136,18 @@ class _IssuesListScreenWidgetState extends State<_IssuesListScreenWidget> {
     );
   }
 
+  void listenForSortTypeChanges(BuildContext context) {
+    switch (context.watch<AppCubit>().state.sortType) {
+      case IssuesListSortType.created:
+      case IssuesListSortType.updated:
+      case IssuesListSortType.comments:
+        context.read<IssuesListBloc>().add(FetchFirstPageIssuesListEvent(
+              appState: context.read<AppCubit>().state,
+            ));
+        break;
+    }
+  }
+
   @override
   void dispose() {
     _scrollController
@@ -144,9 +158,7 @@ class _IssuesListScreenWidgetState extends State<_IssuesListScreenWidget> {
 
   void _onScroll() {
     if (_isBottom) {
-      context.read<IssuesListBloc>().add(
-            const IssuesListEvent.fetchNextPage(),
-          );
+      context.read<IssuesListBloc>().add(IssuesListEvent.fetchNextPage(appState: context.read<AppCubit>().state));
     }
   }
 

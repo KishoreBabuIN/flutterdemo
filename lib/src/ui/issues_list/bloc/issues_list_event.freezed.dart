@@ -18,18 +18,15 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$IssuesListEventTearOff {
   const _$IssuesListEventTearOff();
 
-  FetchFirstPageIssuesListEvent fetchFirstPage() {
-    return const FetchFirstPageIssuesListEvent();
+  FetchFirstPageIssuesListEvent fetchFirstPage({required AppState appState}) {
+    return FetchFirstPageIssuesListEvent(
+      appState: appState,
+    );
   }
 
-  FetchNextPageIssuesListEvent fetchNextPage() {
-    return const FetchNextPageIssuesListEvent();
-  }
-
-  ChangeSortedByTypeIssuesListEvent changeSortBy(
-      {required IssuesListSortType sortType}) {
-    return ChangeSortedByTypeIssuesListEvent(
-      sortType: sortType,
+  FetchNextPageIssuesListEvent fetchNextPage({required AppState appState}) {
+    return FetchNextPageIssuesListEvent(
+      appState: appState,
     );
   }
 }
@@ -39,25 +36,24 @@ const $IssuesListEvent = _$IssuesListEventTearOff();
 
 /// @nodoc
 mixin _$IssuesListEvent {
+  AppState get appState => throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() fetchFirstPage,
-    required TResult Function() fetchNextPage,
-    required TResult Function(IssuesListSortType sortType) changeSortBy,
+    required TResult Function(AppState appState) fetchFirstPage,
+    required TResult Function(AppState appState) fetchNextPage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? fetchFirstPage,
-    TResult Function()? fetchNextPage,
-    TResult Function(IssuesListSortType sortType)? changeSortBy,
+    TResult Function(AppState appState)? fetchFirstPage,
+    TResult Function(AppState appState)? fetchNextPage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? fetchFirstPage,
-    TResult Function()? fetchNextPage,
-    TResult Function(IssuesListSortType sortType)? changeSortBy,
+    TResult Function(AppState appState)? fetchFirstPage,
+    TResult Function(AppState appState)? fetchNextPage,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -66,24 +62,24 @@ mixin _$IssuesListEvent {
     required TResult Function(FetchFirstPageIssuesListEvent value)
         fetchFirstPage,
     required TResult Function(FetchNextPageIssuesListEvent value) fetchNextPage,
-    required TResult Function(ChangeSortedByTypeIssuesListEvent value)
-        changeSortBy,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(FetchFirstPageIssuesListEvent value)? fetchFirstPage,
     TResult Function(FetchNextPageIssuesListEvent value)? fetchNextPage,
-    TResult Function(ChangeSortedByTypeIssuesListEvent value)? changeSortBy,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(FetchFirstPageIssuesListEvent value)? fetchFirstPage,
     TResult Function(FetchNextPageIssuesListEvent value)? fetchNextPage,
-    TResult Function(ChangeSortedByTypeIssuesListEvent value)? changeSortBy,
     required TResult orElse(),
   }) =>
+      throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $IssuesListEventCopyWith<IssuesListEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -92,6 +88,9 @@ abstract class $IssuesListEventCopyWith<$Res> {
   factory $IssuesListEventCopyWith(
           IssuesListEvent value, $Res Function(IssuesListEvent) then) =
       _$IssuesListEventCopyWithImpl<$Res>;
+  $Res call({AppState appState});
+
+  $AppStateCopyWith<$Res> get appState;
 }
 
 /// @nodoc
@@ -102,14 +101,39 @@ class _$IssuesListEventCopyWithImpl<$Res>
   final IssuesListEvent _value;
   // ignore: unused_field
   final $Res Function(IssuesListEvent) _then;
+
+  @override
+  $Res call({
+    Object? appState = freezed,
+  }) {
+    return _then(_value.copyWith(
+      appState: appState == freezed
+          ? _value.appState
+          : appState // ignore: cast_nullable_to_non_nullable
+              as AppState,
+    ));
+  }
+
+  @override
+  $AppStateCopyWith<$Res> get appState {
+    return $AppStateCopyWith<$Res>(_value.appState, (value) {
+      return _then(_value.copyWith(appState: value));
+    });
+  }
 }
 
 /// @nodoc
-abstract class $FetchFirstPageIssuesListEventCopyWith<$Res> {
+abstract class $FetchFirstPageIssuesListEventCopyWith<$Res>
+    implements $IssuesListEventCopyWith<$Res> {
   factory $FetchFirstPageIssuesListEventCopyWith(
           FetchFirstPageIssuesListEvent value,
           $Res Function(FetchFirstPageIssuesListEvent) then) =
       _$FetchFirstPageIssuesListEventCopyWithImpl<$Res>;
+  @override
+  $Res call({AppState appState});
+
+  @override
+  $AppStateCopyWith<$Res> get appState;
 }
 
 /// @nodoc
@@ -124,6 +148,18 @@ class _$FetchFirstPageIssuesListEventCopyWithImpl<$Res>
   @override
   FetchFirstPageIssuesListEvent get _value =>
       super._value as FetchFirstPageIssuesListEvent;
+
+  @override
+  $Res call({
+    Object? appState = freezed,
+  }) {
+    return _then(FetchFirstPageIssuesListEvent(
+      appState: appState == freezed
+          ? _value.appState
+          : appState // ignore: cast_nullable_to_non_nullable
+              as AppState,
+    ));
+  }
 }
 
 /// @nodoc
@@ -131,60 +167,69 @@ class _$FetchFirstPageIssuesListEventCopyWithImpl<$Res>
 class _$FetchFirstPageIssuesListEvent
     with DiagnosticableTreeMixin
     implements FetchFirstPageIssuesListEvent {
-  const _$FetchFirstPageIssuesListEvent();
+  const _$FetchFirstPageIssuesListEvent({required this.appState});
+
+  @override
+  final AppState appState;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'IssuesListEvent.fetchFirstPage()';
+    return 'IssuesListEvent.fetchFirstPage(appState: $appState)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'IssuesListEvent.fetchFirstPage'));
+      ..add(DiagnosticsProperty('type', 'IssuesListEvent.fetchFirstPage'))
+      ..add(DiagnosticsProperty('appState', appState));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is FetchFirstPageIssuesListEvent);
+            other is FetchFirstPageIssuesListEvent &&
+            const DeepCollectionEquality().equals(other.appState, appState));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(appState));
+
+  @JsonKey(ignore: true)
+  @override
+  $FetchFirstPageIssuesListEventCopyWith<FetchFirstPageIssuesListEvent>
+      get copyWith => _$FetchFirstPageIssuesListEventCopyWithImpl<
+          FetchFirstPageIssuesListEvent>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() fetchFirstPage,
-    required TResult Function() fetchNextPage,
-    required TResult Function(IssuesListSortType sortType) changeSortBy,
+    required TResult Function(AppState appState) fetchFirstPage,
+    required TResult Function(AppState appState) fetchNextPage,
   }) {
-    return fetchFirstPage();
+    return fetchFirstPage(appState);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? fetchFirstPage,
-    TResult Function()? fetchNextPage,
-    TResult Function(IssuesListSortType sortType)? changeSortBy,
+    TResult Function(AppState appState)? fetchFirstPage,
+    TResult Function(AppState appState)? fetchNextPage,
   }) {
-    return fetchFirstPage?.call();
+    return fetchFirstPage?.call(appState);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? fetchFirstPage,
-    TResult Function()? fetchNextPage,
-    TResult Function(IssuesListSortType sortType)? changeSortBy,
+    TResult Function(AppState appState)? fetchFirstPage,
+    TResult Function(AppState appState)? fetchNextPage,
     required TResult orElse(),
   }) {
     if (fetchFirstPage != null) {
-      return fetchFirstPage();
+      return fetchFirstPage(appState);
     }
     return orElse();
   }
@@ -195,8 +240,6 @@ class _$FetchFirstPageIssuesListEvent
     required TResult Function(FetchFirstPageIssuesListEvent value)
         fetchFirstPage,
     required TResult Function(FetchNextPageIssuesListEvent value) fetchNextPage,
-    required TResult Function(ChangeSortedByTypeIssuesListEvent value)
-        changeSortBy,
   }) {
     return fetchFirstPage(this);
   }
@@ -206,7 +249,6 @@ class _$FetchFirstPageIssuesListEvent
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(FetchFirstPageIssuesListEvent value)? fetchFirstPage,
     TResult Function(FetchNextPageIssuesListEvent value)? fetchNextPage,
-    TResult Function(ChangeSortedByTypeIssuesListEvent value)? changeSortBy,
   }) {
     return fetchFirstPage?.call(this);
   }
@@ -216,7 +258,6 @@ class _$FetchFirstPageIssuesListEvent
   TResult maybeMap<TResult extends Object?>({
     TResult Function(FetchFirstPageIssuesListEvent value)? fetchFirstPage,
     TResult Function(FetchNextPageIssuesListEvent value)? fetchNextPage,
-    TResult Function(ChangeSortedByTypeIssuesListEvent value)? changeSortBy,
     required TResult orElse(),
   }) {
     if (fetchFirstPage != null) {
@@ -227,16 +268,29 @@ class _$FetchFirstPageIssuesListEvent
 }
 
 abstract class FetchFirstPageIssuesListEvent implements IssuesListEvent {
-  const factory FetchFirstPageIssuesListEvent() =
+  const factory FetchFirstPageIssuesListEvent({required AppState appState}) =
       _$FetchFirstPageIssuesListEvent;
+
+  @override
+  AppState get appState;
+  @override
+  @JsonKey(ignore: true)
+  $FetchFirstPageIssuesListEventCopyWith<FetchFirstPageIssuesListEvent>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $FetchNextPageIssuesListEventCopyWith<$Res> {
+abstract class $FetchNextPageIssuesListEventCopyWith<$Res>
+    implements $IssuesListEventCopyWith<$Res> {
   factory $FetchNextPageIssuesListEventCopyWith(
           FetchNextPageIssuesListEvent value,
           $Res Function(FetchNextPageIssuesListEvent) then) =
       _$FetchNextPageIssuesListEventCopyWithImpl<$Res>;
+  @override
+  $Res call({AppState appState});
+
+  @override
+  $AppStateCopyWith<$Res> get appState;
 }
 
 /// @nodoc
@@ -251,6 +305,18 @@ class _$FetchNextPageIssuesListEventCopyWithImpl<$Res>
   @override
   FetchNextPageIssuesListEvent get _value =>
       super._value as FetchNextPageIssuesListEvent;
+
+  @override
+  $Res call({
+    Object? appState = freezed,
+  }) {
+    return _then(FetchNextPageIssuesListEvent(
+      appState: appState == freezed
+          ? _value.appState
+          : appState // ignore: cast_nullable_to_non_nullable
+              as AppState,
+    ));
+  }
 }
 
 /// @nodoc
@@ -258,60 +324,69 @@ class _$FetchNextPageIssuesListEventCopyWithImpl<$Res>
 class _$FetchNextPageIssuesListEvent
     with DiagnosticableTreeMixin
     implements FetchNextPageIssuesListEvent {
-  const _$FetchNextPageIssuesListEvent();
+  const _$FetchNextPageIssuesListEvent({required this.appState});
+
+  @override
+  final AppState appState;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'IssuesListEvent.fetchNextPage()';
+    return 'IssuesListEvent.fetchNextPage(appState: $appState)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'IssuesListEvent.fetchNextPage'));
+      ..add(DiagnosticsProperty('type', 'IssuesListEvent.fetchNextPage'))
+      ..add(DiagnosticsProperty('appState', appState));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is FetchNextPageIssuesListEvent);
+            other is FetchNextPageIssuesListEvent &&
+            const DeepCollectionEquality().equals(other.appState, appState));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(appState));
+
+  @JsonKey(ignore: true)
+  @override
+  $FetchNextPageIssuesListEventCopyWith<FetchNextPageIssuesListEvent>
+      get copyWith => _$FetchNextPageIssuesListEventCopyWithImpl<
+          FetchNextPageIssuesListEvent>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() fetchFirstPage,
-    required TResult Function() fetchNextPage,
-    required TResult Function(IssuesListSortType sortType) changeSortBy,
+    required TResult Function(AppState appState) fetchFirstPage,
+    required TResult Function(AppState appState) fetchNextPage,
   }) {
-    return fetchNextPage();
+    return fetchNextPage(appState);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? fetchFirstPage,
-    TResult Function()? fetchNextPage,
-    TResult Function(IssuesListSortType sortType)? changeSortBy,
+    TResult Function(AppState appState)? fetchFirstPage,
+    TResult Function(AppState appState)? fetchNextPage,
   }) {
-    return fetchNextPage?.call();
+    return fetchNextPage?.call(appState);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? fetchFirstPage,
-    TResult Function()? fetchNextPage,
-    TResult Function(IssuesListSortType sortType)? changeSortBy,
+    TResult Function(AppState appState)? fetchFirstPage,
+    TResult Function(AppState appState)? fetchNextPage,
     required TResult orElse(),
   }) {
     if (fetchNextPage != null) {
-      return fetchNextPage();
+      return fetchNextPage(appState);
     }
     return orElse();
   }
@@ -322,8 +397,6 @@ class _$FetchNextPageIssuesListEvent
     required TResult Function(FetchFirstPageIssuesListEvent value)
         fetchFirstPage,
     required TResult Function(FetchNextPageIssuesListEvent value) fetchNextPage,
-    required TResult Function(ChangeSortedByTypeIssuesListEvent value)
-        changeSortBy,
   }) {
     return fetchNextPage(this);
   }
@@ -333,7 +406,6 @@ class _$FetchNextPageIssuesListEvent
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(FetchFirstPageIssuesListEvent value)? fetchFirstPage,
     TResult Function(FetchNextPageIssuesListEvent value)? fetchNextPage,
-    TResult Function(ChangeSortedByTypeIssuesListEvent value)? changeSortBy,
   }) {
     return fetchNextPage?.call(this);
   }
@@ -343,7 +415,6 @@ class _$FetchNextPageIssuesListEvent
   TResult maybeMap<TResult extends Object?>({
     TResult Function(FetchFirstPageIssuesListEvent value)? fetchFirstPage,
     TResult Function(FetchNextPageIssuesListEvent value)? fetchNextPage,
-    TResult Function(ChangeSortedByTypeIssuesListEvent value)? changeSortBy,
     required TResult orElse(),
   }) {
     if (fetchNextPage != null) {
@@ -354,163 +425,13 @@ class _$FetchNextPageIssuesListEvent
 }
 
 abstract class FetchNextPageIssuesListEvent implements IssuesListEvent {
-  const factory FetchNextPageIssuesListEvent() = _$FetchNextPageIssuesListEvent;
-}
-
-/// @nodoc
-abstract class $ChangeSortedByTypeIssuesListEventCopyWith<$Res> {
-  factory $ChangeSortedByTypeIssuesListEventCopyWith(
-          ChangeSortedByTypeIssuesListEvent value,
-          $Res Function(ChangeSortedByTypeIssuesListEvent) then) =
-      _$ChangeSortedByTypeIssuesListEventCopyWithImpl<$Res>;
-  $Res call({IssuesListSortType sortType});
-}
-
-/// @nodoc
-class _$ChangeSortedByTypeIssuesListEventCopyWithImpl<$Res>
-    extends _$IssuesListEventCopyWithImpl<$Res>
-    implements $ChangeSortedByTypeIssuesListEventCopyWith<$Res> {
-  _$ChangeSortedByTypeIssuesListEventCopyWithImpl(
-      ChangeSortedByTypeIssuesListEvent _value,
-      $Res Function(ChangeSortedByTypeIssuesListEvent) _then)
-      : super(_value, (v) => _then(v as ChangeSortedByTypeIssuesListEvent));
+  const factory FetchNextPageIssuesListEvent({required AppState appState}) =
+      _$FetchNextPageIssuesListEvent;
 
   @override
-  ChangeSortedByTypeIssuesListEvent get _value =>
-      super._value as ChangeSortedByTypeIssuesListEvent;
-
+  AppState get appState;
   @override
-  $Res call({
-    Object? sortType = freezed,
-  }) {
-    return _then(ChangeSortedByTypeIssuesListEvent(
-      sortType: sortType == freezed
-          ? _value.sortType
-          : sortType // ignore: cast_nullable_to_non_nullable
-              as IssuesListSortType,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$ChangeSortedByTypeIssuesListEvent
-    with DiagnosticableTreeMixin
-    implements ChangeSortedByTypeIssuesListEvent {
-  const _$ChangeSortedByTypeIssuesListEvent({required this.sortType});
-
-  @override
-  final IssuesListSortType sortType;
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'IssuesListEvent.changeSortBy(sortType: $sortType)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'IssuesListEvent.changeSortBy'))
-      ..add(DiagnosticsProperty('sortType', sortType));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is ChangeSortedByTypeIssuesListEvent &&
-            const DeepCollectionEquality().equals(other.sortType, sortType));
-  }
-
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(sortType));
-
   @JsonKey(ignore: true)
-  @override
-  $ChangeSortedByTypeIssuesListEventCopyWith<ChangeSortedByTypeIssuesListEvent>
-      get copyWith => _$ChangeSortedByTypeIssuesListEventCopyWithImpl<
-          ChangeSortedByTypeIssuesListEvent>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() fetchFirstPage,
-    required TResult Function() fetchNextPage,
-    required TResult Function(IssuesListSortType sortType) changeSortBy,
-  }) {
-    return changeSortBy(sortType);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? fetchFirstPage,
-    TResult Function()? fetchNextPage,
-    TResult Function(IssuesListSortType sortType)? changeSortBy,
-  }) {
-    return changeSortBy?.call(sortType);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? fetchFirstPage,
-    TResult Function()? fetchNextPage,
-    TResult Function(IssuesListSortType sortType)? changeSortBy,
-    required TResult orElse(),
-  }) {
-    if (changeSortBy != null) {
-      return changeSortBy(sortType);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(FetchFirstPageIssuesListEvent value)
-        fetchFirstPage,
-    required TResult Function(FetchNextPageIssuesListEvent value) fetchNextPage,
-    required TResult Function(ChangeSortedByTypeIssuesListEvent value)
-        changeSortBy,
-  }) {
-    return changeSortBy(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(FetchFirstPageIssuesListEvent value)? fetchFirstPage,
-    TResult Function(FetchNextPageIssuesListEvent value)? fetchNextPage,
-    TResult Function(ChangeSortedByTypeIssuesListEvent value)? changeSortBy,
-  }) {
-    return changeSortBy?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(FetchFirstPageIssuesListEvent value)? fetchFirstPage,
-    TResult Function(FetchNextPageIssuesListEvent value)? fetchNextPage,
-    TResult Function(ChangeSortedByTypeIssuesListEvent value)? changeSortBy,
-    required TResult orElse(),
-  }) {
-    if (changeSortBy != null) {
-      return changeSortBy(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class ChangeSortedByTypeIssuesListEvent implements IssuesListEvent {
-  const factory ChangeSortedByTypeIssuesListEvent(
-          {required IssuesListSortType sortType}) =
-      _$ChangeSortedByTypeIssuesListEvent;
-
-  IssuesListSortType get sortType;
-  @JsonKey(ignore: true)
-  $ChangeSortedByTypeIssuesListEventCopyWith<ChangeSortedByTypeIssuesListEvent>
+  $FetchNextPageIssuesListEventCopyWith<FetchNextPageIssuesListEvent>
       get copyWith => throw _privateConstructorUsedError;
 }
