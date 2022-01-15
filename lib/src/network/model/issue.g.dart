@@ -51,6 +51,7 @@ _$_Issue _$$_IssueFromJson(Map<String, dynamic> json) => _$_Issue(
           ? null
           : Repository.fromJson(json['repository'] as Map<String, dynamic>),
       authorAssociation: json['author_association'] as String?,
+      isSeen: json['isSeen'] as bool? ?? false,
     );
 
 Map<String, dynamic> _$$_IssueToJson(_$_Issue instance) => <String, dynamic>{
@@ -80,4 +81,5 @@ Map<String, dynamic> _$$_IssueToJson(_$_Issue instance) => <String, dynamic>{
       'updated_at': instance.updatedAt?.toIso8601String(),
       'repository': instance.repository,
       'author_association': instance.authorAssociation,
+      'isSeen': instance.isSeen,
     };

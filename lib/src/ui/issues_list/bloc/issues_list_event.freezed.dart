@@ -29,6 +29,12 @@ class _$IssuesListEventTearOff {
       appState: appState,
     );
   }
+
+  MarkIssueAsSeenIssuesListEvent markIssueAsSeen({required Issue issue}) {
+    return MarkIssueAsSeenIssuesListEvent(
+      issue: issue,
+    );
+  }
 }
 
 /// @nodoc
@@ -36,24 +42,25 @@ const $IssuesListEvent = _$IssuesListEventTearOff();
 
 /// @nodoc
 mixin _$IssuesListEvent {
-  AppState get appState => throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(AppState appState) fetchFirstPage,
     required TResult Function(AppState appState) fetchNextPage,
+    required TResult Function(Issue issue) markIssueAsSeen,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(AppState appState)? fetchFirstPage,
     TResult Function(AppState appState)? fetchNextPage,
+    TResult Function(Issue issue)? markIssueAsSeen,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(AppState appState)? fetchFirstPage,
     TResult Function(AppState appState)? fetchNextPage,
+    TResult Function(Issue issue)? markIssueAsSeen,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -62,24 +69,24 @@ mixin _$IssuesListEvent {
     required TResult Function(FetchFirstPageIssuesListEvent value)
         fetchFirstPage,
     required TResult Function(FetchNextPageIssuesListEvent value) fetchNextPage,
+    required TResult Function(MarkIssueAsSeenIssuesListEvent value)
+        markIssueAsSeen,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(FetchFirstPageIssuesListEvent value)? fetchFirstPage,
     TResult Function(FetchNextPageIssuesListEvent value)? fetchNextPage,
+    TResult Function(MarkIssueAsSeenIssuesListEvent value)? markIssueAsSeen,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(FetchFirstPageIssuesListEvent value)? fetchFirstPage,
     TResult Function(FetchNextPageIssuesListEvent value)? fetchNextPage,
+    TResult Function(MarkIssueAsSeenIssuesListEvent value)? markIssueAsSeen,
     required TResult orElse(),
   }) =>
-      throw _privateConstructorUsedError;
-
-  @JsonKey(ignore: true)
-  $IssuesListEventCopyWith<IssuesListEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -88,9 +95,6 @@ abstract class $IssuesListEventCopyWith<$Res> {
   factory $IssuesListEventCopyWith(
           IssuesListEvent value, $Res Function(IssuesListEvent) then) =
       _$IssuesListEventCopyWithImpl<$Res>;
-  $Res call({AppState appState});
-
-  $AppStateCopyWith<$Res> get appState;
 }
 
 /// @nodoc
@@ -101,38 +105,16 @@ class _$IssuesListEventCopyWithImpl<$Res>
   final IssuesListEvent _value;
   // ignore: unused_field
   final $Res Function(IssuesListEvent) _then;
-
-  @override
-  $Res call({
-    Object? appState = freezed,
-  }) {
-    return _then(_value.copyWith(
-      appState: appState == freezed
-          ? _value.appState
-          : appState // ignore: cast_nullable_to_non_nullable
-              as AppState,
-    ));
-  }
-
-  @override
-  $AppStateCopyWith<$Res> get appState {
-    return $AppStateCopyWith<$Res>(_value.appState, (value) {
-      return _then(_value.copyWith(appState: value));
-    });
-  }
 }
 
 /// @nodoc
-abstract class $FetchFirstPageIssuesListEventCopyWith<$Res>
-    implements $IssuesListEventCopyWith<$Res> {
+abstract class $FetchFirstPageIssuesListEventCopyWith<$Res> {
   factory $FetchFirstPageIssuesListEventCopyWith(
           FetchFirstPageIssuesListEvent value,
           $Res Function(FetchFirstPageIssuesListEvent) then) =
       _$FetchFirstPageIssuesListEventCopyWithImpl<$Res>;
-  @override
   $Res call({AppState appState});
 
-  @override
   $AppStateCopyWith<$Res> get appState;
 }
 
@@ -159,6 +141,13 @@ class _$FetchFirstPageIssuesListEventCopyWithImpl<$Res>
           : appState // ignore: cast_nullable_to_non_nullable
               as AppState,
     ));
+  }
+
+  @override
+  $AppStateCopyWith<$Res> get appState {
+    return $AppStateCopyWith<$Res>(_value.appState, (value) {
+      return _then(_value.copyWith(appState: value));
+    });
   }
 }
 
@@ -208,6 +197,7 @@ class _$FetchFirstPageIssuesListEvent
   TResult when<TResult extends Object?>({
     required TResult Function(AppState appState) fetchFirstPage,
     required TResult Function(AppState appState) fetchNextPage,
+    required TResult Function(Issue issue) markIssueAsSeen,
   }) {
     return fetchFirstPage(appState);
   }
@@ -217,6 +207,7 @@ class _$FetchFirstPageIssuesListEvent
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(AppState appState)? fetchFirstPage,
     TResult Function(AppState appState)? fetchNextPage,
+    TResult Function(Issue issue)? markIssueAsSeen,
   }) {
     return fetchFirstPage?.call(appState);
   }
@@ -226,6 +217,7 @@ class _$FetchFirstPageIssuesListEvent
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(AppState appState)? fetchFirstPage,
     TResult Function(AppState appState)? fetchNextPage,
+    TResult Function(Issue issue)? markIssueAsSeen,
     required TResult orElse(),
   }) {
     if (fetchFirstPage != null) {
@@ -240,6 +232,8 @@ class _$FetchFirstPageIssuesListEvent
     required TResult Function(FetchFirstPageIssuesListEvent value)
         fetchFirstPage,
     required TResult Function(FetchNextPageIssuesListEvent value) fetchNextPage,
+    required TResult Function(MarkIssueAsSeenIssuesListEvent value)
+        markIssueAsSeen,
   }) {
     return fetchFirstPage(this);
   }
@@ -249,6 +243,7 @@ class _$FetchFirstPageIssuesListEvent
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(FetchFirstPageIssuesListEvent value)? fetchFirstPage,
     TResult Function(FetchNextPageIssuesListEvent value)? fetchNextPage,
+    TResult Function(MarkIssueAsSeenIssuesListEvent value)? markIssueAsSeen,
   }) {
     return fetchFirstPage?.call(this);
   }
@@ -258,6 +253,7 @@ class _$FetchFirstPageIssuesListEvent
   TResult maybeMap<TResult extends Object?>({
     TResult Function(FetchFirstPageIssuesListEvent value)? fetchFirstPage,
     TResult Function(FetchNextPageIssuesListEvent value)? fetchNextPage,
+    TResult Function(MarkIssueAsSeenIssuesListEvent value)? markIssueAsSeen,
     required TResult orElse(),
   }) {
     if (fetchFirstPage != null) {
@@ -271,25 +267,20 @@ abstract class FetchFirstPageIssuesListEvent implements IssuesListEvent {
   const factory FetchFirstPageIssuesListEvent({required AppState appState}) =
       _$FetchFirstPageIssuesListEvent;
 
-  @override
   AppState get appState;
-  @override
   @JsonKey(ignore: true)
   $FetchFirstPageIssuesListEventCopyWith<FetchFirstPageIssuesListEvent>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $FetchNextPageIssuesListEventCopyWith<$Res>
-    implements $IssuesListEventCopyWith<$Res> {
+abstract class $FetchNextPageIssuesListEventCopyWith<$Res> {
   factory $FetchNextPageIssuesListEventCopyWith(
           FetchNextPageIssuesListEvent value,
           $Res Function(FetchNextPageIssuesListEvent) then) =
       _$FetchNextPageIssuesListEventCopyWithImpl<$Res>;
-  @override
   $Res call({AppState appState});
 
-  @override
   $AppStateCopyWith<$Res> get appState;
 }
 
@@ -316,6 +307,13 @@ class _$FetchNextPageIssuesListEventCopyWithImpl<$Res>
           : appState // ignore: cast_nullable_to_non_nullable
               as AppState,
     ));
+  }
+
+  @override
+  $AppStateCopyWith<$Res> get appState {
+    return $AppStateCopyWith<$Res>(_value.appState, (value) {
+      return _then(_value.copyWith(appState: value));
+    });
   }
 }
 
@@ -365,6 +363,7 @@ class _$FetchNextPageIssuesListEvent
   TResult when<TResult extends Object?>({
     required TResult Function(AppState appState) fetchFirstPage,
     required TResult Function(AppState appState) fetchNextPage,
+    required TResult Function(Issue issue) markIssueAsSeen,
   }) {
     return fetchNextPage(appState);
   }
@@ -374,6 +373,7 @@ class _$FetchNextPageIssuesListEvent
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(AppState appState)? fetchFirstPage,
     TResult Function(AppState appState)? fetchNextPage,
+    TResult Function(Issue issue)? markIssueAsSeen,
   }) {
     return fetchNextPage?.call(appState);
   }
@@ -383,6 +383,7 @@ class _$FetchNextPageIssuesListEvent
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(AppState appState)? fetchFirstPage,
     TResult Function(AppState appState)? fetchNextPage,
+    TResult Function(Issue issue)? markIssueAsSeen,
     required TResult orElse(),
   }) {
     if (fetchNextPage != null) {
@@ -397,6 +398,8 @@ class _$FetchNextPageIssuesListEvent
     required TResult Function(FetchFirstPageIssuesListEvent value)
         fetchFirstPage,
     required TResult Function(FetchNextPageIssuesListEvent value) fetchNextPage,
+    required TResult Function(MarkIssueAsSeenIssuesListEvent value)
+        markIssueAsSeen,
   }) {
     return fetchNextPage(this);
   }
@@ -406,6 +409,7 @@ class _$FetchNextPageIssuesListEvent
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(FetchFirstPageIssuesListEvent value)? fetchFirstPage,
     TResult Function(FetchNextPageIssuesListEvent value)? fetchNextPage,
+    TResult Function(MarkIssueAsSeenIssuesListEvent value)? markIssueAsSeen,
   }) {
     return fetchNextPage?.call(this);
   }
@@ -415,6 +419,7 @@ class _$FetchNextPageIssuesListEvent
   TResult maybeMap<TResult extends Object?>({
     TResult Function(FetchFirstPageIssuesListEvent value)? fetchFirstPage,
     TResult Function(FetchNextPageIssuesListEvent value)? fetchNextPage,
+    TResult Function(MarkIssueAsSeenIssuesListEvent value)? markIssueAsSeen,
     required TResult orElse(),
   }) {
     if (fetchNextPage != null) {
@@ -428,10 +433,174 @@ abstract class FetchNextPageIssuesListEvent implements IssuesListEvent {
   const factory FetchNextPageIssuesListEvent({required AppState appState}) =
       _$FetchNextPageIssuesListEvent;
 
-  @override
   AppState get appState;
-  @override
   @JsonKey(ignore: true)
   $FetchNextPageIssuesListEventCopyWith<FetchNextPageIssuesListEvent>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $MarkIssueAsSeenIssuesListEventCopyWith<$Res> {
+  factory $MarkIssueAsSeenIssuesListEventCopyWith(
+          MarkIssueAsSeenIssuesListEvent value,
+          $Res Function(MarkIssueAsSeenIssuesListEvent) then) =
+      _$MarkIssueAsSeenIssuesListEventCopyWithImpl<$Res>;
+  $Res call({Issue issue});
+
+  $IssueCopyWith<$Res> get issue;
+}
+
+/// @nodoc
+class _$MarkIssueAsSeenIssuesListEventCopyWithImpl<$Res>
+    extends _$IssuesListEventCopyWithImpl<$Res>
+    implements $MarkIssueAsSeenIssuesListEventCopyWith<$Res> {
+  _$MarkIssueAsSeenIssuesListEventCopyWithImpl(
+      MarkIssueAsSeenIssuesListEvent _value,
+      $Res Function(MarkIssueAsSeenIssuesListEvent) _then)
+      : super(_value, (v) => _then(v as MarkIssueAsSeenIssuesListEvent));
+
+  @override
+  MarkIssueAsSeenIssuesListEvent get _value =>
+      super._value as MarkIssueAsSeenIssuesListEvent;
+
+  @override
+  $Res call({
+    Object? issue = freezed,
+  }) {
+    return _then(MarkIssueAsSeenIssuesListEvent(
+      issue: issue == freezed
+          ? _value.issue
+          : issue // ignore: cast_nullable_to_non_nullable
+              as Issue,
+    ));
+  }
+
+  @override
+  $IssueCopyWith<$Res> get issue {
+    return $IssueCopyWith<$Res>(_value.issue, (value) {
+      return _then(_value.copyWith(issue: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$MarkIssueAsSeenIssuesListEvent
+    with DiagnosticableTreeMixin
+    implements MarkIssueAsSeenIssuesListEvent {
+  const _$MarkIssueAsSeenIssuesListEvent({required this.issue});
+
+  @override
+  final Issue issue;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'IssuesListEvent.markIssueAsSeen(issue: $issue)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'IssuesListEvent.markIssueAsSeen'))
+      ..add(DiagnosticsProperty('issue', issue));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is MarkIssueAsSeenIssuesListEvent &&
+            const DeepCollectionEquality().equals(other.issue, issue));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(issue));
+
+  @JsonKey(ignore: true)
+  @override
+  $MarkIssueAsSeenIssuesListEventCopyWith<MarkIssueAsSeenIssuesListEvent>
+      get copyWith => _$MarkIssueAsSeenIssuesListEventCopyWithImpl<
+          MarkIssueAsSeenIssuesListEvent>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(AppState appState) fetchFirstPage,
+    required TResult Function(AppState appState) fetchNextPage,
+    required TResult Function(Issue issue) markIssueAsSeen,
+  }) {
+    return markIssueAsSeen(issue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(AppState appState)? fetchFirstPage,
+    TResult Function(AppState appState)? fetchNextPage,
+    TResult Function(Issue issue)? markIssueAsSeen,
+  }) {
+    return markIssueAsSeen?.call(issue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(AppState appState)? fetchFirstPage,
+    TResult Function(AppState appState)? fetchNextPage,
+    TResult Function(Issue issue)? markIssueAsSeen,
+    required TResult orElse(),
+  }) {
+    if (markIssueAsSeen != null) {
+      return markIssueAsSeen(issue);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(FetchFirstPageIssuesListEvent value)
+        fetchFirstPage,
+    required TResult Function(FetchNextPageIssuesListEvent value) fetchNextPage,
+    required TResult Function(MarkIssueAsSeenIssuesListEvent value)
+        markIssueAsSeen,
+  }) {
+    return markIssueAsSeen(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(FetchFirstPageIssuesListEvent value)? fetchFirstPage,
+    TResult Function(FetchNextPageIssuesListEvent value)? fetchNextPage,
+    TResult Function(MarkIssueAsSeenIssuesListEvent value)? markIssueAsSeen,
+  }) {
+    return markIssueAsSeen?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(FetchFirstPageIssuesListEvent value)? fetchFirstPage,
+    TResult Function(FetchNextPageIssuesListEvent value)? fetchNextPage,
+    TResult Function(MarkIssueAsSeenIssuesListEvent value)? markIssueAsSeen,
+    required TResult orElse(),
+  }) {
+    if (markIssueAsSeen != null) {
+      return markIssueAsSeen(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class MarkIssueAsSeenIssuesListEvent implements IssuesListEvent {
+  const factory MarkIssueAsSeenIssuesListEvent({required Issue issue}) =
+      _$MarkIssueAsSeenIssuesListEvent;
+
+  Issue get issue;
+  @JsonKey(ignore: true)
+  $MarkIssueAsSeenIssuesListEventCopyWith<MarkIssueAsSeenIssuesListEvent>
       get copyWith => throw _privateConstructorUsedError;
 }

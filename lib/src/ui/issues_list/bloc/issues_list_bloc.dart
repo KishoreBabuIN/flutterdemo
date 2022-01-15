@@ -14,18 +14,20 @@ class IssuesListBloc extends Bloc<IssuesListEvent, IssuesListState> {
       (event, emit) => event.map(
         fetchFirstPage: (e) => _onFetch(emit, e),
         fetchNextPage: (e) => _fetchNextPage(emit, e),
+        markIssueAsSeen: (e) => _markIssueAsSeen(emit, e),
       ),
     );
   }
   final String _ownerName = "flutter";
   final String _repoName = "flutter";
-  final GithubIssuesRepository repository;
   final List<Issue> _issues = [];
   bool _hasReachedEnd = false;
   bool _isLoadingNextPage = false;
   int _currentPage = 1;
   IssuesListSortType _currentSortType = IssuesListSortType.created;
   IssuesListFilterType _currentFilterType = IssuesListFilterType.open;
+
+  final GithubIssuesRepository repository;
 
   Future<void> _onFetch(Emitter<IssuesListState> emit, FetchFirstPageIssuesListEvent e) async {
     _currentSortType = e.appState.sortType;
@@ -83,5 +85,21 @@ class IssuesListBloc extends Bloc<IssuesListEvent, IssuesListState> {
       emit(IssuesListState.error(exception: e));
       _isLoadingNextPage = false;
     }
+  }
+
+  void _markIssueAsSeen(Emitter<IssuesListState> emit, MarkIssueAsSeenIssuesListEvent e) {
+    final seenIssue = e.issue;
+    final index = _issues.indexWhere((issue) => issue.id == seenIssue.id);
+    if (index < 0) return;
+
+    _issues[index] = seenIssue.copyWith(isSeen: true);
+
+    emit(
+      IssuesListState.content(
+        issues: [..._issues],
+        hasReachedEnd: _hasReachedEnd,
+        sortType: _currentSortType,
+      ),
+    );
   }
 }

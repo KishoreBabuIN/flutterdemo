@@ -39,6 +39,7 @@ class Issue with _$Issue {
     @JsonKey(name: 'updated_at') DateTime? updatedAt,
     Repository? repository,
     @JsonKey(name: 'author_association') String? authorAssociation,
+    @Default(false) bool isSeen,
   }) = _Issue;
 
   factory Issue.fromJson(Map<String, dynamic> json) => _$IssueFromJson(json);

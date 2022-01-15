@@ -48,7 +48,8 @@ class _$IssueTearOff {
       @JsonKey(name: 'created_at') DateTime? createdAt,
       @JsonKey(name: 'updated_at') DateTime? updatedAt,
       Repository? repository,
-      @JsonKey(name: 'author_association') String? authorAssociation}) {
+      @JsonKey(name: 'author_association') String? authorAssociation,
+      bool isSeen = false}) {
     return _Issue(
       id: id,
       nodeId: nodeId,
@@ -76,6 +77,7 @@ class _$IssueTearOff {
       updatedAt: updatedAt,
       repository: repository,
       authorAssociation: authorAssociation,
+      isSeen: isSeen,
     );
   }
 
@@ -127,6 +129,7 @@ mixin _$Issue {
   Repository? get repository => throw _privateConstructorUsedError;
   @JsonKey(name: 'author_association')
   String? get authorAssociation => throw _privateConstructorUsedError;
+  bool get isSeen => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -163,7 +166,8 @@ abstract class $IssueCopyWith<$Res> {
       @JsonKey(name: 'created_at') DateTime? createdAt,
       @JsonKey(name: 'updated_at') DateTime? updatedAt,
       Repository? repository,
-      @JsonKey(name: 'author_association') String? authorAssociation});
+      @JsonKey(name: 'author_association') String? authorAssociation,
+      bool isSeen});
 
   $UserCopyWith<$Res>? get user;
   $AssigneeCopyWith<$Res>? get assignee;
@@ -208,6 +212,7 @@ class _$IssueCopyWithImpl<$Res> implements $IssueCopyWith<$Res> {
     Object? updatedAt = freezed,
     Object? repository = freezed,
     Object? authorAssociation = freezed,
+    Object? isSeen = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed
@@ -314,6 +319,10 @@ class _$IssueCopyWithImpl<$Res> implements $IssueCopyWith<$Res> {
           ? _value.authorAssociation
           : authorAssociation // ignore: cast_nullable_to_non_nullable
               as String?,
+      isSeen: isSeen == freezed
+          ? _value.isSeen
+          : isSeen // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 
@@ -404,7 +413,8 @@ abstract class _$IssueCopyWith<$Res> implements $IssueCopyWith<$Res> {
       @JsonKey(name: 'created_at') DateTime? createdAt,
       @JsonKey(name: 'updated_at') DateTime? updatedAt,
       Repository? repository,
-      @JsonKey(name: 'author_association') String? authorAssociation});
+      @JsonKey(name: 'author_association') String? authorAssociation,
+      bool isSeen});
 
   @override
   $UserCopyWith<$Res>? get user;
@@ -455,6 +465,7 @@ class __$IssueCopyWithImpl<$Res> extends _$IssueCopyWithImpl<$Res>
     Object? updatedAt = freezed,
     Object? repository = freezed,
     Object? authorAssociation = freezed,
+    Object? isSeen = freezed,
   }) {
     return _then(_Issue(
       id: id == freezed
@@ -561,6 +572,10 @@ class __$IssueCopyWithImpl<$Res> extends _$IssueCopyWithImpl<$Res>
           ? _value.authorAssociation
           : authorAssociation // ignore: cast_nullable_to_non_nullable
               as String?,
+      isSeen: isSeen == freezed
+          ? _value.isSeen
+          : isSeen // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -594,7 +609,8 @@ class _$_Issue implements _Issue {
       @JsonKey(name: 'created_at') this.createdAt,
       @JsonKey(name: 'updated_at') this.updatedAt,
       this.repository,
-      @JsonKey(name: 'author_association') this.authorAssociation});
+      @JsonKey(name: 'author_association') this.authorAssociation,
+      this.isSeen = false});
 
   factory _$_Issue.fromJson(Map<String, dynamic> json) =>
       _$$_IssueFromJson(json);
@@ -663,10 +679,13 @@ class _$_Issue implements _Issue {
   @override
   @JsonKey(name: 'author_association')
   final String? authorAssociation;
+  @JsonKey()
+  @override
+  final bool isSeen;
 
   @override
   String toString() {
-    return 'Issue(id: $id, nodeId: $nodeId, url: $url, repositoryUrl: $repositoryUrl, labelsUrl: $labelsUrl, commentsUrl: $commentsUrl, eventsUrl: $eventsUrl, htmlUrl: $htmlUrl, number: $number, state: $state, title: $title, body: $body, user: $user, labels: $labels, assignee: $assignee, assignees: $assignees, milestone: $milestone, locked: $locked, activeLockReason: $activeLockReason, comments: $comments, pullRequest: $pullRequest, closedAt: $closedAt, createdAt: $createdAt, updatedAt: $updatedAt, repository: $repository, authorAssociation: $authorAssociation)';
+    return 'Issue(id: $id, nodeId: $nodeId, url: $url, repositoryUrl: $repositoryUrl, labelsUrl: $labelsUrl, commentsUrl: $commentsUrl, eventsUrl: $eventsUrl, htmlUrl: $htmlUrl, number: $number, state: $state, title: $title, body: $body, user: $user, labels: $labels, assignee: $assignee, assignees: $assignees, milestone: $milestone, locked: $locked, activeLockReason: $activeLockReason, comments: $comments, pullRequest: $pullRequest, closedAt: $closedAt, createdAt: $createdAt, updatedAt: $updatedAt, repository: $repository, authorAssociation: $authorAssociation, isSeen: $isSeen)';
   }
 
   @override
@@ -705,7 +724,8 @@ class _$_Issue implements _Issue {
             const DeepCollectionEquality()
                 .equals(other.repository, repository) &&
             const DeepCollectionEquality()
-                .equals(other.authorAssociation, authorAssociation));
+                .equals(other.authorAssociation, authorAssociation) &&
+            const DeepCollectionEquality().equals(other.isSeen, isSeen));
   }
 
   @override
@@ -736,7 +756,8 @@ class _$_Issue implements _Issue {
         const DeepCollectionEquality().hash(createdAt),
         const DeepCollectionEquality().hash(updatedAt),
         const DeepCollectionEquality().hash(repository),
-        const DeepCollectionEquality().hash(authorAssociation)
+        const DeepCollectionEquality().hash(authorAssociation),
+        const DeepCollectionEquality().hash(isSeen)
       ]);
 
   @JsonKey(ignore: true)
@@ -752,33 +773,33 @@ class _$_Issue implements _Issue {
 
 abstract class _Issue implements Issue {
   factory _Issue(
-          {int? id,
-          @JsonKey(name: 'node_id') String? nodeId,
-          String? url,
-          @JsonKey(name: 'repository_url') String? repositoryUrl,
-          @JsonKey(name: 'labels_url') String? labelsUrl,
-          @JsonKey(name: 'comments_url') String? commentsUrl,
-          @JsonKey(name: 'events_url') String? eventsUrl,
-          @JsonKey(name: 'html_url') String? htmlUrl,
-          int? number,
-          String? state,
-          String? title,
-          String? body,
-          User? user,
-          List<Label>? labels,
-          Assignee? assignee,
-          List<Assignee>? assignees,
-          Milestone? milestone,
-          bool? locked,
-          @JsonKey(name: 'active_lock_reason') String? activeLockReason,
-          int? comments,
-          @JsonKey(name: 'pull_request') PullRequest? pullRequest,
-          @JsonKey(name: 'closed_at') dynamic closedAt,
-          @JsonKey(name: 'created_at') DateTime? createdAt,
-          @JsonKey(name: 'updated_at') DateTime? updatedAt,
-          Repository? repository,
-          @JsonKey(name: 'author_association') String? authorAssociation}) =
-      _$_Issue;
+      {int? id,
+      @JsonKey(name: 'node_id') String? nodeId,
+      String? url,
+      @JsonKey(name: 'repository_url') String? repositoryUrl,
+      @JsonKey(name: 'labels_url') String? labelsUrl,
+      @JsonKey(name: 'comments_url') String? commentsUrl,
+      @JsonKey(name: 'events_url') String? eventsUrl,
+      @JsonKey(name: 'html_url') String? htmlUrl,
+      int? number,
+      String? state,
+      String? title,
+      String? body,
+      User? user,
+      List<Label>? labels,
+      Assignee? assignee,
+      List<Assignee>? assignees,
+      Milestone? milestone,
+      bool? locked,
+      @JsonKey(name: 'active_lock_reason') String? activeLockReason,
+      int? comments,
+      @JsonKey(name: 'pull_request') PullRequest? pullRequest,
+      @JsonKey(name: 'closed_at') dynamic closedAt,
+      @JsonKey(name: 'created_at') DateTime? createdAt,
+      @JsonKey(name: 'updated_at') DateTime? updatedAt,
+      Repository? repository,
+      @JsonKey(name: 'author_association') String? authorAssociation,
+      bool isSeen}) = _$_Issue;
 
   factory _Issue.fromJson(Map<String, dynamic> json) = _$_Issue.fromJson;
 
@@ -846,6 +867,8 @@ abstract class _Issue implements Issue {
   @override
   @JsonKey(name: 'author_association')
   String? get authorAssociation;
+  @override
+  bool get isSeen;
   @override
   @JsonKey(ignore: true)
   _$IssueCopyWith<_Issue> get copyWith => throw _privateConstructorUsedError;

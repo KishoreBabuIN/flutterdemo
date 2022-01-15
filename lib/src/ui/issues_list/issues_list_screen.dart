@@ -222,8 +222,12 @@ class _IssueListItemWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      title: Text("${issue.title}"),
+      title: Opacity(
+        opacity: issue.isSeen ? 0.5 : 1.0,
+        child: Text("${issue.title}"),
+      ),
       onTap: () {
+        context.read<IssuesListBloc>().add(MarkIssueAsSeenIssuesListEvent(issue: issue));
         Navigator.restorablePushNamed(
           context,
           IssueDetailsScreen.routeName,
