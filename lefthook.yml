@@ -1,7 +1,6 @@
 pre-commit:
   commands:
     pretty:
-      glob: '*.dart'
+      glob: "*.dart"
       exclude: '\.freezed\.dart|\.g\.dart|\.config\.dart'
       run: flutter format lib test
-      # run: flutter format --line-length=120 {staged_files} && git add {staged_files}
