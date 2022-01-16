@@ -7,6 +7,8 @@ import 'package:flutter_demo/src/ui/issue_details/bloc/issue_details_bloc.dart';
 import 'package:flutter_demo/src/ui/issue_details/bloc/issue_details_event.dart';
 import 'package:flutter_demo/src/ui/issue_details/bloc/issue_details_state.dart';
 import 'package:flutter_demo/src/ui/utils/datetime_utils.dart';
+import 'package:flutter_markdown/flutter_markdown.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class IssueDetailsScreen extends StatelessWidget {
   const IssueDetailsScreen({Key? key}) : super(key: key);
@@ -76,14 +78,38 @@ class _IssueDetailsWidget extends StatelessWidget {
         Container(height: 8.0),
         Text(
           issue.user?.login ?? "",
-          style: Theme.of(context).textTheme.headline6,
+          style: Theme.of(context).textTheme.caption,
         ),
         Container(height: 8.0),
         Text(
-          issue.createdAt != null ? issue.createdAt!.format() : "",
-          style: Theme.of(context).textTheme.headline6,
+          "Created: ${issue.createdAt != null ? issue.createdAt!.format() : ""}",
+          style: Theme.of(context).textTheme.caption,
         ),
+        Container(height: 16.0),
+        Markdown(
+            padding: EdgeInsets.zero,
+            shrinkWrap: true,
+            selectable: true,
+            physics: const NeverScrollableScrollPhysics(),
+            data: issue.body ?? "",
+            onTapLink: (String text, String? href, String title) async {
+              if (href != null) {
+                try {
+                  await canLaunch(href) ? await launch(href) : _cannotLaunchUrl(context);
+                } on Exception catch (e) {
+                  _cannotLaunchUrl(context);
+                }
+              }
+            }),
       ],
+    );
+  }
+
+  ScaffoldFeatureController<SnackBar, SnackBarClosedReason> _cannotLaunchUrl(BuildContext context) {
+    return ScaffoldMessenger.of(context).showSnackBar(
+      const SnackBar(
+        content: Text("Cannot Launch URL :("),
+      ),
     );
   }
 }
