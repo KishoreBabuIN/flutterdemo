@@ -252,10 +252,10 @@ class _IssueListItemWidget extends StatelessWidget {
     //fixme
     switch (sortType) {
       case IssuesListSortType.updated:
-        return issue.updatedAt != null ? timeSince(issue.updatedAt!) : "";
+        return issue.updatedAt != null ? issue.updatedAt!.timeAgo() : "";
       case IssuesListSortType.comments:
       case IssuesListSortType.created:
-        return issue.createdAt != null ? timeSince(issue.createdAt!) : "";
+        return issue.createdAt != null ? issue.createdAt!.timeAgo() : "";
     }
   }
 }
