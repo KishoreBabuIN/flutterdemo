@@ -10,6 +10,7 @@ import 'package:flutter_demo/src/ui/issue_details/issue_details_screen.dart';
 import 'package:flutter_demo/src/ui/issues_list/bloc/issues_list_bloc.dart';
 import 'package:flutter_demo/src/ui/issues_list/bloc/issues_list_event.dart';
 import 'package:flutter_demo/src/ui/issues_list/bloc/issues_list_state.dart';
+import 'package:flutter_demo/src/ui/issues_list/datetime_utils.dart';
 
 class IssuesListScreen extends StatelessWidget {
   static const routeName = '/';
@@ -222,9 +223,16 @@ class _IssueListItemWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
+      contentPadding: const EdgeInsets.all(8.0),
+      leading: issue.state == "open" ? const Icon(Icons.adjust) : const Icon(Icons.check_circle_outline),
+      trailing: Text(issue.createdAt != null ? timeSince(issue.createdAt!) : ""), //fixme
       title: Opacity(
         opacity: issue.isSeen ? 0.5 : 1.0,
-        child: Text("${issue.title}"),
+        child: Text(
+          "${issue.title}",
+          maxLines: 2,
+          overflow: TextOverflow.ellipsis,
+        ),
       ),
       onTap: () {
         context.read<IssuesListBloc>().add(MarkIssueAsSeenIssuesListEvent(issue: issue));
