@@ -206,6 +206,7 @@ class _IssueListViewBuilderWidget extends StatelessWidget {
             ? const _BottomLoaderWidget()
             : _IssueListItemWidget(
                 issue: issues[index],
+                currentSortType: contentState.sortType,
               );
       },
     );
@@ -216,16 +217,18 @@ class _IssueListItemWidget extends StatelessWidget {
   const _IssueListItemWidget({
     Key? key,
     required this.issue,
+    required this.currentSortType,
   }) : super(key: key);
 
   final Issue issue;
+  final IssuesListSortType currentSortType;
 
   @override
   Widget build(BuildContext context) {
     return ListTile(
       contentPadding: const EdgeInsets.all(8.0),
       leading: issue.state == "open" ? const Icon(Icons.adjust) : const Icon(Icons.check_circle_outline),
-      trailing: Text(issue.createdAt != null ? timeSince(issue.createdAt!) : ""), //fixme
+      trailing: Text(_timeSince(issue, currentSortType)),
       title: Opacity(
         opacity: issue.isSeen ? 0.5 : 1.0,
         child: Text(
@@ -243,6 +246,17 @@ class _IssueListItemWidget extends StatelessWidget {
         );
       },
     );
+  }
+
+  String _timeSince(Issue issue, IssuesListSortType sortType) {
+    //fixme
+    switch (sortType) {
+      case IssuesListSortType.updated:
+        return issue.updatedAt != null ? timeSince(issue.updatedAt!) : "";
+      case IssuesListSortType.comments:
+      case IssuesListSortType.created:
+        return issue.createdAt != null ? timeSince(issue.createdAt!) : "";
+    }
   }
 }
 
