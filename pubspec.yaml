@@ -8,6 +8,7 @@ version: 1.0.0+1
 
 environment:
   sdk: ">=2.15.1 <3.0.0"
+  flutter: '>=2.8.1'
 
 dependencies:
   flutter:
@@ -25,6 +26,7 @@ dependencies:
   injectable: ^1.5.3
 
   flutter_bloc: ^8.0.1
+  bloc_test: ^9.0.2
 
   intl: ^0.17.0
   flutter_markdown: ^0.6.9
@@ -40,6 +42,9 @@ dev_dependencies:
   json_serializable: ^6.1.2
   retrofit_generator: any
   injectable_generator: ^1.5.3
+
+dependency_overrides:
+  test_api: 0.4.9
 
 flutter:
   uses-material-design: true
