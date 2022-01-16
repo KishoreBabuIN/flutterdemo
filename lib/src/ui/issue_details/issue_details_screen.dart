@@ -73,16 +73,26 @@ class _IssueDetailsWidget extends StatelessWidget {
       children: [
         Text(
           issue.title ?? "",
-          style: Theme.of(context).textTheme.headline5,
+          style: Theme.of(context).textTheme.headline6,
         ),
         Container(height: 8.0),
         Text(
           issue.user?.login ?? "",
+          style: Theme.of(context).textTheme.subtitle1,
+        ),
+        Container(height: 4.0),
+        Text(
+          "Created: ${issue.createdAt != null ? issue.createdAt!.format() : ""}",
+          style: Theme.of(context).textTheme.subtitle2,
+        ),
+        Container(height: 8.0),
+        Text(
+          "${issue.comments} comments",
           style: Theme.of(context).textTheme.caption,
         ),
         Container(height: 8.0),
         Text(
-          "Created: ${issue.createdAt != null ? issue.createdAt!.format() : ""}",
+          "${issue.labels?.length ?? 0} labels",
           style: Theme.of(context).textTheme.caption,
         ),
         Container(height: 16.0),
