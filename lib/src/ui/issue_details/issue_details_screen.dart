@@ -109,7 +109,7 @@ class _IssueDetailsWidget extends StatelessWidget {
                   await canLaunch(href)
                       ? await launch(href)
                       : _cannotLaunchUrl(context);
-                } on Exception catch (e) {
+                } on Exception catch (_) {
                   _cannotLaunchUrl(context);
                 }
               }
