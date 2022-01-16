@@ -206,7 +206,7 @@ class _IssueListViewBuilderWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final issues = contentState.issues;
-    return ListView.builder(
+    return ListView.separated(
       restorationId: 'issues',
       itemCount: contentState.hasReachedEnd ? issues.length : issues.length + 1,
       controller: scrollController,
@@ -218,6 +218,9 @@ class _IssueListViewBuilderWidget extends StatelessWidget {
                 currentSortType: contentState.sortType,
               );
       },
+      separatorBuilder: (context, index) => const Divider(
+        thickness: 0.5,
+      ),
     );
   }
 }
