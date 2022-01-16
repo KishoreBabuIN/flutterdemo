@@ -7,7 +7,10 @@ part 'issues_list_event.freezed.dart';
 
 @freezed
 class IssuesListEvent with _$IssuesListEvent {
-  const factory IssuesListEvent.fetchFirstPage({required AppState appState}) = FetchFirstPageIssuesListEvent;
-  const factory IssuesListEvent.fetchNextPage({required AppState appState}) = FetchNextPageIssuesListEvent;
-  const factory IssuesListEvent.markIssueAsSeen({required Issue issue}) = MarkIssueAsSeenIssuesListEvent;
+  const factory IssuesListEvent.fetchFirstPage({required AppState appState}) =
+      FetchFirstPageIssuesListEvent;
+  const factory IssuesListEvent.fetchNextPage({required AppState appState}) =
+      FetchNextPageIssuesListEvent;
+  const factory IssuesListEvent.markIssueAsSeen({required Issue issue}) =
+      MarkIssueAsSeenIssuesListEvent;
 }

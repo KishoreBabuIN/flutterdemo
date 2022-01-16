@@ -19,10 +19,11 @@ class IssueDetailsScreen extends StatelessWidget {
     final _args = ModalRoute.of(context)?.settings.arguments as String?;
 
     return BlocProvider(
-      create: (context) => IssueDetailsBloc(repository: getIt<GithubIssuesRepository>())
-        ..add(
-          IssueDetailsEvent.load(_args),
-        ),
+      create: (context) =>
+          IssueDetailsBloc(repository: getIt<GithubIssuesRepository>())
+            ..add(
+              IssueDetailsEvent.load(_args),
+            ),
       child: const _IssueDetailsScreenWidget(),
     );
   }
@@ -105,7 +106,9 @@ class _IssueDetailsWidget extends StatelessWidget {
             onTapLink: (String text, String? href, String title) async {
               if (href != null) {
                 try {
-                  await canLaunch(href) ? await launch(href) : _cannotLaunchUrl(context);
+                  await canLaunch(href)
+                      ? await launch(href)
+                      : _cannotLaunchUrl(context);
                 } on Exception catch (e) {
                   _cannotLaunchUrl(context);
                 }
@@ -115,7 +118,8 @@ class _IssueDetailsWidget extends StatelessWidget {
     );
   }
 
-  ScaffoldFeatureController<SnackBar, SnackBarClosedReason> _cannotLaunchUrl(BuildContext context) {
+  ScaffoldFeatureController<SnackBar, SnackBarClosedReason> _cannotLaunchUrl(
+      BuildContext context) {
     return ScaffoldMessenger.of(context).showSnackBar(
       const SnackBar(
         content: Text("Cannot Launch URL :("),

@@ -27,7 +27,8 @@ class IssuesListScreen extends StatelessWidget {
             onPressed: () => _showFilterPicker(
               context,
               context.read<AppCubit>().currentFilterType,
-              (filterType) => context.read<AppCubit>().setFilterType(filterType),
+              (filterType) =>
+                  context.read<AppCubit>().setFilterType(filterType),
             ),
           ),
           IconButton(
@@ -41,10 +42,12 @@ class IssuesListScreen extends StatelessWidget {
         ],
       ),
       body: BlocProvider(
-        create: (context) => IssuesListBloc(repository: getIt<GithubIssuesRepository>())
-          ..add(
-            IssuesListEvent.fetchFirstPage(appState: context.read<AppCubit>().state),
-          ),
+        create: (context) =>
+            IssuesListBloc(repository: getIt<GithubIssuesRepository>())
+              ..add(
+                IssuesListEvent.fetchFirstPage(
+                    appState: context.read<AppCubit>().state),
+              ),
         child: const _IssuesListScreenWidget(),
       ),
     );
@@ -62,7 +65,9 @@ class IssuesListScreen extends StatelessWidget {
             .map(
               (sortType) => ListTile(
                 title: Text(sortType.name),
-                trailing: sortType == currentSortType ? const Icon(Icons.check) : null,
+                trailing: sortType == currentSortType
+                    ? const Icon(Icons.check)
+                    : null,
                 onTap: () {
                   onSortTypeSelected(sortType);
                   Navigator.pop(context);
@@ -86,7 +91,9 @@ class IssuesListScreen extends StatelessWidget {
             .map(
               (filterType) => ListTile(
                 title: Text(filterType.name),
-                trailing: filterType == currentFilterType ? const Icon(Icons.check) : null,
+                trailing: filterType == currentFilterType
+                    ? const Icon(Icons.check)
+                    : null,
                 onTap: () {
                   onFilterTypeSelected(filterType);
                   Navigator.pop(context);
@@ -103,7 +110,8 @@ class _IssuesListScreenWidget extends StatefulWidget {
   const _IssuesListScreenWidget({Key? key}) : super(key: key);
 
   @override
-  State<_IssuesListScreenWidget> createState() => _IssuesListScreenWidgetState();
+  State<_IssuesListScreenWidget> createState() =>
+      _IssuesListScreenWidgetState();
 }
 
 class _IssuesListScreenWidgetState extends State<_IssuesListScreenWidget> {
@@ -172,7 +180,8 @@ class _IssuesListScreenWidgetState extends State<_IssuesListScreenWidget> {
 
   void _onScroll() {
     if (_isBottom) {
-      context.read<IssuesListBloc>().add(IssuesListEvent.fetchNextPage(appState: context.read<AppCubit>().state));
+      context.read<IssuesListBloc>().add(IssuesListEvent.fetchNextPage(
+          appState: context.read<AppCubit>().state));
     }
   }
 
@@ -227,7 +236,9 @@ class _IssueListItemWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       contentPadding: const EdgeInsets.all(8.0),
-      leading: issue.state == "open" ? const Icon(Icons.adjust) : const Icon(Icons.check_circle_outline),
+      leading: issue.state == "open"
+          ? const Icon(Icons.adjust)
+          : const Icon(Icons.check_circle_outline),
       trailing: Text(_timeSince(issue, currentSortType)),
       title: Opacity(
         opacity: issue.isSeen ? 0.5 : 1.0,
@@ -238,7 +249,9 @@ class _IssueListItemWidget extends StatelessWidget {
         ),
       ),
       onTap: () {
-        context.read<IssuesListBloc>().add(MarkIssueAsSeenIssuesListEvent(issue: issue));
+        context
+            .read<IssuesListBloc>()
+            .add(MarkIssueAsSeenIssuesListEvent(issue: issue));
         Navigator.restorablePushNamed(
           context,
           IssueDetailsScreen.routeName,

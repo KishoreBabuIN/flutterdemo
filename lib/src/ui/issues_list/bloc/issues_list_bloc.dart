@@ -29,7 +29,8 @@ class IssuesListBloc extends Bloc<IssuesListEvent, IssuesListState> {
 
   final GithubIssuesRepository repository;
 
-  Future<void> _onFetch(Emitter<IssuesListState> emit, FetchFirstPageIssuesListEvent e) async {
+  Future<void> _onFetch(
+      Emitter<IssuesListState> emit, FetchFirstPageIssuesListEvent e) async {
     _currentSortType = e.appState.sortType;
     _currentFilterType = e.appState.filterType;
 
@@ -87,7 +88,8 @@ class IssuesListBloc extends Bloc<IssuesListEvent, IssuesListState> {
     }
   }
 
-  void _markIssueAsSeen(Emitter<IssuesListState> emit, MarkIssueAsSeenIssuesListEvent e) {
+  void _markIssueAsSeen(
+      Emitter<IssuesListState> emit, MarkIssueAsSeenIssuesListEvent e) {
     final seenIssue = e.issue;
     final index = _issues.indexWhere((issue) => issue.id == seenIssue.id);
     if (index < 0) return;
