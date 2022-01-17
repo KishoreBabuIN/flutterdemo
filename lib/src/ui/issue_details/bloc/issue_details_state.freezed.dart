@@ -18,18 +18,18 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$IssueDetailsStateTearOff {
   const _$IssueDetailsStateTearOff();
 
-  _LoadingIssueDetailsState loading() {
-    return const _LoadingIssueDetailsState();
+  LoadingIssueDetailsState loading() {
+    return const LoadingIssueDetailsState();
   }
 
-  _ContentIssueDetailsState content(Issue issue) {
-    return _ContentIssueDetailsState(
+  ContentIssueDetailsState content(Issue issue) {
+    return ContentIssueDetailsState(
       issue,
     );
   }
 
-  _ErrorIssueDetailsState error(Exception? exception) {
-    return _ErrorIssueDetailsState(
+  ErrorIssueDetailsState error(Exception? exception) {
+    return ErrorIssueDetailsState(
       exception,
     );
   }
@@ -64,23 +64,23 @@ mixin _$IssueDetailsState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_LoadingIssueDetailsState value) loading,
-    required TResult Function(_ContentIssueDetailsState value) content,
-    required TResult Function(_ErrorIssueDetailsState value) error,
+    required TResult Function(LoadingIssueDetailsState value) loading,
+    required TResult Function(ContentIssueDetailsState value) content,
+    required TResult Function(ErrorIssueDetailsState value) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_LoadingIssueDetailsState value)? loading,
-    TResult Function(_ContentIssueDetailsState value)? content,
-    TResult Function(_ErrorIssueDetailsState value)? error,
+    TResult Function(LoadingIssueDetailsState value)? loading,
+    TResult Function(ContentIssueDetailsState value)? content,
+    TResult Function(ErrorIssueDetailsState value)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_LoadingIssueDetailsState value)? loading,
-    TResult Function(_ContentIssueDetailsState value)? content,
-    TResult Function(_ErrorIssueDetailsState value)? error,
+    TResult Function(LoadingIssueDetailsState value)? loading,
+    TResult Function(ContentIssueDetailsState value)? content,
+    TResult Function(ErrorIssueDetailsState value)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -104,31 +104,31 @@ class _$IssueDetailsStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$LoadingIssueDetailsStateCopyWith<$Res> {
-  factory _$LoadingIssueDetailsStateCopyWith(_LoadingIssueDetailsState value,
-          $Res Function(_LoadingIssueDetailsState) then) =
-      __$LoadingIssueDetailsStateCopyWithImpl<$Res>;
+abstract class $LoadingIssueDetailsStateCopyWith<$Res> {
+  factory $LoadingIssueDetailsStateCopyWith(LoadingIssueDetailsState value,
+          $Res Function(LoadingIssueDetailsState) then) =
+      _$LoadingIssueDetailsStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$LoadingIssueDetailsStateCopyWithImpl<$Res>
+class _$LoadingIssueDetailsStateCopyWithImpl<$Res>
     extends _$IssueDetailsStateCopyWithImpl<$Res>
-    implements _$LoadingIssueDetailsStateCopyWith<$Res> {
-  __$LoadingIssueDetailsStateCopyWithImpl(_LoadingIssueDetailsState _value,
-      $Res Function(_LoadingIssueDetailsState) _then)
-      : super(_value, (v) => _then(v as _LoadingIssueDetailsState));
+    implements $LoadingIssueDetailsStateCopyWith<$Res> {
+  _$LoadingIssueDetailsStateCopyWithImpl(LoadingIssueDetailsState _value,
+      $Res Function(LoadingIssueDetailsState) _then)
+      : super(_value, (v) => _then(v as LoadingIssueDetailsState));
 
   @override
-  _LoadingIssueDetailsState get _value =>
-      super._value as _LoadingIssueDetailsState;
+  LoadingIssueDetailsState get _value =>
+      super._value as LoadingIssueDetailsState;
 }
 
 /// @nodoc
 
-class _$_LoadingIssueDetailsState
+class _$LoadingIssueDetailsState
     with DiagnosticableTreeMixin
-    implements _LoadingIssueDetailsState {
-  const _$_LoadingIssueDetailsState();
+    implements LoadingIssueDetailsState {
+  const _$LoadingIssueDetailsState();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -144,8 +144,7 @@ class _$_LoadingIssueDetailsState
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _LoadingIssueDetailsState);
+        (other.runtimeType == runtimeType && other is LoadingIssueDetailsState);
   }
 
   @override
@@ -188,9 +187,9 @@ class _$_LoadingIssueDetailsState
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_LoadingIssueDetailsState value) loading,
-    required TResult Function(_ContentIssueDetailsState value) content,
-    required TResult Function(_ErrorIssueDetailsState value) error,
+    required TResult Function(LoadingIssueDetailsState value) loading,
+    required TResult Function(ContentIssueDetailsState value) content,
+    required TResult Function(ErrorIssueDetailsState value) error,
   }) {
     return loading(this);
   }
@@ -198,9 +197,9 @@ class _$_LoadingIssueDetailsState
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_LoadingIssueDetailsState value)? loading,
-    TResult Function(_ContentIssueDetailsState value)? content,
-    TResult Function(_ErrorIssueDetailsState value)? error,
+    TResult Function(LoadingIssueDetailsState value)? loading,
+    TResult Function(ContentIssueDetailsState value)? content,
+    TResult Function(ErrorIssueDetailsState value)? error,
   }) {
     return loading?.call(this);
   }
@@ -208,9 +207,9 @@ class _$_LoadingIssueDetailsState
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_LoadingIssueDetailsState value)? loading,
-    TResult Function(_ContentIssueDetailsState value)? content,
-    TResult Function(_ErrorIssueDetailsState value)? error,
+    TResult Function(LoadingIssueDetailsState value)? loading,
+    TResult Function(ContentIssueDetailsState value)? content,
+    TResult Function(ErrorIssueDetailsState value)? error,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -220,37 +219,37 @@ class _$_LoadingIssueDetailsState
   }
 }
 
-abstract class _LoadingIssueDetailsState implements IssueDetailsState {
-  const factory _LoadingIssueDetailsState() = _$_LoadingIssueDetailsState;
+abstract class LoadingIssueDetailsState implements IssueDetailsState {
+  const factory LoadingIssueDetailsState() = _$LoadingIssueDetailsState;
 }
 
 /// @nodoc
-abstract class _$ContentIssueDetailsStateCopyWith<$Res> {
-  factory _$ContentIssueDetailsStateCopyWith(_ContentIssueDetailsState value,
-          $Res Function(_ContentIssueDetailsState) then) =
-      __$ContentIssueDetailsStateCopyWithImpl<$Res>;
+abstract class $ContentIssueDetailsStateCopyWith<$Res> {
+  factory $ContentIssueDetailsStateCopyWith(ContentIssueDetailsState value,
+          $Res Function(ContentIssueDetailsState) then) =
+      _$ContentIssueDetailsStateCopyWithImpl<$Res>;
   $Res call({Issue issue});
 
   $IssueCopyWith<$Res> get issue;
 }
 
 /// @nodoc
-class __$ContentIssueDetailsStateCopyWithImpl<$Res>
+class _$ContentIssueDetailsStateCopyWithImpl<$Res>
     extends _$IssueDetailsStateCopyWithImpl<$Res>
-    implements _$ContentIssueDetailsStateCopyWith<$Res> {
-  __$ContentIssueDetailsStateCopyWithImpl(_ContentIssueDetailsState _value,
-      $Res Function(_ContentIssueDetailsState) _then)
-      : super(_value, (v) => _then(v as _ContentIssueDetailsState));
+    implements $ContentIssueDetailsStateCopyWith<$Res> {
+  _$ContentIssueDetailsStateCopyWithImpl(ContentIssueDetailsState _value,
+      $Res Function(ContentIssueDetailsState) _then)
+      : super(_value, (v) => _then(v as ContentIssueDetailsState));
 
   @override
-  _ContentIssueDetailsState get _value =>
-      super._value as _ContentIssueDetailsState;
+  ContentIssueDetailsState get _value =>
+      super._value as ContentIssueDetailsState;
 
   @override
   $Res call({
     Object? issue = freezed,
   }) {
-    return _then(_ContentIssueDetailsState(
+    return _then(ContentIssueDetailsState(
       issue == freezed
           ? _value.issue
           : issue // ignore: cast_nullable_to_non_nullable
@@ -268,10 +267,10 @@ class __$ContentIssueDetailsStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_ContentIssueDetailsState
+class _$ContentIssueDetailsState
     with DiagnosticableTreeMixin
-    implements _ContentIssueDetailsState {
-  const _$_ContentIssueDetailsState(this.issue);
+    implements ContentIssueDetailsState {
+  const _$ContentIssueDetailsState(this.issue);
 
   @override
   final Issue issue;
@@ -293,7 +292,7 @@ class _$_ContentIssueDetailsState
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _ContentIssueDetailsState &&
+            other is ContentIssueDetailsState &&
             const DeepCollectionEquality().equals(other.issue, issue));
   }
 
@@ -303,8 +302,8 @@ class _$_ContentIssueDetailsState
 
   @JsonKey(ignore: true)
   @override
-  _$ContentIssueDetailsStateCopyWith<_ContentIssueDetailsState> get copyWith =>
-      __$ContentIssueDetailsStateCopyWithImpl<_ContentIssueDetailsState>(
+  $ContentIssueDetailsStateCopyWith<ContentIssueDetailsState> get copyWith =>
+      _$ContentIssueDetailsStateCopyWithImpl<ContentIssueDetailsState>(
           this, _$identity);
 
   @override
@@ -344,9 +343,9 @@ class _$_ContentIssueDetailsState
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_LoadingIssueDetailsState value) loading,
-    required TResult Function(_ContentIssueDetailsState value) content,
-    required TResult Function(_ErrorIssueDetailsState value) error,
+    required TResult Function(LoadingIssueDetailsState value) loading,
+    required TResult Function(ContentIssueDetailsState value) content,
+    required TResult Function(ErrorIssueDetailsState value) error,
   }) {
     return content(this);
   }
@@ -354,9 +353,9 @@ class _$_ContentIssueDetailsState
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_LoadingIssueDetailsState value)? loading,
-    TResult Function(_ContentIssueDetailsState value)? content,
-    TResult Function(_ErrorIssueDetailsState value)? error,
+    TResult Function(LoadingIssueDetailsState value)? loading,
+    TResult Function(ContentIssueDetailsState value)? content,
+    TResult Function(ErrorIssueDetailsState value)? error,
   }) {
     return content?.call(this);
   }
@@ -364,9 +363,9 @@ class _$_ContentIssueDetailsState
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_LoadingIssueDetailsState value)? loading,
-    TResult Function(_ContentIssueDetailsState value)? content,
-    TResult Function(_ErrorIssueDetailsState value)? error,
+    TResult Function(LoadingIssueDetailsState value)? loading,
+    TResult Function(ContentIssueDetailsState value)? content,
+    TResult Function(ErrorIssueDetailsState value)? error,
     required TResult orElse(),
   }) {
     if (content != null) {
@@ -376,40 +375,40 @@ class _$_ContentIssueDetailsState
   }
 }
 
-abstract class _ContentIssueDetailsState implements IssueDetailsState {
-  const factory _ContentIssueDetailsState(Issue issue) =
-      _$_ContentIssueDetailsState;
+abstract class ContentIssueDetailsState implements IssueDetailsState {
+  const factory ContentIssueDetailsState(Issue issue) =
+      _$ContentIssueDetailsState;
 
   Issue get issue;
   @JsonKey(ignore: true)
-  _$ContentIssueDetailsStateCopyWith<_ContentIssueDetailsState> get copyWith =>
+  $ContentIssueDetailsStateCopyWith<ContentIssueDetailsState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$ErrorIssueDetailsStateCopyWith<$Res> {
-  factory _$ErrorIssueDetailsStateCopyWith(_ErrorIssueDetailsState value,
-          $Res Function(_ErrorIssueDetailsState) then) =
-      __$ErrorIssueDetailsStateCopyWithImpl<$Res>;
+abstract class $ErrorIssueDetailsStateCopyWith<$Res> {
+  factory $ErrorIssueDetailsStateCopyWith(ErrorIssueDetailsState value,
+          $Res Function(ErrorIssueDetailsState) then) =
+      _$ErrorIssueDetailsStateCopyWithImpl<$Res>;
   $Res call({Exception? exception});
 }
 
 /// @nodoc
-class __$ErrorIssueDetailsStateCopyWithImpl<$Res>
+class _$ErrorIssueDetailsStateCopyWithImpl<$Res>
     extends _$IssueDetailsStateCopyWithImpl<$Res>
-    implements _$ErrorIssueDetailsStateCopyWith<$Res> {
-  __$ErrorIssueDetailsStateCopyWithImpl(_ErrorIssueDetailsState _value,
-      $Res Function(_ErrorIssueDetailsState) _then)
-      : super(_value, (v) => _then(v as _ErrorIssueDetailsState));
+    implements $ErrorIssueDetailsStateCopyWith<$Res> {
+  _$ErrorIssueDetailsStateCopyWithImpl(ErrorIssueDetailsState _value,
+      $Res Function(ErrorIssueDetailsState) _then)
+      : super(_value, (v) => _then(v as ErrorIssueDetailsState));
 
   @override
-  _ErrorIssueDetailsState get _value => super._value as _ErrorIssueDetailsState;
+  ErrorIssueDetailsState get _value => super._value as ErrorIssueDetailsState;
 
   @override
   $Res call({
     Object? exception = freezed,
   }) {
-    return _then(_ErrorIssueDetailsState(
+    return _then(ErrorIssueDetailsState(
       exception == freezed
           ? _value.exception
           : exception // ignore: cast_nullable_to_non_nullable
@@ -420,10 +419,10 @@ class __$ErrorIssueDetailsStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_ErrorIssueDetailsState
+class _$ErrorIssueDetailsState
     with DiagnosticableTreeMixin
-    implements _ErrorIssueDetailsState {
-  const _$_ErrorIssueDetailsState(this.exception);
+    implements ErrorIssueDetailsState {
+  const _$ErrorIssueDetailsState(this.exception);
 
   @override
   final Exception? exception;
@@ -445,7 +444,7 @@ class _$_ErrorIssueDetailsState
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _ErrorIssueDetailsState &&
+            other is ErrorIssueDetailsState &&
             const DeepCollectionEquality().equals(other.exception, exception));
   }
 
@@ -455,8 +454,8 @@ class _$_ErrorIssueDetailsState
 
   @JsonKey(ignore: true)
   @override
-  _$ErrorIssueDetailsStateCopyWith<_ErrorIssueDetailsState> get copyWith =>
-      __$ErrorIssueDetailsStateCopyWithImpl<_ErrorIssueDetailsState>(
+  $ErrorIssueDetailsStateCopyWith<ErrorIssueDetailsState> get copyWith =>
+      _$ErrorIssueDetailsStateCopyWithImpl<ErrorIssueDetailsState>(
           this, _$identity);
 
   @override
@@ -496,9 +495,9 @@ class _$_ErrorIssueDetailsState
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_LoadingIssueDetailsState value) loading,
-    required TResult Function(_ContentIssueDetailsState value) content,
-    required TResult Function(_ErrorIssueDetailsState value) error,
+    required TResult Function(LoadingIssueDetailsState value) loading,
+    required TResult Function(ContentIssueDetailsState value) content,
+    required TResult Function(ErrorIssueDetailsState value) error,
   }) {
     return error(this);
   }
@@ -506,9 +505,9 @@ class _$_ErrorIssueDetailsState
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_LoadingIssueDetailsState value)? loading,
-    TResult Function(_ContentIssueDetailsState value)? content,
-    TResult Function(_ErrorIssueDetailsState value)? error,
+    TResult Function(LoadingIssueDetailsState value)? loading,
+    TResult Function(ContentIssueDetailsState value)? content,
+    TResult Function(ErrorIssueDetailsState value)? error,
   }) {
     return error?.call(this);
   }
@@ -516,9 +515,9 @@ class _$_ErrorIssueDetailsState
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_LoadingIssueDetailsState value)? loading,
-    TResult Function(_ContentIssueDetailsState value)? content,
-    TResult Function(_ErrorIssueDetailsState value)? error,
+    TResult Function(LoadingIssueDetailsState value)? loading,
+    TResult Function(ContentIssueDetailsState value)? content,
+    TResult Function(ErrorIssueDetailsState value)? error,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -528,12 +527,12 @@ class _$_ErrorIssueDetailsState
   }
 }
 
-abstract class _ErrorIssueDetailsState implements IssueDetailsState {
-  const factory _ErrorIssueDetailsState(Exception? exception) =
-      _$_ErrorIssueDetailsState;
+abstract class ErrorIssueDetailsState implements IssueDetailsState {
+  const factory ErrorIssueDetailsState(Exception? exception) =
+      _$ErrorIssueDetailsState;
 
   Exception? get exception;
   @JsonKey(ignore: true)
-  _$ErrorIssueDetailsStateCopyWith<_ErrorIssueDetailsState> get copyWith =>
+  $ErrorIssueDetailsStateCopyWith<ErrorIssueDetailsState> get copyWith =>
       throw _privateConstructorUsedError;
 }

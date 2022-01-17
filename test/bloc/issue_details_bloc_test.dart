@@ -1,32 +1,31 @@
-import 'package:flutter_demo/src/data/github_issues_repository.dart';
+import 'package:bloc_test/bloc_test.dart';
 import 'package:flutter_demo/src/network/model/issue.dart';
+import 'package:flutter_demo/src/ui/issue_details/bloc/issue_details_bloc.dart';
+import 'package:flutter_demo/src/ui/issue_details/bloc/issue_details_event.dart';
+import 'package:flutter_demo/src/ui/issue_details/bloc/issue_details_state.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 
-class MockGithubIssuesRepository extends Mock
-    implements GithubIssuesRepository {}
-
-class MockIssue extends Mock implements Issue {}
+import 'mocks.dart';
 
 void main() {
-  late MockGithubIssuesRepository mockIssuesRepository;
+  final MockRepository _mockRepo = MockRepository();
+  IssueDetailsBloc _buildBloc() => IssueDetailsBloc(repository: _mockRepo);
 
-  setUp(() {
-    mockIssuesRepository = MockGithubIssuesRepository();
-    when(() => mockIssuesRepository.getIssueDetails(
-          "flutter",
-          "flutter",
-          "random",
-        )).thenAnswer((_) async => MockIssue());
-  });
+  group("IssueDetailsBloc", () {
+    blocTest<IssueDetailsBloc, IssueDetailsState>(
+      "emits nothing when no events are added",
+      build: _buildBloc,
+      expect: () => <IssueDetailsState>[],
+    );
 
-  group("IssuesDetailsBloc", () {
-    // blocTest<IssuesListBloc, IssuesListState>(
-    //   "emits loading and then content state with first page on first page event",
-    //   build: () => IssuesListBloc(repository: mockIssuesRepository),
-    //   act: (bloc) =>
-    //       bloc.add(FetchFirstPageIssuesListEvent(appState: fakeAppState)),
-    //   expect: () => [const IssuesListState.loading(), baseState],
-    // );
+    blocTest<IssueDetailsBloc, IssueDetailsState>(
+      "emits content when fetch issue details event is added",
+      setUp: () => when(() => _mockRepo.getIssueDetails(any(), any(), any()))
+          .thenAnswer((_) async => Issue(id: 11)),
+      build: _buildBloc,
+      act: (bloc) => bloc.add(IssueDetailsEvent.load("issueId")),
+      expect: () => [ContentIssueDetailsState(Issue(id: 11))],
+    );
   });
 }

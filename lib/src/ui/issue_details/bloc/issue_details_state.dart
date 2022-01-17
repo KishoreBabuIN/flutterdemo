@@ -6,9 +6,9 @@ part 'issue_details_state.freezed.dart';
 
 @freezed
 class IssueDetailsState with _$IssueDetailsState {
-  const factory IssueDetailsState.loading() = _LoadingIssueDetailsState;
+  const factory IssueDetailsState.loading() = LoadingIssueDetailsState;
   const factory IssueDetailsState.content(Issue issue) =
-      _ContentIssueDetailsState;
+      ContentIssueDetailsState;
   const factory IssueDetailsState.error(Exception? exception) =
-      _ErrorIssueDetailsState;
+      ErrorIssueDetailsState;
 }

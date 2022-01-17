@@ -1,6 +1,5 @@
 import 'package:bloc_test/bloc_test.dart';
 import 'package:flutter_demo/src/bloc/app_state.dart';
-import 'package:flutter_demo/src/data/github_issues_repository.dart';
 import 'package:flutter_demo/src/network/model/filter_type.dart';
 import 'package:flutter_demo/src/network/model/issue.dart';
 import 'package:flutter_demo/src/network/model/sort_type.dart';
@@ -10,9 +9,7 @@ import 'package:flutter_demo/src/ui/issues_list/bloc/issues_list_state.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 
-class MockRepository extends Mock implements GithubIssuesRepository {}
-
-class MockContentState extends Mock implements ContentIssuesListState {}
+import 'mocks.dart';
 
 void main() {
   AppState _defualtState = AppState.state(
