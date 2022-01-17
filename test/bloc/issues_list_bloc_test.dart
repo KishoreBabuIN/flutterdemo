@@ -10,66 +10,42 @@ import 'package:flutter_demo/src/ui/issues_list/bloc/issues_list_state.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 
-class MockGithubIssuesRepository extends Mock
-    implements GithubIssuesRepository {}
+class MockRepository extends Mock implements GithubIssuesRepository {}
 
-class MockIssue extends Mock implements Issue {}
+class MockContentState extends Mock implements ContentIssuesListState {}
 
 void main() {
-  late MockGithubIssuesRepository mockIssuesRepository;
-
-  final mockIssuesList = [MockIssue(), MockIssue()];
-  final mockFinalIssuesList = [...mockIssuesList, ...mockIssuesList];
-  final fakeAppState = AppState.state(
+  AppState _defualtState = AppState.state(
       sortType: IssuesListSortType.created,
       filterType: IssuesListFilterType.open);
-  final baseState = IssuesListState.content(
-    issues: mockIssuesList,
-    hasReachedEnd: false,
-    sortType: IssuesListSortType.created,
-  );
+  final Issue issue = Issue(id: 11);
+  final MockRepository _mockRepo = MockRepository();
+  IssuesListBloc _buildBloc() => IssuesListBloc(repository: _mockRepo);
 
   setUp(() {
-    mockIssuesRepository = MockGithubIssuesRepository();
-    when(() => mockIssuesRepository.getAllIssuesByPage(
-          "flutter",
-          "flutter",
-          1,
-          IssuesListSortType.created,
-          IssuesListFilterType.open,
-        )).thenAnswer((_) async => [...mockIssuesList]);
-
-    when(() => mockIssuesRepository.getAllIssuesByPage(
-          "flutter",
-          "flutter",
-          2,
-          IssuesListSortType.created,
-          IssuesListFilterType.open,
-        )).thenAnswer((_) async => [...mockIssuesList]);
+    registerFallbackValue(IssuesListSortType.created);
+    registerFallbackValue(IssuesListFilterType.open);
   });
 
   group("IssuesListBloc", () {
     blocTest<IssuesListBloc, IssuesListState>(
-      "emits loading and then content state with first page on first page event",
-      build: () => IssuesListBloc(repository: mockIssuesRepository),
-      act: (bloc) =>
-          bloc.add(FetchFirstPageIssuesListEvent(appState: fakeAppState)),
-      expect: () => [const IssuesListState.loading(), baseState],
+      "emits nothing when no events are added",
+      build: _buildBloc,
+      expect: () => <IssuesListState>[],
     );
 
-    // blocTest<IssuesListBloc, IssuesListState>(
-    //   "emits content state with last page",
-    //   build: () => IssuesListBloc(repository: mockIssuesRepository),
-    //   seed: () => baseState,
-    //   act: (bloc) =>
-    //       bloc.add(FetchNextPageIssuesListEvent(appState: fakeAppState)),
-    //   expect: () => [
-    //     IssuesListState.content(
-    //       issues: mockFinalIssuesList,
-    //       hasReachedEnd: true,
-    //       sortType: IssuesListSortType.created,
-    //     )
-    //   ],
-    // );
+    blocTest<IssuesListBloc, IssuesListState>(
+      "emits content when first page event is added",
+      setUp: () => when(() =>
+              _mockRepo.getAllIssuesByPage(any(), any(), any(), any(), any()))
+          .thenAnswer((_) async => [issue, issue]),
+      build: _buildBloc,
+      act: (bloc) =>
+          bloc.add(FetchFirstPageIssuesListEvent(appState: _defualtState)),
+      expect: () => [
+        isA<LoadingIssuesListState>(),
+        isA<ContentIssuesListState>(),
+      ],
+    );
   });
 }
