@@ -105,9 +105,11 @@ class _IssueDetailsWidget extends StatelessWidget {
                 try {
                   await canLaunchUrl(Uri.parse(href))
                       ? await launchUrl(Uri.parse(href))
-                      : _cannotLaunchUrl(context);
+                      : context.mounted
+                          ? _cannotLaunchUrl(context)
+                          : null;
                 } on Exception catch (_) {
-                  _cannotLaunchUrl(context);
+                  context.mounted ? _cannotLaunchUrl(context) : null;
                 }
               }
             }),
