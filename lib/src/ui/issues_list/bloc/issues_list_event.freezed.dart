@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'issues_list_event.dart';
 
@@ -12,33 +12,7 @@ part of 'issues_list_event.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$IssuesListEventTearOff {
-  const _$IssuesListEventTearOff();
-
-  FetchFirstPageIssuesListEvent fetchFirstPage({required AppState appState}) {
-    return FetchFirstPageIssuesListEvent(
-      appState: appState,
-    );
-  }
-
-  FetchNextPageIssuesListEvent fetchNextPage({required AppState appState}) {
-    return FetchNextPageIssuesListEvent(
-      appState: appState,
-    );
-  }
-
-  MarkIssueAsSeenIssuesListEvent markIssueAsSeen({required Issue issue}) {
-    return MarkIssueAsSeenIssuesListEvent(
-      issue: issue,
-    );
-  }
-}
-
-/// @nodoc
-const $IssuesListEvent = _$IssuesListEventTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$IssuesListEvent {
@@ -51,9 +25,9 @@ mixin _$IssuesListEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(AppState appState)? fetchFirstPage,
-    TResult Function(AppState appState)? fetchNextPage,
-    TResult Function(Issue issue)? markIssueAsSeen,
+    TResult? Function(AppState appState)? fetchFirstPage,
+    TResult? Function(AppState appState)? fetchNextPage,
+    TResult? Function(Issue issue)? markIssueAsSeen,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -75,9 +49,9 @@ mixin _$IssuesListEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(FetchFirstPageIssuesListEvent value)? fetchFirstPage,
-    TResult Function(FetchNextPageIssuesListEvent value)? fetchNextPage,
-    TResult Function(MarkIssueAsSeenIssuesListEvent value)? markIssueAsSeen,
+    TResult? Function(FetchFirstPageIssuesListEvent value)? fetchFirstPage,
+    TResult? Function(FetchNextPageIssuesListEvent value)? fetchNextPage,
+    TResult? Function(MarkIssueAsSeenIssuesListEvent value)? markIssueAsSeen,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -94,56 +68,64 @@ mixin _$IssuesListEvent {
 abstract class $IssuesListEventCopyWith<$Res> {
   factory $IssuesListEventCopyWith(
           IssuesListEvent value, $Res Function(IssuesListEvent) then) =
-      _$IssuesListEventCopyWithImpl<$Res>;
+      _$IssuesListEventCopyWithImpl<$Res, IssuesListEvent>;
 }
 
 /// @nodoc
-class _$IssuesListEventCopyWithImpl<$Res>
+class _$IssuesListEventCopyWithImpl<$Res, $Val extends IssuesListEvent>
     implements $IssuesListEventCopyWith<$Res> {
   _$IssuesListEventCopyWithImpl(this._value, this._then);
 
-  final IssuesListEvent _value;
   // ignore: unused_field
-  final $Res Function(IssuesListEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of IssuesListEvent
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
-abstract class $FetchFirstPageIssuesListEventCopyWith<$Res> {
-  factory $FetchFirstPageIssuesListEventCopyWith(
-          FetchFirstPageIssuesListEvent value,
-          $Res Function(FetchFirstPageIssuesListEvent) then) =
-      _$FetchFirstPageIssuesListEventCopyWithImpl<$Res>;
+abstract class _$$FetchFirstPageIssuesListEventImplCopyWith<$Res> {
+  factory _$$FetchFirstPageIssuesListEventImplCopyWith(
+          _$FetchFirstPageIssuesListEventImpl value,
+          $Res Function(_$FetchFirstPageIssuesListEventImpl) then) =
+      __$$FetchFirstPageIssuesListEventImplCopyWithImpl<$Res>;
+  @useResult
   $Res call({AppState appState});
 
   $AppStateCopyWith<$Res> get appState;
 }
 
 /// @nodoc
-class _$FetchFirstPageIssuesListEventCopyWithImpl<$Res>
-    extends _$IssuesListEventCopyWithImpl<$Res>
-    implements $FetchFirstPageIssuesListEventCopyWith<$Res> {
-  _$FetchFirstPageIssuesListEventCopyWithImpl(
-      FetchFirstPageIssuesListEvent _value,
-      $Res Function(FetchFirstPageIssuesListEvent) _then)
-      : super(_value, (v) => _then(v as FetchFirstPageIssuesListEvent));
+class __$$FetchFirstPageIssuesListEventImplCopyWithImpl<$Res>
+    extends _$IssuesListEventCopyWithImpl<$Res,
+        _$FetchFirstPageIssuesListEventImpl>
+    implements _$$FetchFirstPageIssuesListEventImplCopyWith<$Res> {
+  __$$FetchFirstPageIssuesListEventImplCopyWithImpl(
+      _$FetchFirstPageIssuesListEventImpl _value,
+      $Res Function(_$FetchFirstPageIssuesListEventImpl) _then)
+      : super(_value, _then);
 
-  @override
-  FetchFirstPageIssuesListEvent get _value =>
-      super._value as FetchFirstPageIssuesListEvent;
-
+  /// Create a copy of IssuesListEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? appState = freezed,
+    Object? appState = null,
   }) {
-    return _then(FetchFirstPageIssuesListEvent(
-      appState: appState == freezed
+    return _then(_$FetchFirstPageIssuesListEventImpl(
+      appState: null == appState
           ? _value.appState
           : appState // ignore: cast_nullable_to_non_nullable
               as AppState,
     ));
   }
 
+  /// Create a copy of IssuesListEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
+  @pragma('vm:prefer-inline')
   $AppStateCopyWith<$Res> get appState {
     return $AppStateCopyWith<$Res>(_value.appState, (value) {
       return _then(_value.copyWith(appState: value));
@@ -153,10 +135,10 @@ class _$FetchFirstPageIssuesListEventCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$FetchFirstPageIssuesListEvent
+class _$FetchFirstPageIssuesListEventImpl
     with DiagnosticableTreeMixin
     implements FetchFirstPageIssuesListEvent {
-  const _$FetchFirstPageIssuesListEvent({required this.appState});
+  const _$FetchFirstPageIssuesListEventImpl({required this.appState});
 
   @override
   final AppState appState;
@@ -175,22 +157,26 @@ class _$FetchFirstPageIssuesListEvent
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is FetchFirstPageIssuesListEvent &&
-            const DeepCollectionEquality().equals(other.appState, appState));
+            other is _$FetchFirstPageIssuesListEventImpl &&
+            (identical(other.appState, appState) ||
+                other.appState == appState));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(appState));
+  int get hashCode => Object.hash(runtimeType, appState);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of IssuesListEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  $FetchFirstPageIssuesListEventCopyWith<FetchFirstPageIssuesListEvent>
-      get copyWith => _$FetchFirstPageIssuesListEventCopyWithImpl<
-          FetchFirstPageIssuesListEvent>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$FetchFirstPageIssuesListEventImplCopyWith<
+          _$FetchFirstPageIssuesListEventImpl>
+      get copyWith => __$$FetchFirstPageIssuesListEventImplCopyWithImpl<
+          _$FetchFirstPageIssuesListEventImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -205,9 +191,9 @@ class _$FetchFirstPageIssuesListEvent
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(AppState appState)? fetchFirstPage,
-    TResult Function(AppState appState)? fetchNextPage,
-    TResult Function(Issue issue)? markIssueAsSeen,
+    TResult? Function(AppState appState)? fetchFirstPage,
+    TResult? Function(AppState appState)? fetchNextPage,
+    TResult? Function(Issue issue)? markIssueAsSeen,
   }) {
     return fetchFirstPage?.call(appState);
   }
@@ -241,9 +227,9 @@ class _$FetchFirstPageIssuesListEvent
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(FetchFirstPageIssuesListEvent value)? fetchFirstPage,
-    TResult Function(FetchNextPageIssuesListEvent value)? fetchNextPage,
-    TResult Function(MarkIssueAsSeenIssuesListEvent value)? markIssueAsSeen,
+    TResult? Function(FetchFirstPageIssuesListEvent value)? fetchFirstPage,
+    TResult? Function(FetchNextPageIssuesListEvent value)? fetchNextPage,
+    TResult? Function(MarkIssueAsSeenIssuesListEvent value)? markIssueAsSeen,
   }) {
     return fetchFirstPage?.call(this);
   }
@@ -264,52 +250,60 @@ class _$FetchFirstPageIssuesListEvent
 }
 
 abstract class FetchFirstPageIssuesListEvent implements IssuesListEvent {
-  const factory FetchFirstPageIssuesListEvent({required AppState appState}) =
-      _$FetchFirstPageIssuesListEvent;
+  const factory FetchFirstPageIssuesListEvent(
+      {required final AppState appState}) = _$FetchFirstPageIssuesListEventImpl;
 
   AppState get appState;
-  @JsonKey(ignore: true)
-  $FetchFirstPageIssuesListEventCopyWith<FetchFirstPageIssuesListEvent>
+
+  /// Create a copy of IssuesListEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$FetchFirstPageIssuesListEventImplCopyWith<
+          _$FetchFirstPageIssuesListEventImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $FetchNextPageIssuesListEventCopyWith<$Res> {
-  factory $FetchNextPageIssuesListEventCopyWith(
-          FetchNextPageIssuesListEvent value,
-          $Res Function(FetchNextPageIssuesListEvent) then) =
-      _$FetchNextPageIssuesListEventCopyWithImpl<$Res>;
+abstract class _$$FetchNextPageIssuesListEventImplCopyWith<$Res> {
+  factory _$$FetchNextPageIssuesListEventImplCopyWith(
+          _$FetchNextPageIssuesListEventImpl value,
+          $Res Function(_$FetchNextPageIssuesListEventImpl) then) =
+      __$$FetchNextPageIssuesListEventImplCopyWithImpl<$Res>;
+  @useResult
   $Res call({AppState appState});
 
   $AppStateCopyWith<$Res> get appState;
 }
 
 /// @nodoc
-class _$FetchNextPageIssuesListEventCopyWithImpl<$Res>
-    extends _$IssuesListEventCopyWithImpl<$Res>
-    implements $FetchNextPageIssuesListEventCopyWith<$Res> {
-  _$FetchNextPageIssuesListEventCopyWithImpl(
-      FetchNextPageIssuesListEvent _value,
-      $Res Function(FetchNextPageIssuesListEvent) _then)
-      : super(_value, (v) => _then(v as FetchNextPageIssuesListEvent));
+class __$$FetchNextPageIssuesListEventImplCopyWithImpl<$Res>
+    extends _$IssuesListEventCopyWithImpl<$Res,
+        _$FetchNextPageIssuesListEventImpl>
+    implements _$$FetchNextPageIssuesListEventImplCopyWith<$Res> {
+  __$$FetchNextPageIssuesListEventImplCopyWithImpl(
+      _$FetchNextPageIssuesListEventImpl _value,
+      $Res Function(_$FetchNextPageIssuesListEventImpl) _then)
+      : super(_value, _then);
 
-  @override
-  FetchNextPageIssuesListEvent get _value =>
-      super._value as FetchNextPageIssuesListEvent;
-
+  /// Create a copy of IssuesListEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? appState = freezed,
+    Object? appState = null,
   }) {
-    return _then(FetchNextPageIssuesListEvent(
-      appState: appState == freezed
+    return _then(_$FetchNextPageIssuesListEventImpl(
+      appState: null == appState
           ? _value.appState
           : appState // ignore: cast_nullable_to_non_nullable
               as AppState,
     ));
   }
 
+  /// Create a copy of IssuesListEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
+  @pragma('vm:prefer-inline')
   $AppStateCopyWith<$Res> get appState {
     return $AppStateCopyWith<$Res>(_value.appState, (value) {
       return _then(_value.copyWith(appState: value));
@@ -319,10 +313,10 @@ class _$FetchNextPageIssuesListEventCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$FetchNextPageIssuesListEvent
+class _$FetchNextPageIssuesListEventImpl
     with DiagnosticableTreeMixin
     implements FetchNextPageIssuesListEvent {
-  const _$FetchNextPageIssuesListEvent({required this.appState});
+  const _$FetchNextPageIssuesListEventImpl({required this.appState});
 
   @override
   final AppState appState;
@@ -341,22 +335,26 @@ class _$FetchNextPageIssuesListEvent
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is FetchNextPageIssuesListEvent &&
-            const DeepCollectionEquality().equals(other.appState, appState));
+            other is _$FetchNextPageIssuesListEventImpl &&
+            (identical(other.appState, appState) ||
+                other.appState == appState));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(appState));
+  int get hashCode => Object.hash(runtimeType, appState);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of IssuesListEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  $FetchNextPageIssuesListEventCopyWith<FetchNextPageIssuesListEvent>
-      get copyWith => _$FetchNextPageIssuesListEventCopyWithImpl<
-          FetchNextPageIssuesListEvent>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$FetchNextPageIssuesListEventImplCopyWith<
+          _$FetchNextPageIssuesListEventImpl>
+      get copyWith => __$$FetchNextPageIssuesListEventImplCopyWithImpl<
+          _$FetchNextPageIssuesListEventImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -371,9 +369,9 @@ class _$FetchNextPageIssuesListEvent
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(AppState appState)? fetchFirstPage,
-    TResult Function(AppState appState)? fetchNextPage,
-    TResult Function(Issue issue)? markIssueAsSeen,
+    TResult? Function(AppState appState)? fetchFirstPage,
+    TResult? Function(AppState appState)? fetchNextPage,
+    TResult? Function(Issue issue)? markIssueAsSeen,
   }) {
     return fetchNextPage?.call(appState);
   }
@@ -407,9 +405,9 @@ class _$FetchNextPageIssuesListEvent
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(FetchFirstPageIssuesListEvent value)? fetchFirstPage,
-    TResult Function(FetchNextPageIssuesListEvent value)? fetchNextPage,
-    TResult Function(MarkIssueAsSeenIssuesListEvent value)? markIssueAsSeen,
+    TResult? Function(FetchFirstPageIssuesListEvent value)? fetchFirstPage,
+    TResult? Function(FetchNextPageIssuesListEvent value)? fetchNextPage,
+    TResult? Function(MarkIssueAsSeenIssuesListEvent value)? markIssueAsSeen,
   }) {
     return fetchNextPage?.call(this);
   }
@@ -430,52 +428,60 @@ class _$FetchNextPageIssuesListEvent
 }
 
 abstract class FetchNextPageIssuesListEvent implements IssuesListEvent {
-  const factory FetchNextPageIssuesListEvent({required AppState appState}) =
-      _$FetchNextPageIssuesListEvent;
+  const factory FetchNextPageIssuesListEvent(
+      {required final AppState appState}) = _$FetchNextPageIssuesListEventImpl;
 
   AppState get appState;
-  @JsonKey(ignore: true)
-  $FetchNextPageIssuesListEventCopyWith<FetchNextPageIssuesListEvent>
+
+  /// Create a copy of IssuesListEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$FetchNextPageIssuesListEventImplCopyWith<
+          _$FetchNextPageIssuesListEventImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $MarkIssueAsSeenIssuesListEventCopyWith<$Res> {
-  factory $MarkIssueAsSeenIssuesListEventCopyWith(
-          MarkIssueAsSeenIssuesListEvent value,
-          $Res Function(MarkIssueAsSeenIssuesListEvent) then) =
-      _$MarkIssueAsSeenIssuesListEventCopyWithImpl<$Res>;
+abstract class _$$MarkIssueAsSeenIssuesListEventImplCopyWith<$Res> {
+  factory _$$MarkIssueAsSeenIssuesListEventImplCopyWith(
+          _$MarkIssueAsSeenIssuesListEventImpl value,
+          $Res Function(_$MarkIssueAsSeenIssuesListEventImpl) then) =
+      __$$MarkIssueAsSeenIssuesListEventImplCopyWithImpl<$Res>;
+  @useResult
   $Res call({Issue issue});
 
   $IssueCopyWith<$Res> get issue;
 }
 
 /// @nodoc
-class _$MarkIssueAsSeenIssuesListEventCopyWithImpl<$Res>
-    extends _$IssuesListEventCopyWithImpl<$Res>
-    implements $MarkIssueAsSeenIssuesListEventCopyWith<$Res> {
-  _$MarkIssueAsSeenIssuesListEventCopyWithImpl(
-      MarkIssueAsSeenIssuesListEvent _value,
-      $Res Function(MarkIssueAsSeenIssuesListEvent) _then)
-      : super(_value, (v) => _then(v as MarkIssueAsSeenIssuesListEvent));
+class __$$MarkIssueAsSeenIssuesListEventImplCopyWithImpl<$Res>
+    extends _$IssuesListEventCopyWithImpl<$Res,
+        _$MarkIssueAsSeenIssuesListEventImpl>
+    implements _$$MarkIssueAsSeenIssuesListEventImplCopyWith<$Res> {
+  __$$MarkIssueAsSeenIssuesListEventImplCopyWithImpl(
+      _$MarkIssueAsSeenIssuesListEventImpl _value,
+      $Res Function(_$MarkIssueAsSeenIssuesListEventImpl) _then)
+      : super(_value, _then);
 
-  @override
-  MarkIssueAsSeenIssuesListEvent get _value =>
-      super._value as MarkIssueAsSeenIssuesListEvent;
-
+  /// Create a copy of IssuesListEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? issue = freezed,
+    Object? issue = null,
   }) {
-    return _then(MarkIssueAsSeenIssuesListEvent(
-      issue: issue == freezed
+    return _then(_$MarkIssueAsSeenIssuesListEventImpl(
+      issue: null == issue
           ? _value.issue
           : issue // ignore: cast_nullable_to_non_nullable
               as Issue,
     ));
   }
 
+  /// Create a copy of IssuesListEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
+  @pragma('vm:prefer-inline')
   $IssueCopyWith<$Res> get issue {
     return $IssueCopyWith<$Res>(_value.issue, (value) {
       return _then(_value.copyWith(issue: value));
@@ -485,10 +491,10 @@ class _$MarkIssueAsSeenIssuesListEventCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$MarkIssueAsSeenIssuesListEvent
+class _$MarkIssueAsSeenIssuesListEventImpl
     with DiagnosticableTreeMixin
     implements MarkIssueAsSeenIssuesListEvent {
-  const _$MarkIssueAsSeenIssuesListEvent({required this.issue});
+  const _$MarkIssueAsSeenIssuesListEventImpl({required this.issue});
 
   @override
   final Issue issue;
@@ -507,22 +513,25 @@ class _$MarkIssueAsSeenIssuesListEvent
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is MarkIssueAsSeenIssuesListEvent &&
-            const DeepCollectionEquality().equals(other.issue, issue));
+            other is _$MarkIssueAsSeenIssuesListEventImpl &&
+            (identical(other.issue, issue) || other.issue == issue));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(issue));
+  int get hashCode => Object.hash(runtimeType, issue);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of IssuesListEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  $MarkIssueAsSeenIssuesListEventCopyWith<MarkIssueAsSeenIssuesListEvent>
-      get copyWith => _$MarkIssueAsSeenIssuesListEventCopyWithImpl<
-          MarkIssueAsSeenIssuesListEvent>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$MarkIssueAsSeenIssuesListEventImplCopyWith<
+          _$MarkIssueAsSeenIssuesListEventImpl>
+      get copyWith => __$$MarkIssueAsSeenIssuesListEventImplCopyWithImpl<
+          _$MarkIssueAsSeenIssuesListEventImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -537,9 +546,9 @@ class _$MarkIssueAsSeenIssuesListEvent
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(AppState appState)? fetchFirstPage,
-    TResult Function(AppState appState)? fetchNextPage,
-    TResult Function(Issue issue)? markIssueAsSeen,
+    TResult? Function(AppState appState)? fetchFirstPage,
+    TResult? Function(AppState appState)? fetchNextPage,
+    TResult? Function(Issue issue)? markIssueAsSeen,
   }) {
     return markIssueAsSeen?.call(issue);
   }
@@ -573,9 +582,9 @@ class _$MarkIssueAsSeenIssuesListEvent
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(FetchFirstPageIssuesListEvent value)? fetchFirstPage,
-    TResult Function(FetchNextPageIssuesListEvent value)? fetchNextPage,
-    TResult Function(MarkIssueAsSeenIssuesListEvent value)? markIssueAsSeen,
+    TResult? Function(FetchFirstPageIssuesListEvent value)? fetchFirstPage,
+    TResult? Function(FetchNextPageIssuesListEvent value)? fetchNextPage,
+    TResult? Function(MarkIssueAsSeenIssuesListEvent value)? markIssueAsSeen,
   }) {
     return markIssueAsSeen?.call(this);
   }
@@ -596,11 +605,15 @@ class _$MarkIssueAsSeenIssuesListEvent
 }
 
 abstract class MarkIssueAsSeenIssuesListEvent implements IssuesListEvent {
-  const factory MarkIssueAsSeenIssuesListEvent({required Issue issue}) =
-      _$MarkIssueAsSeenIssuesListEvent;
+  const factory MarkIssueAsSeenIssuesListEvent({required final Issue issue}) =
+      _$MarkIssueAsSeenIssuesListEventImpl;
 
   Issue get issue;
-  @JsonKey(ignore: true)
-  $MarkIssueAsSeenIssuesListEventCopyWith<MarkIssueAsSeenIssuesListEvent>
+
+  /// Create a copy of IssuesListEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$MarkIssueAsSeenIssuesListEventImplCopyWith<
+          _$MarkIssueAsSeenIssuesListEventImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

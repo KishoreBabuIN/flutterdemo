@@ -6,21 +6,22 @@ part of 'milestone.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Milestone _$$_MilestoneFromJson(Map<String, dynamic> json) => _$_Milestone(
+_$MilestoneImpl _$$MilestoneImplFromJson(Map<String, dynamic> json) =>
+    _$MilestoneImpl(
       url: json['url'] as String?,
       htmlUrl: json['html_url'] as String?,
       labelsUrl: json['labels_url'] as String?,
-      id: json['id'] as int?,
+      id: (json['id'] as num?)?.toInt(),
       nodeId: json['node_id'] as String?,
-      number: json['number'] as int?,
+      number: (json['number'] as num?)?.toInt(),
       state: json['state'] as String?,
       title: json['title'] as String?,
       description: json['description'] as String?,
       creator: json['creator'] == null
           ? null
           : Creator.fromJson(json['creator'] as Map<String, dynamic>),
-      openIssues: json['open_issues'] as int?,
-      closedIssues: json['closed_issues'] as int?,
+      openIssues: (json['open_issues'] as num?)?.toInt(),
+      closedIssues: (json['closed_issues'] as num?)?.toInt(),
       createdAt: json['created_at'] == null
           ? null
           : DateTime.parse(json['created_at'] as String),
@@ -35,7 +36,7 @@ _$_Milestone _$$_MilestoneFromJson(Map<String, dynamic> json) => _$_Milestone(
           : DateTime.parse(json['due_on'] as String),
     );
 
-Map<String, dynamic> _$$_MilestoneToJson(_$_Milestone instance) =>
+Map<String, dynamic> _$$MilestoneImplToJson(_$MilestoneImpl instance) =>
     <String, dynamic>{
       'url': instance.url,
       'html_url': instance.htmlUrl,

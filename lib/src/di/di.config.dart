@@ -4,30 +4,46 @@
 // InjectableConfigGenerator
 // **************************************************************************
 
-import 'package:dio/dio.dart' as i3;
-import 'package:get_it/get_it.dart' as i1;
-import 'package:injectable/injectable.dart' as i2;
+// ignore_for_file: type=lint
+// coverage:ignore-file
 
-import '../data/github_issues_repository.dart' as i5;
-import '../network/api/github_api.dart' as i4;
-import '../network/client.dart' as i6; // ignore_for_file: unnecessary_lambdas
+// ignore_for_file: no_leading_underscores_for_library_prefixes
+import 'package:dio/dio.dart' as _i361;
+import 'package:flutter_demo/src/data/github_issues_repository.dart' as _i548;
+import 'package:flutter_demo/src/network/api/github_api.dart' as _i191;
+import 'package:flutter_demo/src/network/client.dart' as _i55;
+import 'package:get_it/get_it.dart' as _i174;
+import 'package:injectable/injectable.dart' as _i526;
 
-// ignore_for_file: lines_longer_than_80_chars
-/// initializes the registration of provided dependencies inside of [GetIt]
-i1.GetIt $initGetIt(i1.GetIt get,
-    {String? environment, i2.EnvironmentFilter? environmentFilter}) {
-  final gh = i2.GetItHelper(get, environment, environmentFilter);
-  final apiClientModule = _$ApiClientModule();
-  gh.factory<String>(() => apiClientModule.baseUrl, instanceName: 'BaseUrl');
-  gh.factory<String>(() => apiClientModule.githubToken,
-      instanceName: 'GithubToken');
-  gh.lazySingleton<i3.Dio>(() => apiClientModule.dio(
-      get<String>(instanceName: 'BaseUrl'),
-      get<String>(instanceName: 'GithubToken')));
-  gh.lazySingleton<i4.GithubApi>(() => i4.GithubApi(get<i3.Dio>()));
-  gh.lazySingleton<i5.GithubIssuesRepository>(
-      () => i5.GithubIssuesRepository(api: get<i4.GithubApi>()));
-  return get;
+extension GetItInjectableX on _i174.GetIt {
+// initializes the registration of main-scope dependencies inside of GetIt
+  _i174.GetIt init({
+    String? environment,
+    _i526.EnvironmentFilter? environmentFilter,
+  }) {
+    final gh = _i526.GetItHelper(
+      this,
+      environment,
+      environmentFilter,
+    );
+    final apiClientModule = _$ApiClientModule();
+    gh.factory<String>(
+      () => apiClientModule.baseUrl,
+      instanceName: 'BaseUrl',
+    );
+    gh.factory<String>(
+      () => apiClientModule.githubToken,
+      instanceName: 'GithubToken',
+    );
+    gh.lazySingleton<_i361.Dio>(() => apiClientModule.dio(
+          gh<String>(instanceName: 'BaseUrl'),
+          gh<String>(instanceName: 'GithubToken'),
+        ));
+    gh.lazySingleton<_i191.GithubApi>(() => _i191.GithubApi(gh<_i361.Dio>()));
+    gh.lazySingleton<_i548.GithubIssuesRepository>(
+        () => _i548.GithubIssuesRepository(api: gh<_i191.GithubApi>()));
+    return this;
+  }
 }
 
-class _$ApiClientModule extends i6.ApiClientModule {}
+class _$ApiClientModule extends _i55.ApiClientModule {}

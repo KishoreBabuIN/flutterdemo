@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'issue_details_state.dart';
 
@@ -12,31 +12,7 @@ part of 'issue_details_state.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$IssueDetailsStateTearOff {
-  const _$IssueDetailsStateTearOff();
-
-  LoadingIssueDetailsState loading() {
-    return const LoadingIssueDetailsState();
-  }
-
-  ContentIssueDetailsState content(Issue issue) {
-    return ContentIssueDetailsState(
-      issue,
-    );
-  }
-
-  ErrorIssueDetailsState error(Exception? exception) {
-    return ErrorIssueDetailsState(
-      exception,
-    );
-  }
-}
-
-/// @nodoc
-const $IssueDetailsState = _$IssueDetailsStateTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$IssueDetailsState {
@@ -49,9 +25,9 @@ mixin _$IssueDetailsState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? loading,
-    TResult Function(Issue issue)? content,
-    TResult Function(Exception? exception)? error,
+    TResult? Function()? loading,
+    TResult? Function(Issue issue)? content,
+    TResult? Function(Exception? exception)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -71,9 +47,9 @@ mixin _$IssueDetailsState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(LoadingIssueDetailsState value)? loading,
-    TResult Function(ContentIssueDetailsState value)? content,
-    TResult Function(ErrorIssueDetailsState value)? error,
+    TResult? Function(LoadingIssueDetailsState value)? loading,
+    TResult? Function(ContentIssueDetailsState value)? content,
+    TResult? Function(ErrorIssueDetailsState value)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -90,45 +66,51 @@ mixin _$IssueDetailsState {
 abstract class $IssueDetailsStateCopyWith<$Res> {
   factory $IssueDetailsStateCopyWith(
           IssueDetailsState value, $Res Function(IssueDetailsState) then) =
-      _$IssueDetailsStateCopyWithImpl<$Res>;
+      _$IssueDetailsStateCopyWithImpl<$Res, IssueDetailsState>;
 }
 
 /// @nodoc
-class _$IssueDetailsStateCopyWithImpl<$Res>
+class _$IssueDetailsStateCopyWithImpl<$Res, $Val extends IssueDetailsState>
     implements $IssueDetailsStateCopyWith<$Res> {
   _$IssueDetailsStateCopyWithImpl(this._value, this._then);
 
-  final IssueDetailsState _value;
   // ignore: unused_field
-  final $Res Function(IssueDetailsState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of IssueDetailsState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
-abstract class $LoadingIssueDetailsStateCopyWith<$Res> {
-  factory $LoadingIssueDetailsStateCopyWith(LoadingIssueDetailsState value,
-          $Res Function(LoadingIssueDetailsState) then) =
-      _$LoadingIssueDetailsStateCopyWithImpl<$Res>;
+abstract class _$$LoadingIssueDetailsStateImplCopyWith<$Res> {
+  factory _$$LoadingIssueDetailsStateImplCopyWith(
+          _$LoadingIssueDetailsStateImpl value,
+          $Res Function(_$LoadingIssueDetailsStateImpl) then) =
+      __$$LoadingIssueDetailsStateImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$LoadingIssueDetailsStateCopyWithImpl<$Res>
-    extends _$IssueDetailsStateCopyWithImpl<$Res>
-    implements $LoadingIssueDetailsStateCopyWith<$Res> {
-  _$LoadingIssueDetailsStateCopyWithImpl(LoadingIssueDetailsState _value,
-      $Res Function(LoadingIssueDetailsState) _then)
-      : super(_value, (v) => _then(v as LoadingIssueDetailsState));
+class __$$LoadingIssueDetailsStateImplCopyWithImpl<$Res>
+    extends _$IssueDetailsStateCopyWithImpl<$Res,
+        _$LoadingIssueDetailsStateImpl>
+    implements _$$LoadingIssueDetailsStateImplCopyWith<$Res> {
+  __$$LoadingIssueDetailsStateImplCopyWithImpl(
+      _$LoadingIssueDetailsStateImpl _value,
+      $Res Function(_$LoadingIssueDetailsStateImpl) _then)
+      : super(_value, _then);
 
-  @override
-  LoadingIssueDetailsState get _value =>
-      super._value as LoadingIssueDetailsState;
+  /// Create a copy of IssueDetailsState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$LoadingIssueDetailsState
+class _$LoadingIssueDetailsStateImpl
     with DiagnosticableTreeMixin
     implements LoadingIssueDetailsState {
-  const _$LoadingIssueDetailsState();
+  const _$LoadingIssueDetailsStateImpl();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -138,13 +120,14 @@ class _$LoadingIssueDetailsState
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'IssueDetailsState.loading'));
+    properties.add(DiagnosticsProperty('type', 'IssueDetailsState.loading'));
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is LoadingIssueDetailsState);
+        (other.runtimeType == runtimeType &&
+            other is _$LoadingIssueDetailsStateImpl);
   }
 
   @override
@@ -163,9 +146,9 @@ class _$LoadingIssueDetailsState
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? loading,
-    TResult Function(Issue issue)? content,
-    TResult Function(Exception? exception)? error,
+    TResult? Function()? loading,
+    TResult? Function(Issue issue)? content,
+    TResult? Function(Exception? exception)? error,
   }) {
     return loading?.call();
   }
@@ -197,9 +180,9 @@ class _$LoadingIssueDetailsState
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(LoadingIssueDetailsState value)? loading,
-    TResult Function(ContentIssueDetailsState value)? content,
-    TResult Function(ErrorIssueDetailsState value)? error,
+    TResult? Function(LoadingIssueDetailsState value)? loading,
+    TResult? Function(ContentIssueDetailsState value)? content,
+    TResult? Function(ErrorIssueDetailsState value)? error,
   }) {
     return loading?.call(this);
   }
@@ -220,44 +203,50 @@ class _$LoadingIssueDetailsState
 }
 
 abstract class LoadingIssueDetailsState implements IssueDetailsState {
-  const factory LoadingIssueDetailsState() = _$LoadingIssueDetailsState;
+  const factory LoadingIssueDetailsState() = _$LoadingIssueDetailsStateImpl;
 }
 
 /// @nodoc
-abstract class $ContentIssueDetailsStateCopyWith<$Res> {
-  factory $ContentIssueDetailsStateCopyWith(ContentIssueDetailsState value,
-          $Res Function(ContentIssueDetailsState) then) =
-      _$ContentIssueDetailsStateCopyWithImpl<$Res>;
+abstract class _$$ContentIssueDetailsStateImplCopyWith<$Res> {
+  factory _$$ContentIssueDetailsStateImplCopyWith(
+          _$ContentIssueDetailsStateImpl value,
+          $Res Function(_$ContentIssueDetailsStateImpl) then) =
+      __$$ContentIssueDetailsStateImplCopyWithImpl<$Res>;
+  @useResult
   $Res call({Issue issue});
 
   $IssueCopyWith<$Res> get issue;
 }
 
 /// @nodoc
-class _$ContentIssueDetailsStateCopyWithImpl<$Res>
-    extends _$IssueDetailsStateCopyWithImpl<$Res>
-    implements $ContentIssueDetailsStateCopyWith<$Res> {
-  _$ContentIssueDetailsStateCopyWithImpl(ContentIssueDetailsState _value,
-      $Res Function(ContentIssueDetailsState) _then)
-      : super(_value, (v) => _then(v as ContentIssueDetailsState));
+class __$$ContentIssueDetailsStateImplCopyWithImpl<$Res>
+    extends _$IssueDetailsStateCopyWithImpl<$Res,
+        _$ContentIssueDetailsStateImpl>
+    implements _$$ContentIssueDetailsStateImplCopyWith<$Res> {
+  __$$ContentIssueDetailsStateImplCopyWithImpl(
+      _$ContentIssueDetailsStateImpl _value,
+      $Res Function(_$ContentIssueDetailsStateImpl) _then)
+      : super(_value, _then);
 
-  @override
-  ContentIssueDetailsState get _value =>
-      super._value as ContentIssueDetailsState;
-
+  /// Create a copy of IssueDetailsState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? issue = freezed,
+    Object? issue = null,
   }) {
-    return _then(ContentIssueDetailsState(
-      issue == freezed
+    return _then(_$ContentIssueDetailsStateImpl(
+      null == issue
           ? _value.issue
           : issue // ignore: cast_nullable_to_non_nullable
               as Issue,
     ));
   }
 
+  /// Create a copy of IssueDetailsState
+  /// with the given fields replaced by the non-null parameter values.
   @override
+  @pragma('vm:prefer-inline')
   $IssueCopyWith<$Res> get issue {
     return $IssueCopyWith<$Res>(_value.issue, (value) {
       return _then(_value.copyWith(issue: value));
@@ -267,10 +256,10 @@ class _$ContentIssueDetailsStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ContentIssueDetailsState
+class _$ContentIssueDetailsStateImpl
     with DiagnosticableTreeMixin
     implements ContentIssueDetailsState {
-  const _$ContentIssueDetailsState(this.issue);
+  const _$ContentIssueDetailsStateImpl(this.issue);
 
   @override
   final Issue issue;
@@ -289,22 +278,24 @@ class _$ContentIssueDetailsState
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is ContentIssueDetailsState &&
-            const DeepCollectionEquality().equals(other.issue, issue));
+            other is _$ContentIssueDetailsStateImpl &&
+            (identical(other.issue, issue) || other.issue == issue));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(issue));
+  int get hashCode => Object.hash(runtimeType, issue);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of IssueDetailsState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  $ContentIssueDetailsStateCopyWith<ContentIssueDetailsState> get copyWith =>
-      _$ContentIssueDetailsStateCopyWithImpl<ContentIssueDetailsState>(
-          this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$ContentIssueDetailsStateImplCopyWith<_$ContentIssueDetailsStateImpl>
+      get copyWith => __$$ContentIssueDetailsStateImplCopyWithImpl<
+          _$ContentIssueDetailsStateImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -319,9 +310,9 @@ class _$ContentIssueDetailsState
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? loading,
-    TResult Function(Issue issue)? content,
-    TResult Function(Exception? exception)? error,
+    TResult? Function()? loading,
+    TResult? Function(Issue issue)? content,
+    TResult? Function(Exception? exception)? error,
   }) {
     return content?.call(issue);
   }
@@ -353,9 +344,9 @@ class _$ContentIssueDetailsState
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(LoadingIssueDetailsState value)? loading,
-    TResult Function(ContentIssueDetailsState value)? content,
-    TResult Function(ErrorIssueDetailsState value)? error,
+    TResult? Function(LoadingIssueDetailsState value)? loading,
+    TResult? Function(ContentIssueDetailsState value)? content,
+    TResult? Function(ErrorIssueDetailsState value)? error,
   }) {
     return content?.call(this);
   }
@@ -376,40 +367,46 @@ class _$ContentIssueDetailsState
 }
 
 abstract class ContentIssueDetailsState implements IssueDetailsState {
-  const factory ContentIssueDetailsState(Issue issue) =
-      _$ContentIssueDetailsState;
+  const factory ContentIssueDetailsState(final Issue issue) =
+      _$ContentIssueDetailsStateImpl;
 
   Issue get issue;
-  @JsonKey(ignore: true)
-  $ContentIssueDetailsStateCopyWith<ContentIssueDetailsState> get copyWith =>
-      throw _privateConstructorUsedError;
+
+  /// Create a copy of IssueDetailsState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ContentIssueDetailsStateImplCopyWith<_$ContentIssueDetailsStateImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ErrorIssueDetailsStateCopyWith<$Res> {
-  factory $ErrorIssueDetailsStateCopyWith(ErrorIssueDetailsState value,
-          $Res Function(ErrorIssueDetailsState) then) =
-      _$ErrorIssueDetailsStateCopyWithImpl<$Res>;
+abstract class _$$ErrorIssueDetailsStateImplCopyWith<$Res> {
+  factory _$$ErrorIssueDetailsStateImplCopyWith(
+          _$ErrorIssueDetailsStateImpl value,
+          $Res Function(_$ErrorIssueDetailsStateImpl) then) =
+      __$$ErrorIssueDetailsStateImplCopyWithImpl<$Res>;
+  @useResult
   $Res call({Exception? exception});
 }
 
 /// @nodoc
-class _$ErrorIssueDetailsStateCopyWithImpl<$Res>
-    extends _$IssueDetailsStateCopyWithImpl<$Res>
-    implements $ErrorIssueDetailsStateCopyWith<$Res> {
-  _$ErrorIssueDetailsStateCopyWithImpl(ErrorIssueDetailsState _value,
-      $Res Function(ErrorIssueDetailsState) _then)
-      : super(_value, (v) => _then(v as ErrorIssueDetailsState));
+class __$$ErrorIssueDetailsStateImplCopyWithImpl<$Res>
+    extends _$IssueDetailsStateCopyWithImpl<$Res, _$ErrorIssueDetailsStateImpl>
+    implements _$$ErrorIssueDetailsStateImplCopyWith<$Res> {
+  __$$ErrorIssueDetailsStateImplCopyWithImpl(
+      _$ErrorIssueDetailsStateImpl _value,
+      $Res Function(_$ErrorIssueDetailsStateImpl) _then)
+      : super(_value, _then);
 
-  @override
-  ErrorIssueDetailsState get _value => super._value as ErrorIssueDetailsState;
-
+  /// Create a copy of IssueDetailsState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? exception = freezed,
   }) {
-    return _then(ErrorIssueDetailsState(
-      exception == freezed
+    return _then(_$ErrorIssueDetailsStateImpl(
+      freezed == exception
           ? _value.exception
           : exception // ignore: cast_nullable_to_non_nullable
               as Exception?,
@@ -419,10 +416,10 @@ class _$ErrorIssueDetailsStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ErrorIssueDetailsState
+class _$ErrorIssueDetailsStateImpl
     with DiagnosticableTreeMixin
     implements ErrorIssueDetailsState {
-  const _$ErrorIssueDetailsState(this.exception);
+  const _$ErrorIssueDetailsStateImpl(this.exception);
 
   @override
   final Exception? exception;
@@ -441,22 +438,25 @@ class _$ErrorIssueDetailsState
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is ErrorIssueDetailsState &&
-            const DeepCollectionEquality().equals(other.exception, exception));
+            other is _$ErrorIssueDetailsStateImpl &&
+            (identical(other.exception, exception) ||
+                other.exception == exception));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(exception));
+  int get hashCode => Object.hash(runtimeType, exception);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of IssueDetailsState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  $ErrorIssueDetailsStateCopyWith<ErrorIssueDetailsState> get copyWith =>
-      _$ErrorIssueDetailsStateCopyWithImpl<ErrorIssueDetailsState>(
-          this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$ErrorIssueDetailsStateImplCopyWith<_$ErrorIssueDetailsStateImpl>
+      get copyWith => __$$ErrorIssueDetailsStateImplCopyWithImpl<
+          _$ErrorIssueDetailsStateImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -471,9 +471,9 @@ class _$ErrorIssueDetailsState
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? loading,
-    TResult Function(Issue issue)? content,
-    TResult Function(Exception? exception)? error,
+    TResult? Function()? loading,
+    TResult? Function(Issue issue)? content,
+    TResult? Function(Exception? exception)? error,
   }) {
     return error?.call(exception);
   }
@@ -505,9 +505,9 @@ class _$ErrorIssueDetailsState
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(LoadingIssueDetailsState value)? loading,
-    TResult Function(ContentIssueDetailsState value)? content,
-    TResult Function(ErrorIssueDetailsState value)? error,
+    TResult? Function(LoadingIssueDetailsState value)? loading,
+    TResult? Function(ContentIssueDetailsState value)? content,
+    TResult? Function(ErrorIssueDetailsState value)? error,
   }) {
     return error?.call(this);
   }
@@ -528,11 +528,14 @@ class _$ErrorIssueDetailsState
 }
 
 abstract class ErrorIssueDetailsState implements IssueDetailsState {
-  const factory ErrorIssueDetailsState(Exception? exception) =
-      _$ErrorIssueDetailsState;
+  const factory ErrorIssueDetailsState(final Exception? exception) =
+      _$ErrorIssueDetailsStateImpl;
 
   Exception? get exception;
-  @JsonKey(ignore: true)
-  $ErrorIssueDetailsStateCopyWith<ErrorIssueDetailsState> get copyWith =>
-      throw _privateConstructorUsedError;
+
+  /// Create a copy of IssueDetailsState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ErrorIssueDetailsStateImplCopyWith<_$ErrorIssueDetailsStateImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

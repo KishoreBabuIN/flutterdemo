@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'permissions.dart';
 
@@ -12,31 +12,11 @@ part of 'permissions.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 Permissions _$PermissionsFromJson(Map<String, dynamic> json) {
   return _Permissions.fromJson(json);
 }
-
-/// @nodoc
-class _$PermissionsTearOff {
-  const _$PermissionsTearOff();
-
-  _Permissions call({bool? admin, bool? push, bool? pull}) {
-    return _Permissions(
-      admin: admin,
-      push: push,
-      pull: pull,
-    );
-  }
-
-  Permissions fromJson(Map<String, Object?> json) {
-    return Permissions.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $Permissions = _$PermissionsTearOff();
 
 /// @nodoc
 mixin _$Permissions {
@@ -44,8 +24,12 @@ mixin _$Permissions {
   bool? get push => throw _privateConstructorUsedError;
   bool? get pull => throw _privateConstructorUsedError;
 
+  /// Serializes this Permissions to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Permissions
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $PermissionsCopyWith<Permissions> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -54,18 +38,24 @@ mixin _$Permissions {
 abstract class $PermissionsCopyWith<$Res> {
   factory $PermissionsCopyWith(
           Permissions value, $Res Function(Permissions) then) =
-      _$PermissionsCopyWithImpl<$Res>;
+      _$PermissionsCopyWithImpl<$Res, Permissions>;
+  @useResult
   $Res call({bool? admin, bool? push, bool? pull});
 }
 
 /// @nodoc
-class _$PermissionsCopyWithImpl<$Res> implements $PermissionsCopyWith<$Res> {
+class _$PermissionsCopyWithImpl<$Res, $Val extends Permissions>
+    implements $PermissionsCopyWith<$Res> {
   _$PermissionsCopyWithImpl(this._value, this._then);
 
-  final Permissions _value;
   // ignore: unused_field
-  final $Res Function(Permissions) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  /// Create a copy of Permissions
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? admin = freezed,
@@ -73,58 +63,60 @@ class _$PermissionsCopyWithImpl<$Res> implements $PermissionsCopyWith<$Res> {
     Object? pull = freezed,
   }) {
     return _then(_value.copyWith(
-      admin: admin == freezed
+      admin: freezed == admin
           ? _value.admin
           : admin // ignore: cast_nullable_to_non_nullable
               as bool?,
-      push: push == freezed
+      push: freezed == push
           ? _value.push
           : push // ignore: cast_nullable_to_non_nullable
               as bool?,
-      pull: pull == freezed
+      pull: freezed == pull
           ? _value.pull
           : pull // ignore: cast_nullable_to_non_nullable
               as bool?,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$PermissionsCopyWith<$Res>
+abstract class _$$PermissionsImplCopyWith<$Res>
     implements $PermissionsCopyWith<$Res> {
-  factory _$PermissionsCopyWith(
-          _Permissions value, $Res Function(_Permissions) then) =
-      __$PermissionsCopyWithImpl<$Res>;
+  factory _$$PermissionsImplCopyWith(
+          _$PermissionsImpl value, $Res Function(_$PermissionsImpl) then) =
+      __$$PermissionsImplCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({bool? admin, bool? push, bool? pull});
 }
 
 /// @nodoc
-class __$PermissionsCopyWithImpl<$Res> extends _$PermissionsCopyWithImpl<$Res>
-    implements _$PermissionsCopyWith<$Res> {
-  __$PermissionsCopyWithImpl(
-      _Permissions _value, $Res Function(_Permissions) _then)
-      : super(_value, (v) => _then(v as _Permissions));
+class __$$PermissionsImplCopyWithImpl<$Res>
+    extends _$PermissionsCopyWithImpl<$Res, _$PermissionsImpl>
+    implements _$$PermissionsImplCopyWith<$Res> {
+  __$$PermissionsImplCopyWithImpl(
+      _$PermissionsImpl _value, $Res Function(_$PermissionsImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _Permissions get _value => super._value as _Permissions;
-
+  /// Create a copy of Permissions
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? admin = freezed,
     Object? push = freezed,
     Object? pull = freezed,
   }) {
-    return _then(_Permissions(
-      admin: admin == freezed
+    return _then(_$PermissionsImpl(
+      admin: freezed == admin
           ? _value.admin
           : admin // ignore: cast_nullable_to_non_nullable
               as bool?,
-      push: push == freezed
+      push: freezed == push
           ? _value.push
           : push // ignore: cast_nullable_to_non_nullable
               as bool?,
-      pull: pull == freezed
+      pull: freezed == pull
           ? _value.pull
           : pull // ignore: cast_nullable_to_non_nullable
               as bool?,
@@ -134,11 +126,11 @@ class __$PermissionsCopyWithImpl<$Res> extends _$PermissionsCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Permissions implements _Permissions {
-  _$_Permissions({this.admin, this.push, this.pull});
+class _$PermissionsImpl implements _Permissions {
+  _$PermissionsImpl({this.admin, this.push, this.pull});
 
-  factory _$_Permissions.fromJson(Map<String, dynamic> json) =>
-      _$$_PermissionsFromJson(json);
+  factory _$PermissionsImpl.fromJson(Map<String, dynamic> json) =>
+      _$$PermissionsImplFromJson(json);
 
   @override
   final bool? admin;
@@ -153,38 +145,43 @@ class _$_Permissions implements _Permissions {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Permissions &&
-            const DeepCollectionEquality().equals(other.admin, admin) &&
-            const DeepCollectionEquality().equals(other.push, push) &&
-            const DeepCollectionEquality().equals(other.pull, pull));
+            other is _$PermissionsImpl &&
+            (identical(other.admin, admin) || other.admin == admin) &&
+            (identical(other.push, push) || other.push == push) &&
+            (identical(other.pull, pull) || other.pull == pull));
   }
 
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(admin),
-      const DeepCollectionEquality().hash(push),
-      const DeepCollectionEquality().hash(pull));
+  int get hashCode => Object.hash(runtimeType, admin, push, pull);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Permissions
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  _$PermissionsCopyWith<_Permissions> get copyWith =>
-      __$PermissionsCopyWithImpl<_Permissions>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$PermissionsImplCopyWith<_$PermissionsImpl> get copyWith =>
+      __$$PermissionsImplCopyWithImpl<_$PermissionsImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_PermissionsToJson(this);
+    return _$$PermissionsImplToJson(
+      this,
+    );
   }
 }
 
 abstract class _Permissions implements Permissions {
-  factory _Permissions({bool? admin, bool? push, bool? pull}) = _$_Permissions;
+  factory _Permissions(
+      {final bool? admin,
+      final bool? push,
+      final bool? pull}) = _$PermissionsImpl;
 
   factory _Permissions.fromJson(Map<String, dynamic> json) =
-      _$_Permissions.fromJson;
+      _$PermissionsImpl.fromJson;
 
   @override
   bool? get admin;
@@ -192,8 +189,11 @@ abstract class _Permissions implements Permissions {
   bool? get push;
   @override
   bool? get pull;
+
+  /// Create a copy of Permissions
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$PermissionsCopyWith<_Permissions> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$PermissionsImplCopyWith<_$PermissionsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

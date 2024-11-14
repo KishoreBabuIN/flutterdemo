@@ -6,9 +6,10 @@ part of 'assignee.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Assignee _$$_AssigneeFromJson(Map<String, dynamic> json) => _$_Assignee(
+_$AssigneeImpl _$$AssigneeImplFromJson(Map<String, dynamic> json) =>
+    _$AssigneeImpl(
       login: json['login'] as String?,
-      id: json['id'] as int?,
+      id: (json['id'] as num?)?.toInt(),
       nodeId: json['node_id'] as String?,
       avatarUrl: json['avatar_url'] as String?,
       gravatarId: json['gravatar_id'] as String?,
@@ -27,7 +28,7 @@ _$_Assignee _$$_AssigneeFromJson(Map<String, dynamic> json) => _$_Assignee(
       siteAdmin: json['site_admin'] as bool?,
     );
 
-Map<String, dynamic> _$$_AssigneeToJson(_$_Assignee instance) =>
+Map<String, dynamic> _$$AssigneeImplToJson(_$AssigneeImpl instance) =>
     <String, dynamic>{
       'login': instance.login,
       'id': instance.id,

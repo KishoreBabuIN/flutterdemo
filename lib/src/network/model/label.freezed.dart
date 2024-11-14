@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'label.dart';
 
@@ -12,42 +12,11 @@ part of 'label.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 Label _$LabelFromJson(Map<String, dynamic> json) {
   return _Label.fromJson(json);
 }
-
-/// @nodoc
-class _$LabelTearOff {
-  const _$LabelTearOff();
-
-  _Label call(
-      {int? id,
-      @JsonKey(name: 'node_id') String? nodeId,
-      String? url,
-      String? name,
-      String? description,
-      String? color,
-      @JsonKey(name: 'default') bool? labelDefault}) {
-    return _Label(
-      id: id,
-      nodeId: nodeId,
-      url: url,
-      name: name,
-      description: description,
-      color: color,
-      labelDefault: labelDefault,
-    );
-  }
-
-  Label fromJson(Map<String, Object?> json) {
-    return Label.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $Label = _$LabelTearOff();
 
 /// @nodoc
 mixin _$Label {
@@ -61,15 +30,20 @@ mixin _$Label {
   @JsonKey(name: 'default')
   bool? get labelDefault => throw _privateConstructorUsedError;
 
+  /// Serializes this Label to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Label
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $LabelCopyWith<Label> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $LabelCopyWith<$Res> {
   factory $LabelCopyWith(Label value, $Res Function(Label) then) =
-      _$LabelCopyWithImpl<$Res>;
+      _$LabelCopyWithImpl<$Res, Label>;
+  @useResult
   $Res call(
       {int? id,
       @JsonKey(name: 'node_id') String? nodeId,
@@ -81,13 +55,18 @@ abstract class $LabelCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$LabelCopyWithImpl<$Res> implements $LabelCopyWith<$Res> {
+class _$LabelCopyWithImpl<$Res, $Val extends Label>
+    implements $LabelCopyWith<$Res> {
   _$LabelCopyWithImpl(this._value, this._then);
 
-  final Label _value;
   // ignore: unused_field
-  final $Res Function(Label) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  /// Create a copy of Label
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
@@ -99,43 +78,45 @@ class _$LabelCopyWithImpl<$Res> implements $LabelCopyWith<$Res> {
     Object? labelDefault = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int?,
-      nodeId: nodeId == freezed
+      nodeId: freezed == nodeId
           ? _value.nodeId
           : nodeId // ignore: cast_nullable_to_non_nullable
               as String?,
-      url: url == freezed
+      url: freezed == url
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as String?,
-      name: name == freezed
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String?,
-      description: description == freezed
+      description: freezed == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
-      color: color == freezed
+      color: freezed == color
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
               as String?,
-      labelDefault: labelDefault == freezed
+      labelDefault: freezed == labelDefault
           ? _value.labelDefault
           : labelDefault // ignore: cast_nullable_to_non_nullable
               as bool?,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$LabelCopyWith<$Res> implements $LabelCopyWith<$Res> {
-  factory _$LabelCopyWith(_Label value, $Res Function(_Label) then) =
-      __$LabelCopyWithImpl<$Res>;
+abstract class _$$LabelImplCopyWith<$Res> implements $LabelCopyWith<$Res> {
+  factory _$$LabelImplCopyWith(
+          _$LabelImpl value, $Res Function(_$LabelImpl) then) =
+      __$$LabelImplCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {int? id,
       @JsonKey(name: 'node_id') String? nodeId,
@@ -147,14 +128,16 @@ abstract class _$LabelCopyWith<$Res> implements $LabelCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$LabelCopyWithImpl<$Res> extends _$LabelCopyWithImpl<$Res>
-    implements _$LabelCopyWith<$Res> {
-  __$LabelCopyWithImpl(_Label _value, $Res Function(_Label) _then)
-      : super(_value, (v) => _then(v as _Label));
+class __$$LabelImplCopyWithImpl<$Res>
+    extends _$LabelCopyWithImpl<$Res, _$LabelImpl>
+    implements _$$LabelImplCopyWith<$Res> {
+  __$$LabelImplCopyWithImpl(
+      _$LabelImpl _value, $Res Function(_$LabelImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _Label get _value => super._value as _Label;
-
+  /// Create a copy of Label
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
@@ -165,32 +148,32 @@ class __$LabelCopyWithImpl<$Res> extends _$LabelCopyWithImpl<$Res>
     Object? color = freezed,
     Object? labelDefault = freezed,
   }) {
-    return _then(_Label(
-      id: id == freezed
+    return _then(_$LabelImpl(
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int?,
-      nodeId: nodeId == freezed
+      nodeId: freezed == nodeId
           ? _value.nodeId
           : nodeId // ignore: cast_nullable_to_non_nullable
               as String?,
-      url: url == freezed
+      url: freezed == url
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as String?,
-      name: name == freezed
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String?,
-      description: description == freezed
+      description: freezed == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
-      color: color == freezed
+      color: freezed == color
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
               as String?,
-      labelDefault: labelDefault == freezed
+      labelDefault: freezed == labelDefault
           ? _value.labelDefault
           : labelDefault // ignore: cast_nullable_to_non_nullable
               as bool?,
@@ -200,8 +183,8 @@ class __$LabelCopyWithImpl<$Res> extends _$LabelCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Label implements _Label {
-  _$_Label(
+class _$LabelImpl implements _Label {
+  _$LabelImpl(
       {this.id,
       @JsonKey(name: 'node_id') this.nodeId,
       this.url,
@@ -210,8 +193,8 @@ class _$_Label implements _Label {
       this.color,
       @JsonKey(name: 'default') this.labelDefault});
 
-  factory _$_Label.fromJson(Map<String, dynamic> json) =>
-      _$$_LabelFromJson(json);
+  factory _$LabelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$LabelImplFromJson(json);
 
   @override
   final int? id;
@@ -236,54 +219,53 @@ class _$_Label implements _Label {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Label &&
-            const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality().equals(other.nodeId, nodeId) &&
-            const DeepCollectionEquality().equals(other.url, url) &&
-            const DeepCollectionEquality().equals(other.name, name) &&
-            const DeepCollectionEquality()
-                .equals(other.description, description) &&
-            const DeepCollectionEquality().equals(other.color, color) &&
-            const DeepCollectionEquality()
-                .equals(other.labelDefault, labelDefault));
+            other is _$LabelImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.nodeId, nodeId) || other.nodeId == nodeId) &&
+            (identical(other.url, url) || other.url == url) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
+            (identical(other.color, color) || other.color == color) &&
+            (identical(other.labelDefault, labelDefault) ||
+                other.labelDefault == labelDefault));
   }
 
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(nodeId),
-      const DeepCollectionEquality().hash(url),
-      const DeepCollectionEquality().hash(name),
-      const DeepCollectionEquality().hash(description),
-      const DeepCollectionEquality().hash(color),
-      const DeepCollectionEquality().hash(labelDefault));
+      runtimeType, id, nodeId, url, name, description, color, labelDefault);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Label
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  _$LabelCopyWith<_Label> get copyWith =>
-      __$LabelCopyWithImpl<_Label>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$LabelImplCopyWith<_$LabelImpl> get copyWith =>
+      __$$LabelImplCopyWithImpl<_$LabelImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_LabelToJson(this);
+    return _$$LabelImplToJson(
+      this,
+    );
   }
 }
 
 abstract class _Label implements Label {
   factory _Label(
-      {int? id,
-      @JsonKey(name: 'node_id') String? nodeId,
-      String? url,
-      String? name,
-      String? description,
-      String? color,
-      @JsonKey(name: 'default') bool? labelDefault}) = _$_Label;
+      {final int? id,
+      @JsonKey(name: 'node_id') final String? nodeId,
+      final String? url,
+      final String? name,
+      final String? description,
+      final String? color,
+      @JsonKey(name: 'default') final bool? labelDefault}) = _$LabelImpl;
 
-  factory _Label.fromJson(Map<String, dynamic> json) = _$_Label.fromJson;
+  factory _Label.fromJson(Map<String, dynamic> json) = _$LabelImpl.fromJson;
 
   @override
   int? get id;
@@ -301,7 +283,11 @@ abstract class _Label implements Label {
   @override
   @JsonKey(name: 'default')
   bool? get labelDefault;
+
+  /// Create a copy of Label
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$LabelCopyWith<_Label> get copyWith => throw _privateConstructorUsedError;
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$LabelImplCopyWith<_$LabelImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

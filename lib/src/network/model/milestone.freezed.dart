@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'milestone.dart';
 
@@ -12,60 +12,11 @@ part of 'milestone.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 Milestone _$MilestoneFromJson(Map<String, dynamic> json) {
   return _Milestone.fromJson(json);
 }
-
-/// @nodoc
-class _$MilestoneTearOff {
-  const _$MilestoneTearOff();
-
-  _Milestone call(
-      {String? url,
-      @JsonKey(name: 'html_url') String? htmlUrl,
-      @JsonKey(name: 'labels_url') String? labelsUrl,
-      int? id,
-      @JsonKey(name: 'node_id') String? nodeId,
-      int? number,
-      String? state,
-      String? title,
-      String? description,
-      Creator? creator,
-      @JsonKey(name: 'open_issues') int? openIssues,
-      @JsonKey(name: 'closed_issues') int? closedIssues,
-      @JsonKey(name: 'created_at') DateTime? createdAt,
-      @JsonKey(name: 'updated_at') DateTime? updatedAt,
-      @JsonKey(name: 'closed_at') DateTime? closedAt,
-      @JsonKey(name: 'due_on') DateTime? dueOn}) {
-    return _Milestone(
-      url: url,
-      htmlUrl: htmlUrl,
-      labelsUrl: labelsUrl,
-      id: id,
-      nodeId: nodeId,
-      number: number,
-      state: state,
-      title: title,
-      description: description,
-      creator: creator,
-      openIssues: openIssues,
-      closedIssues: closedIssues,
-      createdAt: createdAt,
-      updatedAt: updatedAt,
-      closedAt: closedAt,
-      dueOn: dueOn,
-    );
-  }
-
-  Milestone fromJson(Map<String, Object?> json) {
-    return Milestone.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $Milestone = _$MilestoneTearOff();
 
 /// @nodoc
 mixin _$Milestone {
@@ -95,8 +46,12 @@ mixin _$Milestone {
   @JsonKey(name: 'due_on')
   DateTime? get dueOn => throw _privateConstructorUsedError;
 
+  /// Serializes this Milestone to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Milestone
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $MilestoneCopyWith<Milestone> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -104,7 +59,8 @@ mixin _$Milestone {
 /// @nodoc
 abstract class $MilestoneCopyWith<$Res> {
   factory $MilestoneCopyWith(Milestone value, $Res Function(Milestone) then) =
-      _$MilestoneCopyWithImpl<$Res>;
+      _$MilestoneCopyWithImpl<$Res, Milestone>;
+  @useResult
   $Res call(
       {String? url,
       @JsonKey(name: 'html_url') String? htmlUrl,
@@ -127,13 +83,18 @@ abstract class $MilestoneCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$MilestoneCopyWithImpl<$Res> implements $MilestoneCopyWith<$Res> {
+class _$MilestoneCopyWithImpl<$Res, $Val extends Milestone>
+    implements $MilestoneCopyWith<$Res> {
   _$MilestoneCopyWithImpl(this._value, this._then);
 
-  final Milestone _value;
   // ignore: unused_field
-  final $Res Function(Milestone) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  /// Create a copy of Milestone
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? url = freezed,
@@ -154,91 +115,96 @@ class _$MilestoneCopyWithImpl<$Res> implements $MilestoneCopyWith<$Res> {
     Object? dueOn = freezed,
   }) {
     return _then(_value.copyWith(
-      url: url == freezed
+      url: freezed == url
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as String?,
-      htmlUrl: htmlUrl == freezed
+      htmlUrl: freezed == htmlUrl
           ? _value.htmlUrl
           : htmlUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      labelsUrl: labelsUrl == freezed
+      labelsUrl: freezed == labelsUrl
           ? _value.labelsUrl
           : labelsUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      id: id == freezed
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int?,
-      nodeId: nodeId == freezed
+      nodeId: freezed == nodeId
           ? _value.nodeId
           : nodeId // ignore: cast_nullable_to_non_nullable
               as String?,
-      number: number == freezed
+      number: freezed == number
           ? _value.number
           : number // ignore: cast_nullable_to_non_nullable
               as int?,
-      state: state == freezed
+      state: freezed == state
           ? _value.state
           : state // ignore: cast_nullable_to_non_nullable
               as String?,
-      title: title == freezed
+      title: freezed == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String?,
-      description: description == freezed
+      description: freezed == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
-      creator: creator == freezed
+      creator: freezed == creator
           ? _value.creator
           : creator // ignore: cast_nullable_to_non_nullable
               as Creator?,
-      openIssues: openIssues == freezed
+      openIssues: freezed == openIssues
           ? _value.openIssues
           : openIssues // ignore: cast_nullable_to_non_nullable
               as int?,
-      closedIssues: closedIssues == freezed
+      closedIssues: freezed == closedIssues
           ? _value.closedIssues
           : closedIssues // ignore: cast_nullable_to_non_nullable
               as int?,
-      createdAt: createdAt == freezed
+      createdAt: freezed == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      updatedAt: updatedAt == freezed
+      updatedAt: freezed == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      closedAt: closedAt == freezed
+      closedAt: freezed == closedAt
           ? _value.closedAt
           : closedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      dueOn: dueOn == freezed
+      dueOn: freezed == dueOn
           ? _value.dueOn
           : dueOn // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-    ));
+    ) as $Val);
   }
 
+  /// Create a copy of Milestone
+  /// with the given fields replaced by the non-null parameter values.
   @override
+  @pragma('vm:prefer-inline')
   $CreatorCopyWith<$Res>? get creator {
     if (_value.creator == null) {
       return null;
     }
 
     return $CreatorCopyWith<$Res>(_value.creator!, (value) {
-      return _then(_value.copyWith(creator: value));
+      return _then(_value.copyWith(creator: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$MilestoneCopyWith<$Res> implements $MilestoneCopyWith<$Res> {
-  factory _$MilestoneCopyWith(
-          _Milestone value, $Res Function(_Milestone) then) =
-      __$MilestoneCopyWithImpl<$Res>;
+abstract class _$$MilestoneImplCopyWith<$Res>
+    implements $MilestoneCopyWith<$Res> {
+  factory _$$MilestoneImplCopyWith(
+          _$MilestoneImpl value, $Res Function(_$MilestoneImpl) then) =
+      __$$MilestoneImplCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String? url,
       @JsonKey(name: 'html_url') String? htmlUrl,
@@ -262,14 +228,16 @@ abstract class _$MilestoneCopyWith<$Res> implements $MilestoneCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$MilestoneCopyWithImpl<$Res> extends _$MilestoneCopyWithImpl<$Res>
-    implements _$MilestoneCopyWith<$Res> {
-  __$MilestoneCopyWithImpl(_Milestone _value, $Res Function(_Milestone) _then)
-      : super(_value, (v) => _then(v as _Milestone));
+class __$$MilestoneImplCopyWithImpl<$Res>
+    extends _$MilestoneCopyWithImpl<$Res, _$MilestoneImpl>
+    implements _$$MilestoneImplCopyWith<$Res> {
+  __$$MilestoneImplCopyWithImpl(
+      _$MilestoneImpl _value, $Res Function(_$MilestoneImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _Milestone get _value => super._value as _Milestone;
-
+  /// Create a copy of Milestone
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? url = freezed,
@@ -289,68 +257,68 @@ class __$MilestoneCopyWithImpl<$Res> extends _$MilestoneCopyWithImpl<$Res>
     Object? closedAt = freezed,
     Object? dueOn = freezed,
   }) {
-    return _then(_Milestone(
-      url: url == freezed
+    return _then(_$MilestoneImpl(
+      url: freezed == url
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as String?,
-      htmlUrl: htmlUrl == freezed
+      htmlUrl: freezed == htmlUrl
           ? _value.htmlUrl
           : htmlUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      labelsUrl: labelsUrl == freezed
+      labelsUrl: freezed == labelsUrl
           ? _value.labelsUrl
           : labelsUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      id: id == freezed
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int?,
-      nodeId: nodeId == freezed
+      nodeId: freezed == nodeId
           ? _value.nodeId
           : nodeId // ignore: cast_nullable_to_non_nullable
               as String?,
-      number: number == freezed
+      number: freezed == number
           ? _value.number
           : number // ignore: cast_nullable_to_non_nullable
               as int?,
-      state: state == freezed
+      state: freezed == state
           ? _value.state
           : state // ignore: cast_nullable_to_non_nullable
               as String?,
-      title: title == freezed
+      title: freezed == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String?,
-      description: description == freezed
+      description: freezed == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
-      creator: creator == freezed
+      creator: freezed == creator
           ? _value.creator
           : creator // ignore: cast_nullable_to_non_nullable
               as Creator?,
-      openIssues: openIssues == freezed
+      openIssues: freezed == openIssues
           ? _value.openIssues
           : openIssues // ignore: cast_nullable_to_non_nullable
               as int?,
-      closedIssues: closedIssues == freezed
+      closedIssues: freezed == closedIssues
           ? _value.closedIssues
           : closedIssues // ignore: cast_nullable_to_non_nullable
               as int?,
-      createdAt: createdAt == freezed
+      createdAt: freezed == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      updatedAt: updatedAt == freezed
+      updatedAt: freezed == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      closedAt: closedAt == freezed
+      closedAt: freezed == closedAt
           ? _value.closedAt
           : closedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      dueOn: dueOn == freezed
+      dueOn: freezed == dueOn
           ? _value.dueOn
           : dueOn // ignore: cast_nullable_to_non_nullable
               as DateTime?,
@@ -360,8 +328,8 @@ class __$MilestoneCopyWithImpl<$Res> extends _$MilestoneCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Milestone implements _Milestone {
-  _$_Milestone(
+class _$MilestoneImpl implements _Milestone {
+  _$MilestoneImpl(
       {this.url,
       @JsonKey(name: 'html_url') this.htmlUrl,
       @JsonKey(name: 'labels_url') this.labelsUrl,
@@ -379,8 +347,8 @@ class _$_Milestone implements _Milestone {
       @JsonKey(name: 'closed_at') this.closedAt,
       @JsonKey(name: 'due_on') this.dueOn});
 
-  factory _$_Milestone.fromJson(Map<String, dynamic> json) =>
-      _$$_MilestoneFromJson(json);
+  factory _$MilestoneImpl.fromJson(Map<String, dynamic> json) =>
+      _$$MilestoneImplFromJson(json);
 
   @override
   final String? url;
@@ -430,83 +398,93 @@ class _$_Milestone implements _Milestone {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Milestone &&
-            const DeepCollectionEquality().equals(other.url, url) &&
-            const DeepCollectionEquality().equals(other.htmlUrl, htmlUrl) &&
-            const DeepCollectionEquality().equals(other.labelsUrl, labelsUrl) &&
-            const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality().equals(other.nodeId, nodeId) &&
-            const DeepCollectionEquality().equals(other.number, number) &&
-            const DeepCollectionEquality().equals(other.state, state) &&
-            const DeepCollectionEquality().equals(other.title, title) &&
-            const DeepCollectionEquality()
-                .equals(other.description, description) &&
-            const DeepCollectionEquality().equals(other.creator, creator) &&
-            const DeepCollectionEquality()
-                .equals(other.openIssues, openIssues) &&
-            const DeepCollectionEquality()
-                .equals(other.closedIssues, closedIssues) &&
-            const DeepCollectionEquality().equals(other.createdAt, createdAt) &&
-            const DeepCollectionEquality().equals(other.updatedAt, updatedAt) &&
-            const DeepCollectionEquality().equals(other.closedAt, closedAt) &&
-            const DeepCollectionEquality().equals(other.dueOn, dueOn));
+            other is _$MilestoneImpl &&
+            (identical(other.url, url) || other.url == url) &&
+            (identical(other.htmlUrl, htmlUrl) || other.htmlUrl == htmlUrl) &&
+            (identical(other.labelsUrl, labelsUrl) ||
+                other.labelsUrl == labelsUrl) &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.nodeId, nodeId) || other.nodeId == nodeId) &&
+            (identical(other.number, number) || other.number == number) &&
+            (identical(other.state, state) || other.state == state) &&
+            (identical(other.title, title) || other.title == title) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
+            (identical(other.creator, creator) || other.creator == creator) &&
+            (identical(other.openIssues, openIssues) ||
+                other.openIssues == openIssues) &&
+            (identical(other.closedIssues, closedIssues) ||
+                other.closedIssues == closedIssues) &&
+            (identical(other.createdAt, createdAt) ||
+                other.createdAt == createdAt) &&
+            (identical(other.updatedAt, updatedAt) ||
+                other.updatedAt == updatedAt) &&
+            (identical(other.closedAt, closedAt) ||
+                other.closedAt == closedAt) &&
+            (identical(other.dueOn, dueOn) || other.dueOn == dueOn));
   }
 
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(url),
-      const DeepCollectionEquality().hash(htmlUrl),
-      const DeepCollectionEquality().hash(labelsUrl),
-      const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(nodeId),
-      const DeepCollectionEquality().hash(number),
-      const DeepCollectionEquality().hash(state),
-      const DeepCollectionEquality().hash(title),
-      const DeepCollectionEquality().hash(description),
-      const DeepCollectionEquality().hash(creator),
-      const DeepCollectionEquality().hash(openIssues),
-      const DeepCollectionEquality().hash(closedIssues),
-      const DeepCollectionEquality().hash(createdAt),
-      const DeepCollectionEquality().hash(updatedAt),
-      const DeepCollectionEquality().hash(closedAt),
-      const DeepCollectionEquality().hash(dueOn));
+      url,
+      htmlUrl,
+      labelsUrl,
+      id,
+      nodeId,
+      number,
+      state,
+      title,
+      description,
+      creator,
+      openIssues,
+      closedIssues,
+      createdAt,
+      updatedAt,
+      closedAt,
+      dueOn);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Milestone
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  _$MilestoneCopyWith<_Milestone> get copyWith =>
-      __$MilestoneCopyWithImpl<_Milestone>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$MilestoneImplCopyWith<_$MilestoneImpl> get copyWith =>
+      __$$MilestoneImplCopyWithImpl<_$MilestoneImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_MilestoneToJson(this);
+    return _$$MilestoneImplToJson(
+      this,
+    );
   }
 }
 
 abstract class _Milestone implements Milestone {
   factory _Milestone(
-      {String? url,
-      @JsonKey(name: 'html_url') String? htmlUrl,
-      @JsonKey(name: 'labels_url') String? labelsUrl,
-      int? id,
-      @JsonKey(name: 'node_id') String? nodeId,
-      int? number,
-      String? state,
-      String? title,
-      String? description,
-      Creator? creator,
-      @JsonKey(name: 'open_issues') int? openIssues,
-      @JsonKey(name: 'closed_issues') int? closedIssues,
-      @JsonKey(name: 'created_at') DateTime? createdAt,
-      @JsonKey(name: 'updated_at') DateTime? updatedAt,
-      @JsonKey(name: 'closed_at') DateTime? closedAt,
-      @JsonKey(name: 'due_on') DateTime? dueOn}) = _$_Milestone;
+      {final String? url,
+      @JsonKey(name: 'html_url') final String? htmlUrl,
+      @JsonKey(name: 'labels_url') final String? labelsUrl,
+      final int? id,
+      @JsonKey(name: 'node_id') final String? nodeId,
+      final int? number,
+      final String? state,
+      final String? title,
+      final String? description,
+      final Creator? creator,
+      @JsonKey(name: 'open_issues') final int? openIssues,
+      @JsonKey(name: 'closed_issues') final int? closedIssues,
+      @JsonKey(name: 'created_at') final DateTime? createdAt,
+      @JsonKey(name: 'updated_at') final DateTime? updatedAt,
+      @JsonKey(name: 'closed_at') final DateTime? closedAt,
+      @JsonKey(name: 'due_on') final DateTime? dueOn}) = _$MilestoneImpl;
 
   factory _Milestone.fromJson(Map<String, dynamic> json) =
-      _$_Milestone.fromJson;
+      _$MilestoneImpl.fromJson;
 
   @override
   String? get url;
@@ -549,8 +527,11 @@ abstract class _Milestone implements Milestone {
   @override
   @JsonKey(name: 'due_on')
   DateTime? get dueOn;
+
+  /// Create a copy of Milestone
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$MilestoneCopyWith<_Milestone> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$MilestoneImplCopyWith<_$MilestoneImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

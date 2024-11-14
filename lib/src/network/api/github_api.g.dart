@@ -6,52 +6,101 @@ part of 'github_api.dart';
 // RetrofitGenerator
 // **************************************************************************
 
-// ignore_for_file: unnecessary_brace_in_string_interps
+// ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers,unused_element,unnecessary_string_interpolations
 
 class _GithubApi implements GithubApi {
-  _GithubApi(this._dio, {this.baseUrl});
+  _GithubApi(
+    this._dio, {
+    this.baseUrl,
+    this.errorLogger,
+  });
 
   final Dio _dio;
 
   String? baseUrl;
 
+  final ParseErrorLogger? errorLogger;
+
   @override
   Future<List<Issue>> getAllIssues(
-      owner, repoName, pageNum, sortType, filterType) async {
-    const _extra = <String, dynamic>{};
+    String owner,
+    String repoName,
+    int pageNum,
+    String sortType,
+    String filterType,
+  ) async {
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
       r'page': pageNum,
       r'sort': sortType,
-      r'state': filterType
+      r'state': filterType,
     };
     final _headers = <String, dynamic>{};
-    final _data = <String, dynamic>{};
-    final _result = await _dio.fetch<List<dynamic>>(_setStreamType<List<Issue>>(
-        Options(method: 'GET', headers: _headers, extra: _extra)
-            .compose(_dio.options, '/repos/${owner}/${repoName}/issues',
-                queryParameters: queryParameters, data: _data)
-            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
-    var value = _result.data!
-        .map((dynamic i) => Issue.fromJson(i as Map<String, dynamic>))
-        .toList();
-    return value;
+    const Map<String, dynamic>? _data = null;
+    final _options = _setStreamType<List<Issue>>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+        .compose(
+          _dio.options,
+          '/repos/${owner}/${repoName}/issues',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<List<dynamic>>(_options);
+    late List<Issue> _value;
+    try {
+      _value = _result.data!
+          .map((dynamic i) => Issue.fromJson(i as Map<String, dynamic>))
+          .toList();
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
   }
 
   @override
-  Future<Issue> getIssueDetails(owner, repoName, id) async {
-    const _extra = <String, dynamic>{};
+  Future<Issue> getIssueDetails(
+    String owner,
+    String repoName,
+    String id,
+  ) async {
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final _data = <String, dynamic>{};
-    final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<Issue>(
-            Options(method: 'GET', headers: _headers, extra: _extra)
-                .compose(
-                    _dio.options, '/repos/${owner}/${repoName}/issues/${id}',
-                    queryParameters: queryParameters, data: _data)
-                .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
-    final value = Issue.fromJson(_result.data!);
-    return value;
+    const Map<String, dynamic>? _data = null;
+    final _options = _setStreamType<Issue>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+        .compose(
+          _dio.options,
+          '/repos/${owner}/${repoName}/issues/${id}',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late Issue _value;
+    try {
+      _value = Issue.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
   }
 
   RequestOptions _setStreamType<T>(RequestOptions requestOptions) {
@@ -65,5 +114,22 @@ class _GithubApi implements GithubApi {
       }
     }
     return requestOptions;
+  }
+
+  String _combineBaseUrls(
+    String dioBaseUrl,
+    String? baseUrl,
+  ) {
+    if (baseUrl == null || baseUrl.trim().isEmpty) {
+      return dioBaseUrl;
+    }
+
+    final url = Uri.parse(baseUrl);
+
+    if (url.isAbsolute) {
+      return url.toString();
+    }
+
+    return Uri.parse(dioBaseUrl).resolveUri(url).toString();
   }
 }

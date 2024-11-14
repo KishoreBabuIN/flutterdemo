@@ -6,9 +6,9 @@ part of 'repository.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Repository _$$_RepositoryFromJson(Map<String, dynamic> json) =>
-    _$_Repository(
-      id: json['id'] as int?,
+_$RepositoryImpl _$$RepositoryImplFromJson(Map<String, dynamic> json) =>
+    _$RepositoryImpl(
+      id: (json['id'] as num?)?.toInt(),
       nodeId: json['node_id'] as String?,
       name: json['name'] as String?,
       fullName: json['full_name'] as String?,
@@ -63,12 +63,12 @@ _$_Repository _$$_RepositoryFromJson(Map<String, dynamic> json) =>
       svnUrl: json['svn_url'] as String?,
       homepage: json['homepage'] as String?,
       language: json['language'],
-      forksCount: json['forks_count'] as int?,
-      stargazersCount: json['stargazers_count'] as int?,
-      watchersCount: json['watchers_count'] as int?,
-      size: json['size'] as int?,
+      forksCount: (json['forks_count'] as num?)?.toInt(),
+      stargazersCount: (json['stargazers_count'] as num?)?.toInt(),
+      watchersCount: (json['watchers_count'] as num?)?.toInt(),
+      size: (json['size'] as num?)?.toInt(),
       defaultBranch: json['default_branch'] as String?,
-      openIssuesCount: json['open_issues_count'] as int?,
+      openIssuesCount: (json['open_issues_count'] as num?)?.toInt(),
       isTemplate: json['is_template'] as bool?,
       topics:
           (json['topics'] as List<dynamic>?)?.map((e) => e as String).toList(),
@@ -99,17 +99,17 @@ _$_Repository _$$_RepositoryFromJson(Map<String, dynamic> json) =>
       allowAutoMerge: json['allow_auto_merge'] as bool?,
       deleteBranchOnMerge: json['delete_branch_on_merge'] as bool?,
       allowMergeCommit: json['allow_merge_commit'] as bool?,
-      subscribersCount: json['subscribers_count'] as int?,
-      networkCount: json['network_count'] as int?,
+      subscribersCount: (json['subscribers_count'] as num?)?.toInt(),
+      networkCount: (json['network_count'] as num?)?.toInt(),
       license: json['license'] == null
           ? null
           : License.fromJson(json['license'] as Map<String, dynamic>),
-      forks: json['forks'] as int?,
-      openIssues: json['open_issues'] as int?,
-      watchers: json['watchers'] as int?,
+      forks: (json['forks'] as num?)?.toInt(),
+      openIssues: (json['open_issues'] as num?)?.toInt(),
+      watchers: (json['watchers'] as num?)?.toInt(),
     );
 
-Map<String, dynamic> _$$_RepositoryToJson(_$_Repository instance) =>
+Map<String, dynamic> _$$RepositoryImplToJson(_$RepositoryImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'node_id': instance.nodeId,

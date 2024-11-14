@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'creator.dart';
 
@@ -12,64 +12,11 @@ part of 'creator.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 Creator _$CreatorFromJson(Map<String, dynamic> json) {
   return _Creator.fromJson(json);
 }
-
-/// @nodoc
-class _$CreatorTearOff {
-  const _$CreatorTearOff();
-
-  _Creator call(
-      {String? login,
-      int? id,
-      @JsonKey(name: 'node_id') String? nodeId,
-      @JsonKey(name: 'avatar_url') String? avatarUrl,
-      @JsonKey(name: 'gravatar_id') String? gravatarId,
-      String? url,
-      @JsonKey(name: 'html_url') String? htmlUrl,
-      @JsonKey(name: 'followers_url') String? followersUrl,
-      @JsonKey(name: 'following_url') String? followingUrl,
-      @JsonKey(name: 'gists_url') String? gistsUrl,
-      @JsonKey(name: 'starred_url') String? starredUrl,
-      @JsonKey(name: 'subscriptions_url') String? subscriptionsUrl,
-      @JsonKey(name: 'organizations_url') String? organizationsUrl,
-      @JsonKey(name: 'repos_url') String? reposUrl,
-      @JsonKey(name: 'events_url') String? eventsUrl,
-      @JsonKey(name: 'received_events_url') String? receivedEventsUrl,
-      String? type,
-      @JsonKey(name: 'site_admin') bool? siteAdmin}) {
-    return _Creator(
-      login: login,
-      id: id,
-      nodeId: nodeId,
-      avatarUrl: avatarUrl,
-      gravatarId: gravatarId,
-      url: url,
-      htmlUrl: htmlUrl,
-      followersUrl: followersUrl,
-      followingUrl: followingUrl,
-      gistsUrl: gistsUrl,
-      starredUrl: starredUrl,
-      subscriptionsUrl: subscriptionsUrl,
-      organizationsUrl: organizationsUrl,
-      reposUrl: reposUrl,
-      eventsUrl: eventsUrl,
-      receivedEventsUrl: receivedEventsUrl,
-      type: type,
-      siteAdmin: siteAdmin,
-    );
-  }
-
-  Creator fromJson(Map<String, Object?> json) {
-    return Creator.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $Creator = _$CreatorTearOff();
 
 /// @nodoc
 mixin _$Creator {
@@ -106,15 +53,20 @@ mixin _$Creator {
   @JsonKey(name: 'site_admin')
   bool? get siteAdmin => throw _privateConstructorUsedError;
 
+  /// Serializes this Creator to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Creator
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $CreatorCopyWith<Creator> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $CreatorCopyWith<$Res> {
   factory $CreatorCopyWith(Creator value, $Res Function(Creator) then) =
-      _$CreatorCopyWithImpl<$Res>;
+      _$CreatorCopyWithImpl<$Res, Creator>;
+  @useResult
   $Res call(
       {String? login,
       int? id,
@@ -137,13 +89,18 @@ abstract class $CreatorCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$CreatorCopyWithImpl<$Res> implements $CreatorCopyWith<$Res> {
+class _$CreatorCopyWithImpl<$Res, $Val extends Creator>
+    implements $CreatorCopyWith<$Res> {
   _$CreatorCopyWithImpl(this._value, this._then);
 
-  final Creator _value;
   // ignore: unused_field
-  final $Res Function(Creator) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  /// Create a copy of Creator
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? login = freezed,
@@ -166,87 +123,89 @@ class _$CreatorCopyWithImpl<$Res> implements $CreatorCopyWith<$Res> {
     Object? siteAdmin = freezed,
   }) {
     return _then(_value.copyWith(
-      login: login == freezed
+      login: freezed == login
           ? _value.login
           : login // ignore: cast_nullable_to_non_nullable
               as String?,
-      id: id == freezed
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int?,
-      nodeId: nodeId == freezed
+      nodeId: freezed == nodeId
           ? _value.nodeId
           : nodeId // ignore: cast_nullable_to_non_nullable
               as String?,
-      avatarUrl: avatarUrl == freezed
+      avatarUrl: freezed == avatarUrl
           ? _value.avatarUrl
           : avatarUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      gravatarId: gravatarId == freezed
+      gravatarId: freezed == gravatarId
           ? _value.gravatarId
           : gravatarId // ignore: cast_nullable_to_non_nullable
               as String?,
-      url: url == freezed
+      url: freezed == url
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as String?,
-      htmlUrl: htmlUrl == freezed
+      htmlUrl: freezed == htmlUrl
           ? _value.htmlUrl
           : htmlUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      followersUrl: followersUrl == freezed
+      followersUrl: freezed == followersUrl
           ? _value.followersUrl
           : followersUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      followingUrl: followingUrl == freezed
+      followingUrl: freezed == followingUrl
           ? _value.followingUrl
           : followingUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      gistsUrl: gistsUrl == freezed
+      gistsUrl: freezed == gistsUrl
           ? _value.gistsUrl
           : gistsUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      starredUrl: starredUrl == freezed
+      starredUrl: freezed == starredUrl
           ? _value.starredUrl
           : starredUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      subscriptionsUrl: subscriptionsUrl == freezed
+      subscriptionsUrl: freezed == subscriptionsUrl
           ? _value.subscriptionsUrl
           : subscriptionsUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      organizationsUrl: organizationsUrl == freezed
+      organizationsUrl: freezed == organizationsUrl
           ? _value.organizationsUrl
           : organizationsUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      reposUrl: reposUrl == freezed
+      reposUrl: freezed == reposUrl
           ? _value.reposUrl
           : reposUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      eventsUrl: eventsUrl == freezed
+      eventsUrl: freezed == eventsUrl
           ? _value.eventsUrl
           : eventsUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      receivedEventsUrl: receivedEventsUrl == freezed
+      receivedEventsUrl: freezed == receivedEventsUrl
           ? _value.receivedEventsUrl
           : receivedEventsUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      type: type == freezed
+      type: freezed == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as String?,
-      siteAdmin: siteAdmin == freezed
+      siteAdmin: freezed == siteAdmin
           ? _value.siteAdmin
           : siteAdmin // ignore: cast_nullable_to_non_nullable
               as bool?,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$CreatorCopyWith<$Res> implements $CreatorCopyWith<$Res> {
-  factory _$CreatorCopyWith(_Creator value, $Res Function(_Creator) then) =
-      __$CreatorCopyWithImpl<$Res>;
+abstract class _$$CreatorImplCopyWith<$Res> implements $CreatorCopyWith<$Res> {
+  factory _$$CreatorImplCopyWith(
+          _$CreatorImpl value, $Res Function(_$CreatorImpl) then) =
+      __$$CreatorImplCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String? login,
       int? id,
@@ -269,14 +228,16 @@ abstract class _$CreatorCopyWith<$Res> implements $CreatorCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$CreatorCopyWithImpl<$Res> extends _$CreatorCopyWithImpl<$Res>
-    implements _$CreatorCopyWith<$Res> {
-  __$CreatorCopyWithImpl(_Creator _value, $Res Function(_Creator) _then)
-      : super(_value, (v) => _then(v as _Creator));
+class __$$CreatorImplCopyWithImpl<$Res>
+    extends _$CreatorCopyWithImpl<$Res, _$CreatorImpl>
+    implements _$$CreatorImplCopyWith<$Res> {
+  __$$CreatorImplCopyWithImpl(
+      _$CreatorImpl _value, $Res Function(_$CreatorImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _Creator get _value => super._value as _Creator;
-
+  /// Create a copy of Creator
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? login = freezed,
@@ -298,76 +259,76 @@ class __$CreatorCopyWithImpl<$Res> extends _$CreatorCopyWithImpl<$Res>
     Object? type = freezed,
     Object? siteAdmin = freezed,
   }) {
-    return _then(_Creator(
-      login: login == freezed
+    return _then(_$CreatorImpl(
+      login: freezed == login
           ? _value.login
           : login // ignore: cast_nullable_to_non_nullable
               as String?,
-      id: id == freezed
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int?,
-      nodeId: nodeId == freezed
+      nodeId: freezed == nodeId
           ? _value.nodeId
           : nodeId // ignore: cast_nullable_to_non_nullable
               as String?,
-      avatarUrl: avatarUrl == freezed
+      avatarUrl: freezed == avatarUrl
           ? _value.avatarUrl
           : avatarUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      gravatarId: gravatarId == freezed
+      gravatarId: freezed == gravatarId
           ? _value.gravatarId
           : gravatarId // ignore: cast_nullable_to_non_nullable
               as String?,
-      url: url == freezed
+      url: freezed == url
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as String?,
-      htmlUrl: htmlUrl == freezed
+      htmlUrl: freezed == htmlUrl
           ? _value.htmlUrl
           : htmlUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      followersUrl: followersUrl == freezed
+      followersUrl: freezed == followersUrl
           ? _value.followersUrl
           : followersUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      followingUrl: followingUrl == freezed
+      followingUrl: freezed == followingUrl
           ? _value.followingUrl
           : followingUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      gistsUrl: gistsUrl == freezed
+      gistsUrl: freezed == gistsUrl
           ? _value.gistsUrl
           : gistsUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      starredUrl: starredUrl == freezed
+      starredUrl: freezed == starredUrl
           ? _value.starredUrl
           : starredUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      subscriptionsUrl: subscriptionsUrl == freezed
+      subscriptionsUrl: freezed == subscriptionsUrl
           ? _value.subscriptionsUrl
           : subscriptionsUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      organizationsUrl: organizationsUrl == freezed
+      organizationsUrl: freezed == organizationsUrl
           ? _value.organizationsUrl
           : organizationsUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      reposUrl: reposUrl == freezed
+      reposUrl: freezed == reposUrl
           ? _value.reposUrl
           : reposUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      eventsUrl: eventsUrl == freezed
+      eventsUrl: freezed == eventsUrl
           ? _value.eventsUrl
           : eventsUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      receivedEventsUrl: receivedEventsUrl == freezed
+      receivedEventsUrl: freezed == receivedEventsUrl
           ? _value.receivedEventsUrl
           : receivedEventsUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      type: type == freezed
+      type: freezed == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as String?,
-      siteAdmin: siteAdmin == freezed
+      siteAdmin: freezed == siteAdmin
           ? _value.siteAdmin
           : siteAdmin // ignore: cast_nullable_to_non_nullable
               as bool?,
@@ -377,8 +338,8 @@ class __$CreatorCopyWithImpl<$Res> extends _$CreatorCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Creator implements _Creator {
-  _$_Creator(
+class _$CreatorImpl implements _Creator {
+  _$CreatorImpl(
       {this.login,
       this.id,
       @JsonKey(name: 'node_id') this.nodeId,
@@ -398,8 +359,8 @@ class _$_Creator implements _Creator {
       this.type,
       @JsonKey(name: 'site_admin') this.siteAdmin});
 
-  factory _$_Creator.fromJson(Map<String, dynamic> json) =>
-      _$$_CreatorFromJson(json);
+  factory _$CreatorImpl.fromJson(Map<String, dynamic> json) =>
+      _$$CreatorImplFromJson(json);
 
   @override
   final String? login;
@@ -458,92 +419,103 @@ class _$_Creator implements _Creator {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Creator &&
-            const DeepCollectionEquality().equals(other.login, login) &&
-            const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality().equals(other.nodeId, nodeId) &&
-            const DeepCollectionEquality().equals(other.avatarUrl, avatarUrl) &&
-            const DeepCollectionEquality()
-                .equals(other.gravatarId, gravatarId) &&
-            const DeepCollectionEquality().equals(other.url, url) &&
-            const DeepCollectionEquality().equals(other.htmlUrl, htmlUrl) &&
-            const DeepCollectionEquality()
-                .equals(other.followersUrl, followersUrl) &&
-            const DeepCollectionEquality()
-                .equals(other.followingUrl, followingUrl) &&
-            const DeepCollectionEquality().equals(other.gistsUrl, gistsUrl) &&
-            const DeepCollectionEquality()
-                .equals(other.starredUrl, starredUrl) &&
-            const DeepCollectionEquality()
-                .equals(other.subscriptionsUrl, subscriptionsUrl) &&
-            const DeepCollectionEquality()
-                .equals(other.organizationsUrl, organizationsUrl) &&
-            const DeepCollectionEquality().equals(other.reposUrl, reposUrl) &&
-            const DeepCollectionEquality().equals(other.eventsUrl, eventsUrl) &&
-            const DeepCollectionEquality()
-                .equals(other.receivedEventsUrl, receivedEventsUrl) &&
-            const DeepCollectionEquality().equals(other.type, type) &&
-            const DeepCollectionEquality().equals(other.siteAdmin, siteAdmin));
+            other is _$CreatorImpl &&
+            (identical(other.login, login) || other.login == login) &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.nodeId, nodeId) || other.nodeId == nodeId) &&
+            (identical(other.avatarUrl, avatarUrl) ||
+                other.avatarUrl == avatarUrl) &&
+            (identical(other.gravatarId, gravatarId) ||
+                other.gravatarId == gravatarId) &&
+            (identical(other.url, url) || other.url == url) &&
+            (identical(other.htmlUrl, htmlUrl) || other.htmlUrl == htmlUrl) &&
+            (identical(other.followersUrl, followersUrl) ||
+                other.followersUrl == followersUrl) &&
+            (identical(other.followingUrl, followingUrl) ||
+                other.followingUrl == followingUrl) &&
+            (identical(other.gistsUrl, gistsUrl) ||
+                other.gistsUrl == gistsUrl) &&
+            (identical(other.starredUrl, starredUrl) ||
+                other.starredUrl == starredUrl) &&
+            (identical(other.subscriptionsUrl, subscriptionsUrl) ||
+                other.subscriptionsUrl == subscriptionsUrl) &&
+            (identical(other.organizationsUrl, organizationsUrl) ||
+                other.organizationsUrl == organizationsUrl) &&
+            (identical(other.reposUrl, reposUrl) ||
+                other.reposUrl == reposUrl) &&
+            (identical(other.eventsUrl, eventsUrl) ||
+                other.eventsUrl == eventsUrl) &&
+            (identical(other.receivedEventsUrl, receivedEventsUrl) ||
+                other.receivedEventsUrl == receivedEventsUrl) &&
+            (identical(other.type, type) || other.type == type) &&
+            (identical(other.siteAdmin, siteAdmin) ||
+                other.siteAdmin == siteAdmin));
   }
 
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(login),
-      const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(nodeId),
-      const DeepCollectionEquality().hash(avatarUrl),
-      const DeepCollectionEquality().hash(gravatarId),
-      const DeepCollectionEquality().hash(url),
-      const DeepCollectionEquality().hash(htmlUrl),
-      const DeepCollectionEquality().hash(followersUrl),
-      const DeepCollectionEquality().hash(followingUrl),
-      const DeepCollectionEquality().hash(gistsUrl),
-      const DeepCollectionEquality().hash(starredUrl),
-      const DeepCollectionEquality().hash(subscriptionsUrl),
-      const DeepCollectionEquality().hash(organizationsUrl),
-      const DeepCollectionEquality().hash(reposUrl),
-      const DeepCollectionEquality().hash(eventsUrl),
-      const DeepCollectionEquality().hash(receivedEventsUrl),
-      const DeepCollectionEquality().hash(type),
-      const DeepCollectionEquality().hash(siteAdmin));
+      login,
+      id,
+      nodeId,
+      avatarUrl,
+      gravatarId,
+      url,
+      htmlUrl,
+      followersUrl,
+      followingUrl,
+      gistsUrl,
+      starredUrl,
+      subscriptionsUrl,
+      organizationsUrl,
+      reposUrl,
+      eventsUrl,
+      receivedEventsUrl,
+      type,
+      siteAdmin);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Creator
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  _$CreatorCopyWith<_Creator> get copyWith =>
-      __$CreatorCopyWithImpl<_Creator>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$CreatorImplCopyWith<_$CreatorImpl> get copyWith =>
+      __$$CreatorImplCopyWithImpl<_$CreatorImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_CreatorToJson(this);
+    return _$$CreatorImplToJson(
+      this,
+    );
   }
 }
 
 abstract class _Creator implements Creator {
   factory _Creator(
-      {String? login,
-      int? id,
-      @JsonKey(name: 'node_id') String? nodeId,
-      @JsonKey(name: 'avatar_url') String? avatarUrl,
-      @JsonKey(name: 'gravatar_id') String? gravatarId,
-      String? url,
-      @JsonKey(name: 'html_url') String? htmlUrl,
-      @JsonKey(name: 'followers_url') String? followersUrl,
-      @JsonKey(name: 'following_url') String? followingUrl,
-      @JsonKey(name: 'gists_url') String? gistsUrl,
-      @JsonKey(name: 'starred_url') String? starredUrl,
-      @JsonKey(name: 'subscriptions_url') String? subscriptionsUrl,
-      @JsonKey(name: 'organizations_url') String? organizationsUrl,
-      @JsonKey(name: 'repos_url') String? reposUrl,
-      @JsonKey(name: 'events_url') String? eventsUrl,
-      @JsonKey(name: 'received_events_url') String? receivedEventsUrl,
-      String? type,
-      @JsonKey(name: 'site_admin') bool? siteAdmin}) = _$_Creator;
+      {final String? login,
+      final int? id,
+      @JsonKey(name: 'node_id') final String? nodeId,
+      @JsonKey(name: 'avatar_url') final String? avatarUrl,
+      @JsonKey(name: 'gravatar_id') final String? gravatarId,
+      final String? url,
+      @JsonKey(name: 'html_url') final String? htmlUrl,
+      @JsonKey(name: 'followers_url') final String? followersUrl,
+      @JsonKey(name: 'following_url') final String? followingUrl,
+      @JsonKey(name: 'gists_url') final String? gistsUrl,
+      @JsonKey(name: 'starred_url') final String? starredUrl,
+      @JsonKey(name: 'subscriptions_url') final String? subscriptionsUrl,
+      @JsonKey(name: 'organizations_url') final String? organizationsUrl,
+      @JsonKey(name: 'repos_url') final String? reposUrl,
+      @JsonKey(name: 'events_url') final String? eventsUrl,
+      @JsonKey(name: 'received_events_url') final String? receivedEventsUrl,
+      final String? type,
+      @JsonKey(name: 'site_admin') final bool? siteAdmin}) = _$CreatorImpl;
 
-  factory _Creator.fromJson(Map<String, dynamic> json) = _$_Creator.fromJson;
+  factory _Creator.fromJson(Map<String, dynamic> json) = _$CreatorImpl.fromJson;
 
   @override
   String? get login;
@@ -595,8 +567,11 @@ abstract class _Creator implements Creator {
   @override
   @JsonKey(name: 'site_admin')
   bool? get siteAdmin;
+
+  /// Create a copy of Creator
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$CreatorCopyWith<_Creator> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$CreatorImplCopyWith<_$CreatorImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'repository.dart';
 
@@ -12,200 +12,11 @@ part of 'repository.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 Repository _$RepositoryFromJson(Map<String, dynamic> json) {
   return _Repository.fromJson(json);
 }
-
-/// @nodoc
-class _$RepositoryTearOff {
-  const _$RepositoryTearOff();
-
-  _Repository call(
-      {int? id,
-      @JsonKey(name: 'node_id') String? nodeId,
-      String? name,
-      @JsonKey(name: 'full_name') String? fullName,
-      Owner? owner,
-      bool? private,
-      @JsonKey(name: 'html_url') String? htmlUrl,
-      String? description,
-      bool? fork,
-      String? url,
-      @JsonKey(name: 'archive_url') String? archiveUrl,
-      @JsonKey(name: 'assignees_url') String? assigneesUrl,
-      @JsonKey(name: 'blobs_url') String? blobsUrl,
-      @JsonKey(name: 'branches_url') String? branchesUrl,
-      @JsonKey(name: 'collaborators_url') String? collaboratorsUrl,
-      @JsonKey(name: 'comments_url') String? commentsUrl,
-      @JsonKey(name: 'commits_url') String? commitsUrl,
-      @JsonKey(name: 'compare_url') String? compareUrl,
-      @JsonKey(name: 'contents_url') String? contentsUrl,
-      @JsonKey(name: 'contributors_url') String? contributorsUrl,
-      @JsonKey(name: 'deployments_url') String? deploymentsUrl,
-      @JsonKey(name: 'downloads_url') String? downloadsUrl,
-      @JsonKey(name: 'events_url') String? eventsUrl,
-      @JsonKey(name: 'forks_url') String? forksUrl,
-      @JsonKey(name: 'git_commits_url') String? gitCommitsUrl,
-      @JsonKey(name: 'git_refs_url') String? gitRefsUrl,
-      @JsonKey(name: 'git_tags_url') String? gitTagsUrl,
-      @JsonKey(name: 'git_url') String? gitUrl,
-      @JsonKey(name: 'issue_comment_url') String? issueCommentUrl,
-      @JsonKey(name: 'issue_events_url') String? issueEventsUrl,
-      @JsonKey(name: 'issues_url') String? issuesUrl,
-      @JsonKey(name: 'keys_url') String? keysUrl,
-      @JsonKey(name: 'labels_url') String? labelsUrl,
-      @JsonKey(name: 'languages_url') String? languagesUrl,
-      @JsonKey(name: 'merges_url') String? mergesUrl,
-      @JsonKey(name: 'milestones_url') String? milestonesUrl,
-      @JsonKey(name: 'notifications_url') String? notificationsUrl,
-      @JsonKey(name: 'pulls_url') String? pullsUrl,
-      @JsonKey(name: 'releases_url') String? releasesUrl,
-      @JsonKey(name: 'ssh_url') String? sshUrl,
-      @JsonKey(name: 'stargazers_url') String? stargazersUrl,
-      @JsonKey(name: 'statuses_url') String? statusesUrl,
-      @JsonKey(name: 'subscribers_url') String? subscribersUrl,
-      @JsonKey(name: 'subscription_url') String? subscriptionUrl,
-      @JsonKey(name: 'tags_url') String? tagsUrl,
-      @JsonKey(name: 'teams_url') String? teamsUrl,
-      @JsonKey(name: 'trees_url') String? treesUrl,
-      @JsonKey(name: 'clone_url') String? cloneUrl,
-      @JsonKey(name: 'mirror_url') String? mirrorUrl,
-      @JsonKey(name: 'hooks_url') String? hooksUrl,
-      @JsonKey(name: 'svn_url') String? svnUrl,
-      String? homepage,
-      dynamic language,
-      @JsonKey(name: 'forks_count') int? forksCount,
-      @JsonKey(name: 'stargazers_count') int? stargazersCount,
-      @JsonKey(name: 'watchers_count') int? watchersCount,
-      int? size,
-      @JsonKey(name: 'default_branch') String? defaultBranch,
-      @JsonKey(name: 'open_issues_count') int? openIssuesCount,
-      @JsonKey(name: 'is_template') bool? isTemplate,
-      List<String>? topics,
-      @JsonKey(name: 'has_issues') bool? hasIssues,
-      @JsonKey(name: 'has_projects') bool? hasProjects,
-      @JsonKey(name: 'has_wiki') bool? hasWiki,
-      @JsonKey(name: 'has_pages') bool? hasPages,
-      @JsonKey(name: 'has_downloads') bool? hasDownloads,
-      bool? archived,
-      bool? disabled,
-      String? visibility,
-      @JsonKey(name: 'pushed_at') DateTime? pushedAt,
-      @JsonKey(name: 'created_at') DateTime? createdAt,
-      @JsonKey(name: 'updated_at') DateTime? updatedAt,
-      Permissions? permissions,
-      @JsonKey(name: 'allow_rebase_merge') bool? allowRebaseMerge,
-      @JsonKey(name: 'template_repository') dynamic templateRepository,
-      @JsonKey(name: 'temp_clone_token') String? tempCloneToken,
-      @JsonKey(name: 'allow_squash_merge') bool? allowSquashMerge,
-      @JsonKey(name: 'allow_auto_merge') bool? allowAutoMerge,
-      @JsonKey(name: 'delete_branch_on_merge') bool? deleteBranchOnMerge,
-      @JsonKey(name: 'allow_merge_commit') bool? allowMergeCommit,
-      @JsonKey(name: 'subscribers_count') int? subscribersCount,
-      @JsonKey(name: 'network_count') int? networkCount,
-      License? license,
-      int? forks,
-      @JsonKey(name: 'open_issues') int? openIssues,
-      int? watchers}) {
-    return _Repository(
-      id: id,
-      nodeId: nodeId,
-      name: name,
-      fullName: fullName,
-      owner: owner,
-      private: private,
-      htmlUrl: htmlUrl,
-      description: description,
-      fork: fork,
-      url: url,
-      archiveUrl: archiveUrl,
-      assigneesUrl: assigneesUrl,
-      blobsUrl: blobsUrl,
-      branchesUrl: branchesUrl,
-      collaboratorsUrl: collaboratorsUrl,
-      commentsUrl: commentsUrl,
-      commitsUrl: commitsUrl,
-      compareUrl: compareUrl,
-      contentsUrl: contentsUrl,
-      contributorsUrl: contributorsUrl,
-      deploymentsUrl: deploymentsUrl,
-      downloadsUrl: downloadsUrl,
-      eventsUrl: eventsUrl,
-      forksUrl: forksUrl,
-      gitCommitsUrl: gitCommitsUrl,
-      gitRefsUrl: gitRefsUrl,
-      gitTagsUrl: gitTagsUrl,
-      gitUrl: gitUrl,
-      issueCommentUrl: issueCommentUrl,
-      issueEventsUrl: issueEventsUrl,
-      issuesUrl: issuesUrl,
-      keysUrl: keysUrl,
-      labelsUrl: labelsUrl,
-      languagesUrl: languagesUrl,
-      mergesUrl: mergesUrl,
-      milestonesUrl: milestonesUrl,
-      notificationsUrl: notificationsUrl,
-      pullsUrl: pullsUrl,
-      releasesUrl: releasesUrl,
-      sshUrl: sshUrl,
-      stargazersUrl: stargazersUrl,
-      statusesUrl: statusesUrl,
-      subscribersUrl: subscribersUrl,
-      subscriptionUrl: subscriptionUrl,
-      tagsUrl: tagsUrl,
-      teamsUrl: teamsUrl,
-      treesUrl: treesUrl,
-      cloneUrl: cloneUrl,
-      mirrorUrl: mirrorUrl,
-      hooksUrl: hooksUrl,
-      svnUrl: svnUrl,
-      homepage: homepage,
-      language: language,
-      forksCount: forksCount,
-      stargazersCount: stargazersCount,
-      watchersCount: watchersCount,
-      size: size,
-      defaultBranch: defaultBranch,
-      openIssuesCount: openIssuesCount,
-      isTemplate: isTemplate,
-      topics: topics,
-      hasIssues: hasIssues,
-      hasProjects: hasProjects,
-      hasWiki: hasWiki,
-      hasPages: hasPages,
-      hasDownloads: hasDownloads,
-      archived: archived,
-      disabled: disabled,
-      visibility: visibility,
-      pushedAt: pushedAt,
-      createdAt: createdAt,
-      updatedAt: updatedAt,
-      permissions: permissions,
-      allowRebaseMerge: allowRebaseMerge,
-      templateRepository: templateRepository,
-      tempCloneToken: tempCloneToken,
-      allowSquashMerge: allowSquashMerge,
-      allowAutoMerge: allowAutoMerge,
-      deleteBranchOnMerge: deleteBranchOnMerge,
-      allowMergeCommit: allowMergeCommit,
-      subscribersCount: subscribersCount,
-      networkCount: networkCount,
-      license: license,
-      forks: forks,
-      openIssues: openIssues,
-      watchers: watchers,
-    );
-  }
-
-  Repository fromJson(Map<String, Object?> json) {
-    return Repository.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $Repository = _$RepositoryTearOff();
 
 /// @nodoc
 mixin _$Repository {
@@ -364,8 +175,12 @@ mixin _$Repository {
   int? get openIssues => throw _privateConstructorUsedError;
   int? get watchers => throw _privateConstructorUsedError;
 
+  /// Serializes this Repository to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Repository
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $RepositoryCopyWith<Repository> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -374,7 +189,8 @@ mixin _$Repository {
 abstract class $RepositoryCopyWith<$Res> {
   factory $RepositoryCopyWith(
           Repository value, $Res Function(Repository) then) =
-      _$RepositoryCopyWithImpl<$Res>;
+      _$RepositoryCopyWithImpl<$Res, Repository>;
+  @useResult
   $Res call(
       {int? id,
       @JsonKey(name: 'node_id') String? nodeId,
@@ -469,13 +285,18 @@ abstract class $RepositoryCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$RepositoryCopyWithImpl<$Res> implements $RepositoryCopyWith<$Res> {
+class _$RepositoryCopyWithImpl<$Res, $Val extends Repository>
+    implements $RepositoryCopyWith<$Res> {
   _$RepositoryCopyWithImpl(this._value, this._then);
 
-  final Repository _value;
   // ignore: unused_field
-  final $Res Function(Repository) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  /// Create a copy of Repository
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
@@ -566,393 +387,404 @@ class _$RepositoryCopyWithImpl<$Res> implements $RepositoryCopyWith<$Res> {
     Object? watchers = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int?,
-      nodeId: nodeId == freezed
+      nodeId: freezed == nodeId
           ? _value.nodeId
           : nodeId // ignore: cast_nullable_to_non_nullable
               as String?,
-      name: name == freezed
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String?,
-      fullName: fullName == freezed
+      fullName: freezed == fullName
           ? _value.fullName
           : fullName // ignore: cast_nullable_to_non_nullable
               as String?,
-      owner: owner == freezed
+      owner: freezed == owner
           ? _value.owner
           : owner // ignore: cast_nullable_to_non_nullable
               as Owner?,
-      private: private == freezed
+      private: freezed == private
           ? _value.private
           : private // ignore: cast_nullable_to_non_nullable
               as bool?,
-      htmlUrl: htmlUrl == freezed
+      htmlUrl: freezed == htmlUrl
           ? _value.htmlUrl
           : htmlUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      description: description == freezed
+      description: freezed == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
-      fork: fork == freezed
+      fork: freezed == fork
           ? _value.fork
           : fork // ignore: cast_nullable_to_non_nullable
               as bool?,
-      url: url == freezed
+      url: freezed == url
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as String?,
-      archiveUrl: archiveUrl == freezed
+      archiveUrl: freezed == archiveUrl
           ? _value.archiveUrl
           : archiveUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      assigneesUrl: assigneesUrl == freezed
+      assigneesUrl: freezed == assigneesUrl
           ? _value.assigneesUrl
           : assigneesUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      blobsUrl: blobsUrl == freezed
+      blobsUrl: freezed == blobsUrl
           ? _value.blobsUrl
           : blobsUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      branchesUrl: branchesUrl == freezed
+      branchesUrl: freezed == branchesUrl
           ? _value.branchesUrl
           : branchesUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      collaboratorsUrl: collaboratorsUrl == freezed
+      collaboratorsUrl: freezed == collaboratorsUrl
           ? _value.collaboratorsUrl
           : collaboratorsUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      commentsUrl: commentsUrl == freezed
+      commentsUrl: freezed == commentsUrl
           ? _value.commentsUrl
           : commentsUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      commitsUrl: commitsUrl == freezed
+      commitsUrl: freezed == commitsUrl
           ? _value.commitsUrl
           : commitsUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      compareUrl: compareUrl == freezed
+      compareUrl: freezed == compareUrl
           ? _value.compareUrl
           : compareUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      contentsUrl: contentsUrl == freezed
+      contentsUrl: freezed == contentsUrl
           ? _value.contentsUrl
           : contentsUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      contributorsUrl: contributorsUrl == freezed
+      contributorsUrl: freezed == contributorsUrl
           ? _value.contributorsUrl
           : contributorsUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      deploymentsUrl: deploymentsUrl == freezed
+      deploymentsUrl: freezed == deploymentsUrl
           ? _value.deploymentsUrl
           : deploymentsUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      downloadsUrl: downloadsUrl == freezed
+      downloadsUrl: freezed == downloadsUrl
           ? _value.downloadsUrl
           : downloadsUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      eventsUrl: eventsUrl == freezed
+      eventsUrl: freezed == eventsUrl
           ? _value.eventsUrl
           : eventsUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      forksUrl: forksUrl == freezed
+      forksUrl: freezed == forksUrl
           ? _value.forksUrl
           : forksUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      gitCommitsUrl: gitCommitsUrl == freezed
+      gitCommitsUrl: freezed == gitCommitsUrl
           ? _value.gitCommitsUrl
           : gitCommitsUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      gitRefsUrl: gitRefsUrl == freezed
+      gitRefsUrl: freezed == gitRefsUrl
           ? _value.gitRefsUrl
           : gitRefsUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      gitTagsUrl: gitTagsUrl == freezed
+      gitTagsUrl: freezed == gitTagsUrl
           ? _value.gitTagsUrl
           : gitTagsUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      gitUrl: gitUrl == freezed
+      gitUrl: freezed == gitUrl
           ? _value.gitUrl
           : gitUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      issueCommentUrl: issueCommentUrl == freezed
+      issueCommentUrl: freezed == issueCommentUrl
           ? _value.issueCommentUrl
           : issueCommentUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      issueEventsUrl: issueEventsUrl == freezed
+      issueEventsUrl: freezed == issueEventsUrl
           ? _value.issueEventsUrl
           : issueEventsUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      issuesUrl: issuesUrl == freezed
+      issuesUrl: freezed == issuesUrl
           ? _value.issuesUrl
           : issuesUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      keysUrl: keysUrl == freezed
+      keysUrl: freezed == keysUrl
           ? _value.keysUrl
           : keysUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      labelsUrl: labelsUrl == freezed
+      labelsUrl: freezed == labelsUrl
           ? _value.labelsUrl
           : labelsUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      languagesUrl: languagesUrl == freezed
+      languagesUrl: freezed == languagesUrl
           ? _value.languagesUrl
           : languagesUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      mergesUrl: mergesUrl == freezed
+      mergesUrl: freezed == mergesUrl
           ? _value.mergesUrl
           : mergesUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      milestonesUrl: milestonesUrl == freezed
+      milestonesUrl: freezed == milestonesUrl
           ? _value.milestonesUrl
           : milestonesUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      notificationsUrl: notificationsUrl == freezed
+      notificationsUrl: freezed == notificationsUrl
           ? _value.notificationsUrl
           : notificationsUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      pullsUrl: pullsUrl == freezed
+      pullsUrl: freezed == pullsUrl
           ? _value.pullsUrl
           : pullsUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      releasesUrl: releasesUrl == freezed
+      releasesUrl: freezed == releasesUrl
           ? _value.releasesUrl
           : releasesUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      sshUrl: sshUrl == freezed
+      sshUrl: freezed == sshUrl
           ? _value.sshUrl
           : sshUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      stargazersUrl: stargazersUrl == freezed
+      stargazersUrl: freezed == stargazersUrl
           ? _value.stargazersUrl
           : stargazersUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      statusesUrl: statusesUrl == freezed
+      statusesUrl: freezed == statusesUrl
           ? _value.statusesUrl
           : statusesUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      subscribersUrl: subscribersUrl == freezed
+      subscribersUrl: freezed == subscribersUrl
           ? _value.subscribersUrl
           : subscribersUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      subscriptionUrl: subscriptionUrl == freezed
+      subscriptionUrl: freezed == subscriptionUrl
           ? _value.subscriptionUrl
           : subscriptionUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      tagsUrl: tagsUrl == freezed
+      tagsUrl: freezed == tagsUrl
           ? _value.tagsUrl
           : tagsUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      teamsUrl: teamsUrl == freezed
+      teamsUrl: freezed == teamsUrl
           ? _value.teamsUrl
           : teamsUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      treesUrl: treesUrl == freezed
+      treesUrl: freezed == treesUrl
           ? _value.treesUrl
           : treesUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      cloneUrl: cloneUrl == freezed
+      cloneUrl: freezed == cloneUrl
           ? _value.cloneUrl
           : cloneUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      mirrorUrl: mirrorUrl == freezed
+      mirrorUrl: freezed == mirrorUrl
           ? _value.mirrorUrl
           : mirrorUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      hooksUrl: hooksUrl == freezed
+      hooksUrl: freezed == hooksUrl
           ? _value.hooksUrl
           : hooksUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      svnUrl: svnUrl == freezed
+      svnUrl: freezed == svnUrl
           ? _value.svnUrl
           : svnUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      homepage: homepage == freezed
+      homepage: freezed == homepage
           ? _value.homepage
           : homepage // ignore: cast_nullable_to_non_nullable
               as String?,
-      language: language == freezed
+      language: freezed == language
           ? _value.language
           : language // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      forksCount: forksCount == freezed
+      forksCount: freezed == forksCount
           ? _value.forksCount
           : forksCount // ignore: cast_nullable_to_non_nullable
               as int?,
-      stargazersCount: stargazersCount == freezed
+      stargazersCount: freezed == stargazersCount
           ? _value.stargazersCount
           : stargazersCount // ignore: cast_nullable_to_non_nullable
               as int?,
-      watchersCount: watchersCount == freezed
+      watchersCount: freezed == watchersCount
           ? _value.watchersCount
           : watchersCount // ignore: cast_nullable_to_non_nullable
               as int?,
-      size: size == freezed
+      size: freezed == size
           ? _value.size
           : size // ignore: cast_nullable_to_non_nullable
               as int?,
-      defaultBranch: defaultBranch == freezed
+      defaultBranch: freezed == defaultBranch
           ? _value.defaultBranch
           : defaultBranch // ignore: cast_nullable_to_non_nullable
               as String?,
-      openIssuesCount: openIssuesCount == freezed
+      openIssuesCount: freezed == openIssuesCount
           ? _value.openIssuesCount
           : openIssuesCount // ignore: cast_nullable_to_non_nullable
               as int?,
-      isTemplate: isTemplate == freezed
+      isTemplate: freezed == isTemplate
           ? _value.isTemplate
           : isTemplate // ignore: cast_nullable_to_non_nullable
               as bool?,
-      topics: topics == freezed
+      topics: freezed == topics
           ? _value.topics
           : topics // ignore: cast_nullable_to_non_nullable
               as List<String>?,
-      hasIssues: hasIssues == freezed
+      hasIssues: freezed == hasIssues
           ? _value.hasIssues
           : hasIssues // ignore: cast_nullable_to_non_nullable
               as bool?,
-      hasProjects: hasProjects == freezed
+      hasProjects: freezed == hasProjects
           ? _value.hasProjects
           : hasProjects // ignore: cast_nullable_to_non_nullable
               as bool?,
-      hasWiki: hasWiki == freezed
+      hasWiki: freezed == hasWiki
           ? _value.hasWiki
           : hasWiki // ignore: cast_nullable_to_non_nullable
               as bool?,
-      hasPages: hasPages == freezed
+      hasPages: freezed == hasPages
           ? _value.hasPages
           : hasPages // ignore: cast_nullable_to_non_nullable
               as bool?,
-      hasDownloads: hasDownloads == freezed
+      hasDownloads: freezed == hasDownloads
           ? _value.hasDownloads
           : hasDownloads // ignore: cast_nullable_to_non_nullable
               as bool?,
-      archived: archived == freezed
+      archived: freezed == archived
           ? _value.archived
           : archived // ignore: cast_nullable_to_non_nullable
               as bool?,
-      disabled: disabled == freezed
+      disabled: freezed == disabled
           ? _value.disabled
           : disabled // ignore: cast_nullable_to_non_nullable
               as bool?,
-      visibility: visibility == freezed
+      visibility: freezed == visibility
           ? _value.visibility
           : visibility // ignore: cast_nullable_to_non_nullable
               as String?,
-      pushedAt: pushedAt == freezed
+      pushedAt: freezed == pushedAt
           ? _value.pushedAt
           : pushedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      createdAt: createdAt == freezed
+      createdAt: freezed == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      updatedAt: updatedAt == freezed
+      updatedAt: freezed == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      permissions: permissions == freezed
+      permissions: freezed == permissions
           ? _value.permissions
           : permissions // ignore: cast_nullable_to_non_nullable
               as Permissions?,
-      allowRebaseMerge: allowRebaseMerge == freezed
+      allowRebaseMerge: freezed == allowRebaseMerge
           ? _value.allowRebaseMerge
           : allowRebaseMerge // ignore: cast_nullable_to_non_nullable
               as bool?,
-      templateRepository: templateRepository == freezed
+      templateRepository: freezed == templateRepository
           ? _value.templateRepository
           : templateRepository // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      tempCloneToken: tempCloneToken == freezed
+      tempCloneToken: freezed == tempCloneToken
           ? _value.tempCloneToken
           : tempCloneToken // ignore: cast_nullable_to_non_nullable
               as String?,
-      allowSquashMerge: allowSquashMerge == freezed
+      allowSquashMerge: freezed == allowSquashMerge
           ? _value.allowSquashMerge
           : allowSquashMerge // ignore: cast_nullable_to_non_nullable
               as bool?,
-      allowAutoMerge: allowAutoMerge == freezed
+      allowAutoMerge: freezed == allowAutoMerge
           ? _value.allowAutoMerge
           : allowAutoMerge // ignore: cast_nullable_to_non_nullable
               as bool?,
-      deleteBranchOnMerge: deleteBranchOnMerge == freezed
+      deleteBranchOnMerge: freezed == deleteBranchOnMerge
           ? _value.deleteBranchOnMerge
           : deleteBranchOnMerge // ignore: cast_nullable_to_non_nullable
               as bool?,
-      allowMergeCommit: allowMergeCommit == freezed
+      allowMergeCommit: freezed == allowMergeCommit
           ? _value.allowMergeCommit
           : allowMergeCommit // ignore: cast_nullable_to_non_nullable
               as bool?,
-      subscribersCount: subscribersCount == freezed
+      subscribersCount: freezed == subscribersCount
           ? _value.subscribersCount
           : subscribersCount // ignore: cast_nullable_to_non_nullable
               as int?,
-      networkCount: networkCount == freezed
+      networkCount: freezed == networkCount
           ? _value.networkCount
           : networkCount // ignore: cast_nullable_to_non_nullable
               as int?,
-      license: license == freezed
+      license: freezed == license
           ? _value.license
           : license // ignore: cast_nullable_to_non_nullable
               as License?,
-      forks: forks == freezed
+      forks: freezed == forks
           ? _value.forks
           : forks // ignore: cast_nullable_to_non_nullable
               as int?,
-      openIssues: openIssues == freezed
+      openIssues: freezed == openIssues
           ? _value.openIssues
           : openIssues // ignore: cast_nullable_to_non_nullable
               as int?,
-      watchers: watchers == freezed
+      watchers: freezed == watchers
           ? _value.watchers
           : watchers // ignore: cast_nullable_to_non_nullable
               as int?,
-    ));
+    ) as $Val);
   }
 
+  /// Create a copy of Repository
+  /// with the given fields replaced by the non-null parameter values.
   @override
+  @pragma('vm:prefer-inline')
   $OwnerCopyWith<$Res>? get owner {
     if (_value.owner == null) {
       return null;
     }
 
     return $OwnerCopyWith<$Res>(_value.owner!, (value) {
-      return _then(_value.copyWith(owner: value));
+      return _then(_value.copyWith(owner: value) as $Val);
     });
   }
 
+  /// Create a copy of Repository
+  /// with the given fields replaced by the non-null parameter values.
   @override
+  @pragma('vm:prefer-inline')
   $PermissionsCopyWith<$Res>? get permissions {
     if (_value.permissions == null) {
       return null;
     }
 
     return $PermissionsCopyWith<$Res>(_value.permissions!, (value) {
-      return _then(_value.copyWith(permissions: value));
+      return _then(_value.copyWith(permissions: value) as $Val);
     });
   }
 
+  /// Create a copy of Repository
+  /// with the given fields replaced by the non-null parameter values.
   @override
+  @pragma('vm:prefer-inline')
   $LicenseCopyWith<$Res>? get license {
     if (_value.license == null) {
       return null;
     }
 
     return $LicenseCopyWith<$Res>(_value.license!, (value) {
-      return _then(_value.copyWith(license: value));
+      return _then(_value.copyWith(license: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$RepositoryCopyWith<$Res> implements $RepositoryCopyWith<$Res> {
-  factory _$RepositoryCopyWith(
-          _Repository value, $Res Function(_Repository) then) =
-      __$RepositoryCopyWithImpl<$Res>;
+abstract class _$$RepositoryImplCopyWith<$Res>
+    implements $RepositoryCopyWith<$Res> {
+  factory _$$RepositoryImplCopyWith(
+          _$RepositoryImpl value, $Res Function(_$RepositoryImpl) then) =
+      __$$RepositoryImplCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {int? id,
       @JsonKey(name: 'node_id') String? nodeId,
@@ -1050,15 +882,16 @@ abstract class _$RepositoryCopyWith<$Res> implements $RepositoryCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$RepositoryCopyWithImpl<$Res> extends _$RepositoryCopyWithImpl<$Res>
-    implements _$RepositoryCopyWith<$Res> {
-  __$RepositoryCopyWithImpl(
-      _Repository _value, $Res Function(_Repository) _then)
-      : super(_value, (v) => _then(v as _Repository));
+class __$$RepositoryImplCopyWithImpl<$Res>
+    extends _$RepositoryCopyWithImpl<$Res, _$RepositoryImpl>
+    implements _$$RepositoryImplCopyWith<$Res> {
+  __$$RepositoryImplCopyWithImpl(
+      _$RepositoryImpl _value, $Res Function(_$RepositoryImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _Repository get _value => super._value as _Repository;
-
+  /// Create a copy of Repository
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
@@ -1148,348 +981,348 @@ class __$RepositoryCopyWithImpl<$Res> extends _$RepositoryCopyWithImpl<$Res>
     Object? openIssues = freezed,
     Object? watchers = freezed,
   }) {
-    return _then(_Repository(
-      id: id == freezed
+    return _then(_$RepositoryImpl(
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int?,
-      nodeId: nodeId == freezed
+      nodeId: freezed == nodeId
           ? _value.nodeId
           : nodeId // ignore: cast_nullable_to_non_nullable
               as String?,
-      name: name == freezed
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String?,
-      fullName: fullName == freezed
+      fullName: freezed == fullName
           ? _value.fullName
           : fullName // ignore: cast_nullable_to_non_nullable
               as String?,
-      owner: owner == freezed
+      owner: freezed == owner
           ? _value.owner
           : owner // ignore: cast_nullable_to_non_nullable
               as Owner?,
-      private: private == freezed
+      private: freezed == private
           ? _value.private
           : private // ignore: cast_nullable_to_non_nullable
               as bool?,
-      htmlUrl: htmlUrl == freezed
+      htmlUrl: freezed == htmlUrl
           ? _value.htmlUrl
           : htmlUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      description: description == freezed
+      description: freezed == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
-      fork: fork == freezed
+      fork: freezed == fork
           ? _value.fork
           : fork // ignore: cast_nullable_to_non_nullable
               as bool?,
-      url: url == freezed
+      url: freezed == url
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as String?,
-      archiveUrl: archiveUrl == freezed
+      archiveUrl: freezed == archiveUrl
           ? _value.archiveUrl
           : archiveUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      assigneesUrl: assigneesUrl == freezed
+      assigneesUrl: freezed == assigneesUrl
           ? _value.assigneesUrl
           : assigneesUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      blobsUrl: blobsUrl == freezed
+      blobsUrl: freezed == blobsUrl
           ? _value.blobsUrl
           : blobsUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      branchesUrl: branchesUrl == freezed
+      branchesUrl: freezed == branchesUrl
           ? _value.branchesUrl
           : branchesUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      collaboratorsUrl: collaboratorsUrl == freezed
+      collaboratorsUrl: freezed == collaboratorsUrl
           ? _value.collaboratorsUrl
           : collaboratorsUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      commentsUrl: commentsUrl == freezed
+      commentsUrl: freezed == commentsUrl
           ? _value.commentsUrl
           : commentsUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      commitsUrl: commitsUrl == freezed
+      commitsUrl: freezed == commitsUrl
           ? _value.commitsUrl
           : commitsUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      compareUrl: compareUrl == freezed
+      compareUrl: freezed == compareUrl
           ? _value.compareUrl
           : compareUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      contentsUrl: contentsUrl == freezed
+      contentsUrl: freezed == contentsUrl
           ? _value.contentsUrl
           : contentsUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      contributorsUrl: contributorsUrl == freezed
+      contributorsUrl: freezed == contributorsUrl
           ? _value.contributorsUrl
           : contributorsUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      deploymentsUrl: deploymentsUrl == freezed
+      deploymentsUrl: freezed == deploymentsUrl
           ? _value.deploymentsUrl
           : deploymentsUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      downloadsUrl: downloadsUrl == freezed
+      downloadsUrl: freezed == downloadsUrl
           ? _value.downloadsUrl
           : downloadsUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      eventsUrl: eventsUrl == freezed
+      eventsUrl: freezed == eventsUrl
           ? _value.eventsUrl
           : eventsUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      forksUrl: forksUrl == freezed
+      forksUrl: freezed == forksUrl
           ? _value.forksUrl
           : forksUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      gitCommitsUrl: gitCommitsUrl == freezed
+      gitCommitsUrl: freezed == gitCommitsUrl
           ? _value.gitCommitsUrl
           : gitCommitsUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      gitRefsUrl: gitRefsUrl == freezed
+      gitRefsUrl: freezed == gitRefsUrl
           ? _value.gitRefsUrl
           : gitRefsUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      gitTagsUrl: gitTagsUrl == freezed
+      gitTagsUrl: freezed == gitTagsUrl
           ? _value.gitTagsUrl
           : gitTagsUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      gitUrl: gitUrl == freezed
+      gitUrl: freezed == gitUrl
           ? _value.gitUrl
           : gitUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      issueCommentUrl: issueCommentUrl == freezed
+      issueCommentUrl: freezed == issueCommentUrl
           ? _value.issueCommentUrl
           : issueCommentUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      issueEventsUrl: issueEventsUrl == freezed
+      issueEventsUrl: freezed == issueEventsUrl
           ? _value.issueEventsUrl
           : issueEventsUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      issuesUrl: issuesUrl == freezed
+      issuesUrl: freezed == issuesUrl
           ? _value.issuesUrl
           : issuesUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      keysUrl: keysUrl == freezed
+      keysUrl: freezed == keysUrl
           ? _value.keysUrl
           : keysUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      labelsUrl: labelsUrl == freezed
+      labelsUrl: freezed == labelsUrl
           ? _value.labelsUrl
           : labelsUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      languagesUrl: languagesUrl == freezed
+      languagesUrl: freezed == languagesUrl
           ? _value.languagesUrl
           : languagesUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      mergesUrl: mergesUrl == freezed
+      mergesUrl: freezed == mergesUrl
           ? _value.mergesUrl
           : mergesUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      milestonesUrl: milestonesUrl == freezed
+      milestonesUrl: freezed == milestonesUrl
           ? _value.milestonesUrl
           : milestonesUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      notificationsUrl: notificationsUrl == freezed
+      notificationsUrl: freezed == notificationsUrl
           ? _value.notificationsUrl
           : notificationsUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      pullsUrl: pullsUrl == freezed
+      pullsUrl: freezed == pullsUrl
           ? _value.pullsUrl
           : pullsUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      releasesUrl: releasesUrl == freezed
+      releasesUrl: freezed == releasesUrl
           ? _value.releasesUrl
           : releasesUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      sshUrl: sshUrl == freezed
+      sshUrl: freezed == sshUrl
           ? _value.sshUrl
           : sshUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      stargazersUrl: stargazersUrl == freezed
+      stargazersUrl: freezed == stargazersUrl
           ? _value.stargazersUrl
           : stargazersUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      statusesUrl: statusesUrl == freezed
+      statusesUrl: freezed == statusesUrl
           ? _value.statusesUrl
           : statusesUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      subscribersUrl: subscribersUrl == freezed
+      subscribersUrl: freezed == subscribersUrl
           ? _value.subscribersUrl
           : subscribersUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      subscriptionUrl: subscriptionUrl == freezed
+      subscriptionUrl: freezed == subscriptionUrl
           ? _value.subscriptionUrl
           : subscriptionUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      tagsUrl: tagsUrl == freezed
+      tagsUrl: freezed == tagsUrl
           ? _value.tagsUrl
           : tagsUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      teamsUrl: teamsUrl == freezed
+      teamsUrl: freezed == teamsUrl
           ? _value.teamsUrl
           : teamsUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      treesUrl: treesUrl == freezed
+      treesUrl: freezed == treesUrl
           ? _value.treesUrl
           : treesUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      cloneUrl: cloneUrl == freezed
+      cloneUrl: freezed == cloneUrl
           ? _value.cloneUrl
           : cloneUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      mirrorUrl: mirrorUrl == freezed
+      mirrorUrl: freezed == mirrorUrl
           ? _value.mirrorUrl
           : mirrorUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      hooksUrl: hooksUrl == freezed
+      hooksUrl: freezed == hooksUrl
           ? _value.hooksUrl
           : hooksUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      svnUrl: svnUrl == freezed
+      svnUrl: freezed == svnUrl
           ? _value.svnUrl
           : svnUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      homepage: homepage == freezed
+      homepage: freezed == homepage
           ? _value.homepage
           : homepage // ignore: cast_nullable_to_non_nullable
               as String?,
-      language: language == freezed
+      language: freezed == language
           ? _value.language
           : language // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      forksCount: forksCount == freezed
+      forksCount: freezed == forksCount
           ? _value.forksCount
           : forksCount // ignore: cast_nullable_to_non_nullable
               as int?,
-      stargazersCount: stargazersCount == freezed
+      stargazersCount: freezed == stargazersCount
           ? _value.stargazersCount
           : stargazersCount // ignore: cast_nullable_to_non_nullable
               as int?,
-      watchersCount: watchersCount == freezed
+      watchersCount: freezed == watchersCount
           ? _value.watchersCount
           : watchersCount // ignore: cast_nullable_to_non_nullable
               as int?,
-      size: size == freezed
+      size: freezed == size
           ? _value.size
           : size // ignore: cast_nullable_to_non_nullable
               as int?,
-      defaultBranch: defaultBranch == freezed
+      defaultBranch: freezed == defaultBranch
           ? _value.defaultBranch
           : defaultBranch // ignore: cast_nullable_to_non_nullable
               as String?,
-      openIssuesCount: openIssuesCount == freezed
+      openIssuesCount: freezed == openIssuesCount
           ? _value.openIssuesCount
           : openIssuesCount // ignore: cast_nullable_to_non_nullable
               as int?,
-      isTemplate: isTemplate == freezed
+      isTemplate: freezed == isTemplate
           ? _value.isTemplate
           : isTemplate // ignore: cast_nullable_to_non_nullable
               as bool?,
-      topics: topics == freezed
-          ? _value.topics
+      topics: freezed == topics
+          ? _value._topics
           : topics // ignore: cast_nullable_to_non_nullable
               as List<String>?,
-      hasIssues: hasIssues == freezed
+      hasIssues: freezed == hasIssues
           ? _value.hasIssues
           : hasIssues // ignore: cast_nullable_to_non_nullable
               as bool?,
-      hasProjects: hasProjects == freezed
+      hasProjects: freezed == hasProjects
           ? _value.hasProjects
           : hasProjects // ignore: cast_nullable_to_non_nullable
               as bool?,
-      hasWiki: hasWiki == freezed
+      hasWiki: freezed == hasWiki
           ? _value.hasWiki
           : hasWiki // ignore: cast_nullable_to_non_nullable
               as bool?,
-      hasPages: hasPages == freezed
+      hasPages: freezed == hasPages
           ? _value.hasPages
           : hasPages // ignore: cast_nullable_to_non_nullable
               as bool?,
-      hasDownloads: hasDownloads == freezed
+      hasDownloads: freezed == hasDownloads
           ? _value.hasDownloads
           : hasDownloads // ignore: cast_nullable_to_non_nullable
               as bool?,
-      archived: archived == freezed
+      archived: freezed == archived
           ? _value.archived
           : archived // ignore: cast_nullable_to_non_nullable
               as bool?,
-      disabled: disabled == freezed
+      disabled: freezed == disabled
           ? _value.disabled
           : disabled // ignore: cast_nullable_to_non_nullable
               as bool?,
-      visibility: visibility == freezed
+      visibility: freezed == visibility
           ? _value.visibility
           : visibility // ignore: cast_nullable_to_non_nullable
               as String?,
-      pushedAt: pushedAt == freezed
+      pushedAt: freezed == pushedAt
           ? _value.pushedAt
           : pushedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      createdAt: createdAt == freezed
+      createdAt: freezed == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      updatedAt: updatedAt == freezed
+      updatedAt: freezed == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      permissions: permissions == freezed
+      permissions: freezed == permissions
           ? _value.permissions
           : permissions // ignore: cast_nullable_to_non_nullable
               as Permissions?,
-      allowRebaseMerge: allowRebaseMerge == freezed
+      allowRebaseMerge: freezed == allowRebaseMerge
           ? _value.allowRebaseMerge
           : allowRebaseMerge // ignore: cast_nullable_to_non_nullable
               as bool?,
-      templateRepository: templateRepository == freezed
+      templateRepository: freezed == templateRepository
           ? _value.templateRepository
           : templateRepository // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      tempCloneToken: tempCloneToken == freezed
+      tempCloneToken: freezed == tempCloneToken
           ? _value.tempCloneToken
           : tempCloneToken // ignore: cast_nullable_to_non_nullable
               as String?,
-      allowSquashMerge: allowSquashMerge == freezed
+      allowSquashMerge: freezed == allowSquashMerge
           ? _value.allowSquashMerge
           : allowSquashMerge // ignore: cast_nullable_to_non_nullable
               as bool?,
-      allowAutoMerge: allowAutoMerge == freezed
+      allowAutoMerge: freezed == allowAutoMerge
           ? _value.allowAutoMerge
           : allowAutoMerge // ignore: cast_nullable_to_non_nullable
               as bool?,
-      deleteBranchOnMerge: deleteBranchOnMerge == freezed
+      deleteBranchOnMerge: freezed == deleteBranchOnMerge
           ? _value.deleteBranchOnMerge
           : deleteBranchOnMerge // ignore: cast_nullable_to_non_nullable
               as bool?,
-      allowMergeCommit: allowMergeCommit == freezed
+      allowMergeCommit: freezed == allowMergeCommit
           ? _value.allowMergeCommit
           : allowMergeCommit // ignore: cast_nullable_to_non_nullable
               as bool?,
-      subscribersCount: subscribersCount == freezed
+      subscribersCount: freezed == subscribersCount
           ? _value.subscribersCount
           : subscribersCount // ignore: cast_nullable_to_non_nullable
               as int?,
-      networkCount: networkCount == freezed
+      networkCount: freezed == networkCount
           ? _value.networkCount
           : networkCount // ignore: cast_nullable_to_non_nullable
               as int?,
-      license: license == freezed
+      license: freezed == license
           ? _value.license
           : license // ignore: cast_nullable_to_non_nullable
               as License?,
-      forks: forks == freezed
+      forks: freezed == forks
           ? _value.forks
           : forks // ignore: cast_nullable_to_non_nullable
               as int?,
-      openIssues: openIssues == freezed
+      openIssues: freezed == openIssues
           ? _value.openIssues
           : openIssues // ignore: cast_nullable_to_non_nullable
               as int?,
-      watchers: watchers == freezed
+      watchers: freezed == watchers
           ? _value.watchers
           : watchers // ignore: cast_nullable_to_non_nullable
               as int?,
@@ -1499,8 +1332,8 @@ class __$RepositoryCopyWithImpl<$Res> extends _$RepositoryCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Repository implements _Repository {
-  _$_Repository(
+class _$RepositoryImpl implements _Repository {
+  _$RepositoryImpl(
       {this.id,
       @JsonKey(name: 'node_id') this.nodeId,
       this.name,
@@ -1561,7 +1394,7 @@ class _$_Repository implements _Repository {
       @JsonKey(name: 'default_branch') this.defaultBranch,
       @JsonKey(name: 'open_issues_count') this.openIssuesCount,
       @JsonKey(name: 'is_template') this.isTemplate,
-      this.topics,
+      final List<String>? topics,
       @JsonKey(name: 'has_issues') this.hasIssues,
       @JsonKey(name: 'has_projects') this.hasProjects,
       @JsonKey(name: 'has_wiki') this.hasWiki,
@@ -1586,10 +1419,11 @@ class _$_Repository implements _Repository {
       this.license,
       this.forks,
       @JsonKey(name: 'open_issues') this.openIssues,
-      this.watchers});
+      this.watchers})
+      : _topics = topics;
 
-  factory _$_Repository.fromJson(Map<String, dynamic> json) =>
-      _$$_RepositoryFromJson(json);
+  factory _$RepositoryImpl.fromJson(Map<String, dynamic> json) =>
+      _$$RepositoryImplFromJson(json);
 
   @override
   final int? id;
@@ -1761,8 +1595,16 @@ class _$_Repository implements _Repository {
   @override
   @JsonKey(name: 'is_template')
   final bool? isTemplate;
+  final List<String>? _topics;
   @override
-  final List<String>? topics;
+  List<String>? get topics {
+    final value = _topics;
+    if (value == null) return null;
+    if (_topics is EqualUnmodifiableListView) return _topics;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   @JsonKey(name: 'has_issues')
   final bool? hasIssues;
@@ -1838,335 +1680,340 @@ class _$_Repository implements _Repository {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Repository &&
-            const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality().equals(other.nodeId, nodeId) &&
-            const DeepCollectionEquality().equals(other.name, name) &&
-            const DeepCollectionEquality().equals(other.fullName, fullName) &&
-            const DeepCollectionEquality().equals(other.owner, owner) &&
-            const DeepCollectionEquality().equals(other.private, private) &&
-            const DeepCollectionEquality().equals(other.htmlUrl, htmlUrl) &&
-            const DeepCollectionEquality()
-                .equals(other.description, description) &&
-            const DeepCollectionEquality().equals(other.fork, fork) &&
-            const DeepCollectionEquality().equals(other.url, url) &&
-            const DeepCollectionEquality()
-                .equals(other.archiveUrl, archiveUrl) &&
-            const DeepCollectionEquality()
-                .equals(other.assigneesUrl, assigneesUrl) &&
-            const DeepCollectionEquality().equals(other.blobsUrl, blobsUrl) &&
-            const DeepCollectionEquality()
-                .equals(other.branchesUrl, branchesUrl) &&
-            const DeepCollectionEquality()
-                .equals(other.collaboratorsUrl, collaboratorsUrl) &&
-            const DeepCollectionEquality()
-                .equals(other.commentsUrl, commentsUrl) &&
-            const DeepCollectionEquality()
-                .equals(other.commitsUrl, commitsUrl) &&
-            const DeepCollectionEquality()
-                .equals(other.compareUrl, compareUrl) &&
-            const DeepCollectionEquality()
-                .equals(other.contentsUrl, contentsUrl) &&
-            const DeepCollectionEquality()
-                .equals(other.contributorsUrl, contributorsUrl) &&
-            const DeepCollectionEquality()
-                .equals(other.deploymentsUrl, deploymentsUrl) &&
-            const DeepCollectionEquality()
-                .equals(other.downloadsUrl, downloadsUrl) &&
-            const DeepCollectionEquality().equals(other.eventsUrl, eventsUrl) &&
-            const DeepCollectionEquality().equals(other.forksUrl, forksUrl) &&
-            const DeepCollectionEquality()
-                .equals(other.gitCommitsUrl, gitCommitsUrl) &&
-            const DeepCollectionEquality()
-                .equals(other.gitRefsUrl, gitRefsUrl) &&
-            const DeepCollectionEquality()
-                .equals(other.gitTagsUrl, gitTagsUrl) &&
-            const DeepCollectionEquality().equals(other.gitUrl, gitUrl) &&
-            const DeepCollectionEquality()
-                .equals(other.issueCommentUrl, issueCommentUrl) &&
-            const DeepCollectionEquality()
-                .equals(other.issueEventsUrl, issueEventsUrl) &&
-            const DeepCollectionEquality().equals(other.issuesUrl, issuesUrl) &&
-            const DeepCollectionEquality().equals(other.keysUrl, keysUrl) &&
-            const DeepCollectionEquality().equals(other.labelsUrl, labelsUrl) &&
-            const DeepCollectionEquality()
-                .equals(other.languagesUrl, languagesUrl) &&
-            const DeepCollectionEquality().equals(other.mergesUrl, mergesUrl) &&
-            const DeepCollectionEquality()
-                .equals(other.milestonesUrl, milestonesUrl) &&
-            const DeepCollectionEquality()
-                .equals(other.notificationsUrl, notificationsUrl) &&
-            const DeepCollectionEquality().equals(other.pullsUrl, pullsUrl) &&
-            const DeepCollectionEquality()
-                .equals(other.releasesUrl, releasesUrl) &&
-            const DeepCollectionEquality().equals(other.sshUrl, sshUrl) &&
-            const DeepCollectionEquality()
-                .equals(other.stargazersUrl, stargazersUrl) &&
-            const DeepCollectionEquality()
-                .equals(other.statusesUrl, statusesUrl) &&
-            const DeepCollectionEquality()
-                .equals(other.subscribersUrl, subscribersUrl) &&
-            const DeepCollectionEquality()
-                .equals(other.subscriptionUrl, subscriptionUrl) &&
-            const DeepCollectionEquality().equals(other.tagsUrl, tagsUrl) &&
-            const DeepCollectionEquality().equals(other.teamsUrl, teamsUrl) &&
-            const DeepCollectionEquality().equals(other.treesUrl, treesUrl) &&
-            const DeepCollectionEquality().equals(other.cloneUrl, cloneUrl) &&
-            const DeepCollectionEquality().equals(other.mirrorUrl, mirrorUrl) &&
-            const DeepCollectionEquality().equals(other.hooksUrl, hooksUrl) &&
-            const DeepCollectionEquality().equals(other.svnUrl, svnUrl) &&
-            const DeepCollectionEquality().equals(other.homepage, homepage) &&
+            other is _$RepositoryImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.nodeId, nodeId) || other.nodeId == nodeId) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.fullName, fullName) ||
+                other.fullName == fullName) &&
+            (identical(other.owner, owner) || other.owner == owner) &&
+            (identical(other.private, private) || other.private == private) &&
+            (identical(other.htmlUrl, htmlUrl) || other.htmlUrl == htmlUrl) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
+            (identical(other.fork, fork) || other.fork == fork) &&
+            (identical(other.url, url) || other.url == url) &&
+            (identical(other.archiveUrl, archiveUrl) ||
+                other.archiveUrl == archiveUrl) &&
+            (identical(other.assigneesUrl, assigneesUrl) ||
+                other.assigneesUrl == assigneesUrl) &&
+            (identical(other.blobsUrl, blobsUrl) ||
+                other.blobsUrl == blobsUrl) &&
+            (identical(other.branchesUrl, branchesUrl) ||
+                other.branchesUrl == branchesUrl) &&
+            (identical(other.collaboratorsUrl, collaboratorsUrl) ||
+                other.collaboratorsUrl == collaboratorsUrl) &&
+            (identical(other.commentsUrl, commentsUrl) ||
+                other.commentsUrl == commentsUrl) &&
+            (identical(other.commitsUrl, commitsUrl) ||
+                other.commitsUrl == commitsUrl) &&
+            (identical(other.compareUrl, compareUrl) ||
+                other.compareUrl == compareUrl) &&
+            (identical(other.contentsUrl, contentsUrl) ||
+                other.contentsUrl == contentsUrl) &&
+            (identical(other.contributorsUrl, contributorsUrl) ||
+                other.contributorsUrl == contributorsUrl) &&
+            (identical(other.deploymentsUrl, deploymentsUrl) ||
+                other.deploymentsUrl == deploymentsUrl) &&
+            (identical(other.downloadsUrl, downloadsUrl) ||
+                other.downloadsUrl == downloadsUrl) &&
+            (identical(other.eventsUrl, eventsUrl) ||
+                other.eventsUrl == eventsUrl) &&
+            (identical(other.forksUrl, forksUrl) ||
+                other.forksUrl == forksUrl) &&
+            (identical(other.gitCommitsUrl, gitCommitsUrl) ||
+                other.gitCommitsUrl == gitCommitsUrl) &&
+            (identical(other.gitRefsUrl, gitRefsUrl) ||
+                other.gitRefsUrl == gitRefsUrl) &&
+            (identical(other.gitTagsUrl, gitTagsUrl) ||
+                other.gitTagsUrl == gitTagsUrl) &&
+            (identical(other.gitUrl, gitUrl) || other.gitUrl == gitUrl) &&
+            (identical(other.issueCommentUrl, issueCommentUrl) ||
+                other.issueCommentUrl == issueCommentUrl) &&
+            (identical(other.issueEventsUrl, issueEventsUrl) ||
+                other.issueEventsUrl == issueEventsUrl) &&
+            (identical(other.issuesUrl, issuesUrl) ||
+                other.issuesUrl == issuesUrl) &&
+            (identical(other.keysUrl, keysUrl) || other.keysUrl == keysUrl) &&
+            (identical(other.labelsUrl, labelsUrl) ||
+                other.labelsUrl == labelsUrl) &&
+            (identical(other.languagesUrl, languagesUrl) ||
+                other.languagesUrl == languagesUrl) &&
+            (identical(other.mergesUrl, mergesUrl) ||
+                other.mergesUrl == mergesUrl) &&
+            (identical(other.milestonesUrl, milestonesUrl) ||
+                other.milestonesUrl == milestonesUrl) &&
+            (identical(other.notificationsUrl, notificationsUrl) ||
+                other.notificationsUrl == notificationsUrl) &&
+            (identical(other.pullsUrl, pullsUrl) ||
+                other.pullsUrl == pullsUrl) &&
+            (identical(other.releasesUrl, releasesUrl) ||
+                other.releasesUrl == releasesUrl) &&
+            (identical(other.sshUrl, sshUrl) || other.sshUrl == sshUrl) &&
+            (identical(other.stargazersUrl, stargazersUrl) ||
+                other.stargazersUrl == stargazersUrl) &&
+            (identical(other.statusesUrl, statusesUrl) ||
+                other.statusesUrl == statusesUrl) &&
+            (identical(other.subscribersUrl, subscribersUrl) ||
+                other.subscribersUrl == subscribersUrl) &&
+            (identical(other.subscriptionUrl, subscriptionUrl) ||
+                other.subscriptionUrl == subscriptionUrl) &&
+            (identical(other.tagsUrl, tagsUrl) || other.tagsUrl == tagsUrl) &&
+            (identical(other.teamsUrl, teamsUrl) ||
+                other.teamsUrl == teamsUrl) &&
+            (identical(other.treesUrl, treesUrl) ||
+                other.treesUrl == treesUrl) &&
+            (identical(other.cloneUrl, cloneUrl) ||
+                other.cloneUrl == cloneUrl) &&
+            (identical(other.mirrorUrl, mirrorUrl) ||
+                other.mirrorUrl == mirrorUrl) &&
+            (identical(other.hooksUrl, hooksUrl) ||
+                other.hooksUrl == hooksUrl) &&
+            (identical(other.svnUrl, svnUrl) || other.svnUrl == svnUrl) &&
+            (identical(other.homepage, homepage) ||
+                other.homepage == homepage) &&
             const DeepCollectionEquality().equals(other.language, language) &&
-            const DeepCollectionEquality()
-                .equals(other.forksCount, forksCount) &&
-            const DeepCollectionEquality()
-                .equals(other.stargazersCount, stargazersCount) &&
-            const DeepCollectionEquality()
-                .equals(other.watchersCount, watchersCount) &&
-            const DeepCollectionEquality().equals(other.size, size) &&
-            const DeepCollectionEquality()
-                .equals(other.defaultBranch, defaultBranch) &&
-            const DeepCollectionEquality()
-                .equals(other.openIssuesCount, openIssuesCount) &&
-            const DeepCollectionEquality()
-                .equals(other.isTemplate, isTemplate) &&
-            const DeepCollectionEquality().equals(other.topics, topics) &&
-            const DeepCollectionEquality().equals(other.hasIssues, hasIssues) &&
-            const DeepCollectionEquality()
-                .equals(other.hasProjects, hasProjects) &&
-            const DeepCollectionEquality().equals(other.hasWiki, hasWiki) &&
-            const DeepCollectionEquality().equals(other.hasPages, hasPages) &&
-            const DeepCollectionEquality()
-                .equals(other.hasDownloads, hasDownloads) &&
-            const DeepCollectionEquality().equals(other.archived, archived) &&
-            const DeepCollectionEquality().equals(other.disabled, disabled) &&
-            const DeepCollectionEquality()
-                .equals(other.visibility, visibility) &&
-            const DeepCollectionEquality().equals(other.pushedAt, pushedAt) &&
-            const DeepCollectionEquality().equals(other.createdAt, createdAt) &&
-            const DeepCollectionEquality().equals(other.updatedAt, updatedAt) &&
-            const DeepCollectionEquality()
-                .equals(other.permissions, permissions) &&
-            const DeepCollectionEquality()
-                .equals(other.allowRebaseMerge, allowRebaseMerge) &&
-            const DeepCollectionEquality()
-                .equals(other.templateRepository, templateRepository) &&
-            const DeepCollectionEquality()
-                .equals(other.tempCloneToken, tempCloneToken) &&
-            const DeepCollectionEquality()
-                .equals(other.allowSquashMerge, allowSquashMerge) &&
-            const DeepCollectionEquality()
-                .equals(other.allowAutoMerge, allowAutoMerge) &&
-            const DeepCollectionEquality()
-                .equals(other.deleteBranchOnMerge, deleteBranchOnMerge) &&
-            const DeepCollectionEquality()
-                .equals(other.allowMergeCommit, allowMergeCommit) &&
-            const DeepCollectionEquality()
-                .equals(other.subscribersCount, subscribersCount) &&
-            const DeepCollectionEquality()
-                .equals(other.networkCount, networkCount) &&
-            const DeepCollectionEquality().equals(other.license, license) &&
-            const DeepCollectionEquality().equals(other.forks, forks) &&
-            const DeepCollectionEquality().equals(other.openIssues, openIssues) &&
-            const DeepCollectionEquality().equals(other.watchers, watchers));
+            (identical(other.forksCount, forksCount) ||
+                other.forksCount == forksCount) &&
+            (identical(other.stargazersCount, stargazersCount) ||
+                other.stargazersCount == stargazersCount) &&
+            (identical(other.watchersCount, watchersCount) ||
+                other.watchersCount == watchersCount) &&
+            (identical(other.size, size) || other.size == size) &&
+            (identical(other.defaultBranch, defaultBranch) ||
+                other.defaultBranch == defaultBranch) &&
+            (identical(other.openIssuesCount, openIssuesCount) || other.openIssuesCount == openIssuesCount) &&
+            (identical(other.isTemplate, isTemplate) || other.isTemplate == isTemplate) &&
+            const DeepCollectionEquality().equals(other._topics, _topics) &&
+            (identical(other.hasIssues, hasIssues) || other.hasIssues == hasIssues) &&
+            (identical(other.hasProjects, hasProjects) || other.hasProjects == hasProjects) &&
+            (identical(other.hasWiki, hasWiki) || other.hasWiki == hasWiki) &&
+            (identical(other.hasPages, hasPages) || other.hasPages == hasPages) &&
+            (identical(other.hasDownloads, hasDownloads) || other.hasDownloads == hasDownloads) &&
+            (identical(other.archived, archived) || other.archived == archived) &&
+            (identical(other.disabled, disabled) || other.disabled == disabled) &&
+            (identical(other.visibility, visibility) || other.visibility == visibility) &&
+            (identical(other.pushedAt, pushedAt) || other.pushedAt == pushedAt) &&
+            (identical(other.createdAt, createdAt) || other.createdAt == createdAt) &&
+            (identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt) &&
+            (identical(other.permissions, permissions) || other.permissions == permissions) &&
+            (identical(other.allowRebaseMerge, allowRebaseMerge) || other.allowRebaseMerge == allowRebaseMerge) &&
+            const DeepCollectionEquality().equals(other.templateRepository, templateRepository) &&
+            (identical(other.tempCloneToken, tempCloneToken) || other.tempCloneToken == tempCloneToken) &&
+            (identical(other.allowSquashMerge, allowSquashMerge) || other.allowSquashMerge == allowSquashMerge) &&
+            (identical(other.allowAutoMerge, allowAutoMerge) || other.allowAutoMerge == allowAutoMerge) &&
+            (identical(other.deleteBranchOnMerge, deleteBranchOnMerge) || other.deleteBranchOnMerge == deleteBranchOnMerge) &&
+            (identical(other.allowMergeCommit, allowMergeCommit) || other.allowMergeCommit == allowMergeCommit) &&
+            (identical(other.subscribersCount, subscribersCount) || other.subscribersCount == subscribersCount) &&
+            (identical(other.networkCount, networkCount) || other.networkCount == networkCount) &&
+            (identical(other.license, license) || other.license == license) &&
+            (identical(other.forks, forks) || other.forks == forks) &&
+            (identical(other.openIssues, openIssues) || other.openIssues == openIssues) &&
+            (identical(other.watchers, watchers) || other.watchers == watchers));
   }
 
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hashAll([
         runtimeType,
-        const DeepCollectionEquality().hash(id),
-        const DeepCollectionEquality().hash(nodeId),
-        const DeepCollectionEquality().hash(name),
-        const DeepCollectionEquality().hash(fullName),
-        const DeepCollectionEquality().hash(owner),
-        const DeepCollectionEquality().hash(private),
-        const DeepCollectionEquality().hash(htmlUrl),
-        const DeepCollectionEquality().hash(description),
-        const DeepCollectionEquality().hash(fork),
-        const DeepCollectionEquality().hash(url),
-        const DeepCollectionEquality().hash(archiveUrl),
-        const DeepCollectionEquality().hash(assigneesUrl),
-        const DeepCollectionEquality().hash(blobsUrl),
-        const DeepCollectionEquality().hash(branchesUrl),
-        const DeepCollectionEquality().hash(collaboratorsUrl),
-        const DeepCollectionEquality().hash(commentsUrl),
-        const DeepCollectionEquality().hash(commitsUrl),
-        const DeepCollectionEquality().hash(compareUrl),
-        const DeepCollectionEquality().hash(contentsUrl),
-        const DeepCollectionEquality().hash(contributorsUrl),
-        const DeepCollectionEquality().hash(deploymentsUrl),
-        const DeepCollectionEquality().hash(downloadsUrl),
-        const DeepCollectionEquality().hash(eventsUrl),
-        const DeepCollectionEquality().hash(forksUrl),
-        const DeepCollectionEquality().hash(gitCommitsUrl),
-        const DeepCollectionEquality().hash(gitRefsUrl),
-        const DeepCollectionEquality().hash(gitTagsUrl),
-        const DeepCollectionEquality().hash(gitUrl),
-        const DeepCollectionEquality().hash(issueCommentUrl),
-        const DeepCollectionEquality().hash(issueEventsUrl),
-        const DeepCollectionEquality().hash(issuesUrl),
-        const DeepCollectionEquality().hash(keysUrl),
-        const DeepCollectionEquality().hash(labelsUrl),
-        const DeepCollectionEquality().hash(languagesUrl),
-        const DeepCollectionEquality().hash(mergesUrl),
-        const DeepCollectionEquality().hash(milestonesUrl),
-        const DeepCollectionEquality().hash(notificationsUrl),
-        const DeepCollectionEquality().hash(pullsUrl),
-        const DeepCollectionEquality().hash(releasesUrl),
-        const DeepCollectionEquality().hash(sshUrl),
-        const DeepCollectionEquality().hash(stargazersUrl),
-        const DeepCollectionEquality().hash(statusesUrl),
-        const DeepCollectionEquality().hash(subscribersUrl),
-        const DeepCollectionEquality().hash(subscriptionUrl),
-        const DeepCollectionEquality().hash(tagsUrl),
-        const DeepCollectionEquality().hash(teamsUrl),
-        const DeepCollectionEquality().hash(treesUrl),
-        const DeepCollectionEquality().hash(cloneUrl),
-        const DeepCollectionEquality().hash(mirrorUrl),
-        const DeepCollectionEquality().hash(hooksUrl),
-        const DeepCollectionEquality().hash(svnUrl),
-        const DeepCollectionEquality().hash(homepage),
+        id,
+        nodeId,
+        name,
+        fullName,
+        owner,
+        private,
+        htmlUrl,
+        description,
+        fork,
+        url,
+        archiveUrl,
+        assigneesUrl,
+        blobsUrl,
+        branchesUrl,
+        collaboratorsUrl,
+        commentsUrl,
+        commitsUrl,
+        compareUrl,
+        contentsUrl,
+        contributorsUrl,
+        deploymentsUrl,
+        downloadsUrl,
+        eventsUrl,
+        forksUrl,
+        gitCommitsUrl,
+        gitRefsUrl,
+        gitTagsUrl,
+        gitUrl,
+        issueCommentUrl,
+        issueEventsUrl,
+        issuesUrl,
+        keysUrl,
+        labelsUrl,
+        languagesUrl,
+        mergesUrl,
+        milestonesUrl,
+        notificationsUrl,
+        pullsUrl,
+        releasesUrl,
+        sshUrl,
+        stargazersUrl,
+        statusesUrl,
+        subscribersUrl,
+        subscriptionUrl,
+        tagsUrl,
+        teamsUrl,
+        treesUrl,
+        cloneUrl,
+        mirrorUrl,
+        hooksUrl,
+        svnUrl,
+        homepage,
         const DeepCollectionEquality().hash(language),
-        const DeepCollectionEquality().hash(forksCount),
-        const DeepCollectionEquality().hash(stargazersCount),
-        const DeepCollectionEquality().hash(watchersCount),
-        const DeepCollectionEquality().hash(size),
-        const DeepCollectionEquality().hash(defaultBranch),
-        const DeepCollectionEquality().hash(openIssuesCount),
-        const DeepCollectionEquality().hash(isTemplate),
-        const DeepCollectionEquality().hash(topics),
-        const DeepCollectionEquality().hash(hasIssues),
-        const DeepCollectionEquality().hash(hasProjects),
-        const DeepCollectionEquality().hash(hasWiki),
-        const DeepCollectionEquality().hash(hasPages),
-        const DeepCollectionEquality().hash(hasDownloads),
-        const DeepCollectionEquality().hash(archived),
-        const DeepCollectionEquality().hash(disabled),
-        const DeepCollectionEquality().hash(visibility),
-        const DeepCollectionEquality().hash(pushedAt),
-        const DeepCollectionEquality().hash(createdAt),
-        const DeepCollectionEquality().hash(updatedAt),
-        const DeepCollectionEquality().hash(permissions),
-        const DeepCollectionEquality().hash(allowRebaseMerge),
+        forksCount,
+        stargazersCount,
+        watchersCount,
+        size,
+        defaultBranch,
+        openIssuesCount,
+        isTemplate,
+        const DeepCollectionEquality().hash(_topics),
+        hasIssues,
+        hasProjects,
+        hasWiki,
+        hasPages,
+        hasDownloads,
+        archived,
+        disabled,
+        visibility,
+        pushedAt,
+        createdAt,
+        updatedAt,
+        permissions,
+        allowRebaseMerge,
         const DeepCollectionEquality().hash(templateRepository),
-        const DeepCollectionEquality().hash(tempCloneToken),
-        const DeepCollectionEquality().hash(allowSquashMerge),
-        const DeepCollectionEquality().hash(allowAutoMerge),
-        const DeepCollectionEquality().hash(deleteBranchOnMerge),
-        const DeepCollectionEquality().hash(allowMergeCommit),
-        const DeepCollectionEquality().hash(subscribersCount),
-        const DeepCollectionEquality().hash(networkCount),
-        const DeepCollectionEquality().hash(license),
-        const DeepCollectionEquality().hash(forks),
-        const DeepCollectionEquality().hash(openIssues),
-        const DeepCollectionEquality().hash(watchers)
+        tempCloneToken,
+        allowSquashMerge,
+        allowAutoMerge,
+        deleteBranchOnMerge,
+        allowMergeCommit,
+        subscribersCount,
+        networkCount,
+        license,
+        forks,
+        openIssues,
+        watchers
       ]);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Repository
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  _$RepositoryCopyWith<_Repository> get copyWith =>
-      __$RepositoryCopyWithImpl<_Repository>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$RepositoryImplCopyWith<_$RepositoryImpl> get copyWith =>
+      __$$RepositoryImplCopyWithImpl<_$RepositoryImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_RepositoryToJson(this);
+    return _$$RepositoryImplToJson(
+      this,
+    );
   }
 }
 
 abstract class _Repository implements Repository {
   factory _Repository(
-      {int? id,
-      @JsonKey(name: 'node_id') String? nodeId,
-      String? name,
-      @JsonKey(name: 'full_name') String? fullName,
-      Owner? owner,
-      bool? private,
-      @JsonKey(name: 'html_url') String? htmlUrl,
-      String? description,
-      bool? fork,
-      String? url,
-      @JsonKey(name: 'archive_url') String? archiveUrl,
-      @JsonKey(name: 'assignees_url') String? assigneesUrl,
-      @JsonKey(name: 'blobs_url') String? blobsUrl,
-      @JsonKey(name: 'branches_url') String? branchesUrl,
-      @JsonKey(name: 'collaborators_url') String? collaboratorsUrl,
-      @JsonKey(name: 'comments_url') String? commentsUrl,
-      @JsonKey(name: 'commits_url') String? commitsUrl,
-      @JsonKey(name: 'compare_url') String? compareUrl,
-      @JsonKey(name: 'contents_url') String? contentsUrl,
-      @JsonKey(name: 'contributors_url') String? contributorsUrl,
-      @JsonKey(name: 'deployments_url') String? deploymentsUrl,
-      @JsonKey(name: 'downloads_url') String? downloadsUrl,
-      @JsonKey(name: 'events_url') String? eventsUrl,
-      @JsonKey(name: 'forks_url') String? forksUrl,
-      @JsonKey(name: 'git_commits_url') String? gitCommitsUrl,
-      @JsonKey(name: 'git_refs_url') String? gitRefsUrl,
-      @JsonKey(name: 'git_tags_url') String? gitTagsUrl,
-      @JsonKey(name: 'git_url') String? gitUrl,
-      @JsonKey(name: 'issue_comment_url') String? issueCommentUrl,
-      @JsonKey(name: 'issue_events_url') String? issueEventsUrl,
-      @JsonKey(name: 'issues_url') String? issuesUrl,
-      @JsonKey(name: 'keys_url') String? keysUrl,
-      @JsonKey(name: 'labels_url') String? labelsUrl,
-      @JsonKey(name: 'languages_url') String? languagesUrl,
-      @JsonKey(name: 'merges_url') String? mergesUrl,
-      @JsonKey(name: 'milestones_url') String? milestonesUrl,
-      @JsonKey(name: 'notifications_url') String? notificationsUrl,
-      @JsonKey(name: 'pulls_url') String? pullsUrl,
-      @JsonKey(name: 'releases_url') String? releasesUrl,
-      @JsonKey(name: 'ssh_url') String? sshUrl,
-      @JsonKey(name: 'stargazers_url') String? stargazersUrl,
-      @JsonKey(name: 'statuses_url') String? statusesUrl,
-      @JsonKey(name: 'subscribers_url') String? subscribersUrl,
-      @JsonKey(name: 'subscription_url') String? subscriptionUrl,
-      @JsonKey(name: 'tags_url') String? tagsUrl,
-      @JsonKey(name: 'teams_url') String? teamsUrl,
-      @JsonKey(name: 'trees_url') String? treesUrl,
-      @JsonKey(name: 'clone_url') String? cloneUrl,
-      @JsonKey(name: 'mirror_url') String? mirrorUrl,
-      @JsonKey(name: 'hooks_url') String? hooksUrl,
-      @JsonKey(name: 'svn_url') String? svnUrl,
-      String? homepage,
-      dynamic language,
-      @JsonKey(name: 'forks_count') int? forksCount,
-      @JsonKey(name: 'stargazers_count') int? stargazersCount,
-      @JsonKey(name: 'watchers_count') int? watchersCount,
-      int? size,
-      @JsonKey(name: 'default_branch') String? defaultBranch,
-      @JsonKey(name: 'open_issues_count') int? openIssuesCount,
-      @JsonKey(name: 'is_template') bool? isTemplate,
-      List<String>? topics,
-      @JsonKey(name: 'has_issues') bool? hasIssues,
-      @JsonKey(name: 'has_projects') bool? hasProjects,
-      @JsonKey(name: 'has_wiki') bool? hasWiki,
-      @JsonKey(name: 'has_pages') bool? hasPages,
-      @JsonKey(name: 'has_downloads') bool? hasDownloads,
-      bool? archived,
-      bool? disabled,
-      String? visibility,
-      @JsonKey(name: 'pushed_at') DateTime? pushedAt,
-      @JsonKey(name: 'created_at') DateTime? createdAt,
-      @JsonKey(name: 'updated_at') DateTime? updatedAt,
-      Permissions? permissions,
-      @JsonKey(name: 'allow_rebase_merge') bool? allowRebaseMerge,
-      @JsonKey(name: 'template_repository') dynamic templateRepository,
-      @JsonKey(name: 'temp_clone_token') String? tempCloneToken,
-      @JsonKey(name: 'allow_squash_merge') bool? allowSquashMerge,
-      @JsonKey(name: 'allow_auto_merge') bool? allowAutoMerge,
-      @JsonKey(name: 'delete_branch_on_merge') bool? deleteBranchOnMerge,
-      @JsonKey(name: 'allow_merge_commit') bool? allowMergeCommit,
-      @JsonKey(name: 'subscribers_count') int? subscribersCount,
-      @JsonKey(name: 'network_count') int? networkCount,
-      License? license,
-      int? forks,
-      @JsonKey(name: 'open_issues') int? openIssues,
-      int? watchers}) = _$_Repository;
+      {final int? id,
+      @JsonKey(name: 'node_id') final String? nodeId,
+      final String? name,
+      @JsonKey(name: 'full_name') final String? fullName,
+      final Owner? owner,
+      final bool? private,
+      @JsonKey(name: 'html_url') final String? htmlUrl,
+      final String? description,
+      final bool? fork,
+      final String? url,
+      @JsonKey(name: 'archive_url') final String? archiveUrl,
+      @JsonKey(name: 'assignees_url') final String? assigneesUrl,
+      @JsonKey(name: 'blobs_url') final String? blobsUrl,
+      @JsonKey(name: 'branches_url') final String? branchesUrl,
+      @JsonKey(name: 'collaborators_url') final String? collaboratorsUrl,
+      @JsonKey(name: 'comments_url') final String? commentsUrl,
+      @JsonKey(name: 'commits_url') final String? commitsUrl,
+      @JsonKey(name: 'compare_url') final String? compareUrl,
+      @JsonKey(name: 'contents_url') final String? contentsUrl,
+      @JsonKey(name: 'contributors_url') final String? contributorsUrl,
+      @JsonKey(name: 'deployments_url') final String? deploymentsUrl,
+      @JsonKey(name: 'downloads_url') final String? downloadsUrl,
+      @JsonKey(name: 'events_url') final String? eventsUrl,
+      @JsonKey(name: 'forks_url') final String? forksUrl,
+      @JsonKey(name: 'git_commits_url') final String? gitCommitsUrl,
+      @JsonKey(name: 'git_refs_url') final String? gitRefsUrl,
+      @JsonKey(name: 'git_tags_url') final String? gitTagsUrl,
+      @JsonKey(name: 'git_url') final String? gitUrl,
+      @JsonKey(name: 'issue_comment_url') final String? issueCommentUrl,
+      @JsonKey(name: 'issue_events_url') final String? issueEventsUrl,
+      @JsonKey(name: 'issues_url') final String? issuesUrl,
+      @JsonKey(name: 'keys_url') final String? keysUrl,
+      @JsonKey(name: 'labels_url') final String? labelsUrl,
+      @JsonKey(name: 'languages_url') final String? languagesUrl,
+      @JsonKey(name: 'merges_url') final String? mergesUrl,
+      @JsonKey(name: 'milestones_url') final String? milestonesUrl,
+      @JsonKey(name: 'notifications_url') final String? notificationsUrl,
+      @JsonKey(name: 'pulls_url') final String? pullsUrl,
+      @JsonKey(name: 'releases_url') final String? releasesUrl,
+      @JsonKey(name: 'ssh_url') final String? sshUrl,
+      @JsonKey(name: 'stargazers_url') final String? stargazersUrl,
+      @JsonKey(name: 'statuses_url') final String? statusesUrl,
+      @JsonKey(name: 'subscribers_url') final String? subscribersUrl,
+      @JsonKey(name: 'subscription_url') final String? subscriptionUrl,
+      @JsonKey(name: 'tags_url') final String? tagsUrl,
+      @JsonKey(name: 'teams_url') final String? teamsUrl,
+      @JsonKey(name: 'trees_url') final String? treesUrl,
+      @JsonKey(name: 'clone_url') final String? cloneUrl,
+      @JsonKey(name: 'mirror_url') final String? mirrorUrl,
+      @JsonKey(name: 'hooks_url') final String? hooksUrl,
+      @JsonKey(name: 'svn_url') final String? svnUrl,
+      final String? homepage,
+      final dynamic language,
+      @JsonKey(name: 'forks_count') final int? forksCount,
+      @JsonKey(name: 'stargazers_count') final int? stargazersCount,
+      @JsonKey(name: 'watchers_count') final int? watchersCount,
+      final int? size,
+      @JsonKey(name: 'default_branch') final String? defaultBranch,
+      @JsonKey(name: 'open_issues_count') final int? openIssuesCount,
+      @JsonKey(name: 'is_template') final bool? isTemplate,
+      final List<String>? topics,
+      @JsonKey(name: 'has_issues') final bool? hasIssues,
+      @JsonKey(name: 'has_projects') final bool? hasProjects,
+      @JsonKey(name: 'has_wiki') final bool? hasWiki,
+      @JsonKey(name: 'has_pages') final bool? hasPages,
+      @JsonKey(name: 'has_downloads') final bool? hasDownloads,
+      final bool? archived,
+      final bool? disabled,
+      final String? visibility,
+      @JsonKey(name: 'pushed_at') final DateTime? pushedAt,
+      @JsonKey(name: 'created_at') final DateTime? createdAt,
+      @JsonKey(name: 'updated_at') final DateTime? updatedAt,
+      final Permissions? permissions,
+      @JsonKey(name: 'allow_rebase_merge') final bool? allowRebaseMerge,
+      @JsonKey(name: 'template_repository') final dynamic templateRepository,
+      @JsonKey(name: 'temp_clone_token') final String? tempCloneToken,
+      @JsonKey(name: 'allow_squash_merge') final bool? allowSquashMerge,
+      @JsonKey(name: 'allow_auto_merge') final bool? allowAutoMerge,
+      @JsonKey(name: 'delete_branch_on_merge') final bool? deleteBranchOnMerge,
+      @JsonKey(name: 'allow_merge_commit') final bool? allowMergeCommit,
+      @JsonKey(name: 'subscribers_count') final int? subscribersCount,
+      @JsonKey(name: 'network_count') final int? networkCount,
+      final License? license,
+      final int? forks,
+      @JsonKey(name: 'open_issues') final int? openIssues,
+      final int? watchers}) = _$RepositoryImpl;
 
   factory _Repository.fromJson(Map<String, dynamic> json) =
-      _$_Repository.fromJson;
+      _$RepositoryImpl.fromJson;
 
   @override
   int? get id;
@@ -2408,8 +2255,11 @@ abstract class _Repository implements Repository {
   int? get openIssues;
   @override
   int? get watchers;
+
+  /// Create a copy of Repository
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$RepositoryCopyWith<_Repository> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$RepositoryImplCopyWith<_$RepositoryImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -6,7 +6,8 @@ part of 'license.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_License _$$_LicenseFromJson(Map<String, dynamic> json) => _$_License(
+_$LicenseImpl _$$LicenseImplFromJson(Map<String, dynamic> json) =>
+    _$LicenseImpl(
       key: json['key'] as String?,
       name: json['name'] as String?,
       url: json['url'] as String?,
@@ -15,7 +16,7 @@ _$_License _$$_LicenseFromJson(Map<String, dynamic> json) => _$_License(
       htmlUrl: json['html_url'] as String?,
     );
 
-Map<String, dynamic> _$$_LicenseToJson(_$_License instance) =>
+Map<String, dynamic> _$$LicenseImplToJson(_$LicenseImpl instance) =>
     <String, dynamic>{
       'key': instance.key,
       'name': instance.name,

@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'issue_details_event.dart';
 
@@ -12,26 +12,11 @@ part of 'issue_details_event.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$IssueDetailsEventTearOff {
-  const _$IssueDetailsEventTearOff();
-
-  _LoadIssueDetailsEvent load(String? args) {
-    return _LoadIssueDetailsEvent(
-      args,
-    );
-  }
-}
-
-/// @nodoc
-const $IssueDetailsEvent = _$IssueDetailsEventTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$IssueDetailsEvent {
   String? get args => throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String? args) load,
@@ -39,7 +24,7 @@ mixin _$IssueDetailsEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String? args)? load,
+    TResult? Function(String? args)? load,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -55,7 +40,7 @@ mixin _$IssueDetailsEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_LoadIssueDetailsEvent value)? load,
+    TResult? Function(_LoadIssueDetailsEvent value)? load,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -65,7 +50,9 @@ mixin _$IssueDetailsEvent {
   }) =>
       throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of IssueDetailsEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $IssueDetailsEventCopyWith<IssueDetailsEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -74,59 +61,66 @@ mixin _$IssueDetailsEvent {
 abstract class $IssueDetailsEventCopyWith<$Res> {
   factory $IssueDetailsEventCopyWith(
           IssueDetailsEvent value, $Res Function(IssueDetailsEvent) then) =
-      _$IssueDetailsEventCopyWithImpl<$Res>;
+      _$IssueDetailsEventCopyWithImpl<$Res, IssueDetailsEvent>;
+  @useResult
   $Res call({String? args});
 }
 
 /// @nodoc
-class _$IssueDetailsEventCopyWithImpl<$Res>
+class _$IssueDetailsEventCopyWithImpl<$Res, $Val extends IssueDetailsEvent>
     implements $IssueDetailsEventCopyWith<$Res> {
   _$IssueDetailsEventCopyWithImpl(this._value, this._then);
 
-  final IssueDetailsEvent _value;
   // ignore: unused_field
-  final $Res Function(IssueDetailsEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  /// Create a copy of IssueDetailsEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? args = freezed,
   }) {
     return _then(_value.copyWith(
-      args: args == freezed
+      args: freezed == args
           ? _value.args
           : args // ignore: cast_nullable_to_non_nullable
               as String?,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$LoadIssueDetailsEventCopyWith<$Res>
+abstract class _$$LoadIssueDetailsEventImplCopyWith<$Res>
     implements $IssueDetailsEventCopyWith<$Res> {
-  factory _$LoadIssueDetailsEventCopyWith(_LoadIssueDetailsEvent value,
-          $Res Function(_LoadIssueDetailsEvent) then) =
-      __$LoadIssueDetailsEventCopyWithImpl<$Res>;
+  factory _$$LoadIssueDetailsEventImplCopyWith(
+          _$LoadIssueDetailsEventImpl value,
+          $Res Function(_$LoadIssueDetailsEventImpl) then) =
+      __$$LoadIssueDetailsEventImplCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({String? args});
 }
 
 /// @nodoc
-class __$LoadIssueDetailsEventCopyWithImpl<$Res>
-    extends _$IssueDetailsEventCopyWithImpl<$Res>
-    implements _$LoadIssueDetailsEventCopyWith<$Res> {
-  __$LoadIssueDetailsEventCopyWithImpl(_LoadIssueDetailsEvent _value,
-      $Res Function(_LoadIssueDetailsEvent) _then)
-      : super(_value, (v) => _then(v as _LoadIssueDetailsEvent));
+class __$$LoadIssueDetailsEventImplCopyWithImpl<$Res>
+    extends _$IssueDetailsEventCopyWithImpl<$Res, _$LoadIssueDetailsEventImpl>
+    implements _$$LoadIssueDetailsEventImplCopyWith<$Res> {
+  __$$LoadIssueDetailsEventImplCopyWithImpl(_$LoadIssueDetailsEventImpl _value,
+      $Res Function(_$LoadIssueDetailsEventImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _LoadIssueDetailsEvent get _value => super._value as _LoadIssueDetailsEvent;
-
+  /// Create a copy of IssueDetailsEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? args = freezed,
   }) {
-    return _then(_LoadIssueDetailsEvent(
-      args == freezed
+    return _then(_$LoadIssueDetailsEventImpl(
+      freezed == args
           ? _value.args
           : args // ignore: cast_nullable_to_non_nullable
               as String?,
@@ -136,8 +130,8 @@ class __$LoadIssueDetailsEventCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_LoadIssueDetailsEvent implements _LoadIssueDetailsEvent {
-  _$_LoadIssueDetailsEvent(this.args);
+class _$LoadIssueDetailsEventImpl implements _LoadIssueDetailsEvent {
+  _$LoadIssueDetailsEventImpl(this.args);
 
   @override
   final String? args;
@@ -148,22 +142,24 @@ class _$_LoadIssueDetailsEvent implements _LoadIssueDetailsEvent {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _LoadIssueDetailsEvent &&
-            const DeepCollectionEquality().equals(other.args, args));
+            other is _$LoadIssueDetailsEventImpl &&
+            (identical(other.args, args) || other.args == args));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(args));
+  int get hashCode => Object.hash(runtimeType, args);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of IssueDetailsEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  _$LoadIssueDetailsEventCopyWith<_LoadIssueDetailsEvent> get copyWith =>
-      __$LoadIssueDetailsEventCopyWithImpl<_LoadIssueDetailsEvent>(
-          this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$LoadIssueDetailsEventImplCopyWith<_$LoadIssueDetailsEventImpl>
+      get copyWith => __$$LoadIssueDetailsEventImplCopyWithImpl<
+          _$LoadIssueDetailsEventImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -176,7 +172,7 @@ class _$_LoadIssueDetailsEvent implements _LoadIssueDetailsEvent {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String? args)? load,
+    TResult? Function(String? args)? load,
   }) {
     return load?.call(args);
   }
@@ -204,7 +200,7 @@ class _$_LoadIssueDetailsEvent implements _LoadIssueDetailsEvent {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_LoadIssueDetailsEvent value)? load,
+    TResult? Function(_LoadIssueDetailsEvent value)? load,
   }) {
     return load?.call(this);
   }
@@ -223,12 +219,16 @@ class _$_LoadIssueDetailsEvent implements _LoadIssueDetailsEvent {
 }
 
 abstract class _LoadIssueDetailsEvent implements IssueDetailsEvent {
-  factory _LoadIssueDetailsEvent(String? args) = _$_LoadIssueDetailsEvent;
+  factory _LoadIssueDetailsEvent(final String? args) =
+      _$LoadIssueDetailsEventImpl;
 
   @override
   String? get args;
+
+  /// Create a copy of IssueDetailsEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$LoadIssueDetailsEventCopyWith<_LoadIssueDetailsEvent> get copyWith =>
-      throw _privateConstructorUsedError;
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$LoadIssueDetailsEventImplCopyWith<_$LoadIssueDetailsEventImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

@@ -6,9 +6,9 @@ part of 'owner.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Owner _$$_OwnerFromJson(Map<String, dynamic> json) => _$_Owner(
+_$OwnerImpl _$$OwnerImplFromJson(Map<String, dynamic> json) => _$OwnerImpl(
       login: json['login'] as String?,
-      id: json['id'] as int?,
+      id: (json['id'] as num?)?.toInt(),
       nodeId: json['node_id'] as String?,
       avatarUrl: json['avatar_url'] as String?,
       gravatarId: json['gravatar_id'] as String?,
@@ -27,7 +27,8 @@ _$_Owner _$$_OwnerFromJson(Map<String, dynamic> json) => _$_Owner(
       siteAdmin: json['site_admin'] as bool?,
     );
 
-Map<String, dynamic> _$$_OwnerToJson(_$_Owner instance) => <String, dynamic>{
+Map<String, dynamic> _$$OwnerImplToJson(_$OwnerImpl instance) =>
+    <String, dynamic>{
       'login': instance.login,
       'id': instance.id,
       'node_id': instance.nodeId,

@@ -6,9 +6,10 @@ part of 'creator.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Creator _$$_CreatorFromJson(Map<String, dynamic> json) => _$_Creator(
+_$CreatorImpl _$$CreatorImplFromJson(Map<String, dynamic> json) =>
+    _$CreatorImpl(
       login: json['login'] as String?,
-      id: json['id'] as int?,
+      id: (json['id'] as num?)?.toInt(),
       nodeId: json['node_id'] as String?,
       avatarUrl: json['avatar_url'] as String?,
       gravatarId: json['gravatar_id'] as String?,
@@ -27,7 +28,7 @@ _$_Creator _$$_CreatorFromJson(Map<String, dynamic> json) => _$_Creator(
       siteAdmin: json['site_admin'] as bool?,
     );
 
-Map<String, dynamic> _$$_CreatorToJson(_$_Creator instance) =>
+Map<String, dynamic> _$$CreatorImplToJson(_$CreatorImpl instance) =>
     <String, dynamic>{
       'login': instance.login,
       'id': instance.id,

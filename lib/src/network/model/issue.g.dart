@@ -6,8 +6,8 @@ part of 'issue.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Issue _$$_IssueFromJson(Map<String, dynamic> json) => _$_Issue(
-      id: json['id'] as int?,
+_$IssueImpl _$$IssueImplFromJson(Map<String, dynamic> json) => _$IssueImpl(
+      id: (json['id'] as num?)?.toInt(),
       nodeId: json['node_id'] as String?,
       url: json['url'] as String?,
       repositoryUrl: json['repository_url'] as String?,
@@ -15,7 +15,7 @@ _$_Issue _$$_IssueFromJson(Map<String, dynamic> json) => _$_Issue(
       commentsUrl: json['comments_url'] as String?,
       eventsUrl: json['events_url'] as String?,
       htmlUrl: json['html_url'] as String?,
-      number: json['number'] as int?,
+      number: (json['number'] as num?)?.toInt(),
       state: json['state'] as String?,
       title: json['title'] as String?,
       body: json['body'] as String?,
@@ -36,7 +36,7 @@ _$_Issue _$$_IssueFromJson(Map<String, dynamic> json) => _$_Issue(
           : Milestone.fromJson(json['milestone'] as Map<String, dynamic>),
       locked: json['locked'] as bool?,
       activeLockReason: json['active_lock_reason'] as String?,
-      comments: json['comments'] as int?,
+      comments: (json['comments'] as num?)?.toInt(),
       pullRequest: json['pull_request'] == null
           ? null
           : PullRequest.fromJson(json['pull_request'] as Map<String, dynamic>),
@@ -54,7 +54,8 @@ _$_Issue _$$_IssueFromJson(Map<String, dynamic> json) => _$_Issue(
       isSeen: json['isSeen'] as bool? ?? false,
     );
 
-Map<String, dynamic> _$$_IssueToJson(_$_Issue instance) => <String, dynamic>{
+Map<String, dynamic> _$$IssueImplToJson(_$IssueImpl instance) =>
+    <String, dynamic>{
       'id': instance.id,
       'node_id': instance.nodeId,
       'url': instance.url,

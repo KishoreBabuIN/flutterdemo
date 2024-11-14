@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'issues_list_state.dart';
 
@@ -12,36 +12,7 @@ part of 'issues_list_state.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$IssuesListStateTearOff {
-  const _$IssuesListStateTearOff();
-
-  LoadingIssuesListState loading() {
-    return const LoadingIssuesListState();
-  }
-
-  ContentIssuesListState content(
-      {required List<Issue> issues,
-      required bool hasReachedEnd,
-      required IssuesListSortType sortType}) {
-    return ContentIssuesListState(
-      issues: issues,
-      hasReachedEnd: hasReachedEnd,
-      sortType: sortType,
-    );
-  }
-
-  ErrorIssuesListState error({Exception? exception}) {
-    return ErrorIssuesListState(
-      exception: exception,
-    );
-  }
-}
-
-/// @nodoc
-const $IssuesListState = _$IssuesListStateTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$IssuesListState {
@@ -56,11 +27,11 @@ mixin _$IssuesListState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? loading,
-    TResult Function(List<Issue> issues, bool hasReachedEnd,
+    TResult? Function()? loading,
+    TResult? Function(List<Issue> issues, bool hasReachedEnd,
             IssuesListSortType sortType)?
         content,
-    TResult Function(Exception? exception)? error,
+    TResult? Function(Exception? exception)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -82,9 +53,9 @@ mixin _$IssuesListState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(LoadingIssuesListState value)? loading,
-    TResult Function(ContentIssuesListState value)? content,
-    TResult Function(ErrorIssuesListState value)? error,
+    TResult? Function(LoadingIssuesListState value)? loading,
+    TResult? Function(ContentIssuesListState value)? content,
+    TResult? Function(ErrorIssuesListState value)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -101,42 +72,48 @@ mixin _$IssuesListState {
 abstract class $IssuesListStateCopyWith<$Res> {
   factory $IssuesListStateCopyWith(
           IssuesListState value, $Res Function(IssuesListState) then) =
-      _$IssuesListStateCopyWithImpl<$Res>;
+      _$IssuesListStateCopyWithImpl<$Res, IssuesListState>;
 }
 
 /// @nodoc
-class _$IssuesListStateCopyWithImpl<$Res>
+class _$IssuesListStateCopyWithImpl<$Res, $Val extends IssuesListState>
     implements $IssuesListStateCopyWith<$Res> {
   _$IssuesListStateCopyWithImpl(this._value, this._then);
 
-  final IssuesListState _value;
   // ignore: unused_field
-  final $Res Function(IssuesListState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of IssuesListState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
-abstract class $LoadingIssuesListStateCopyWith<$Res> {
-  factory $LoadingIssuesListStateCopyWith(LoadingIssuesListState value,
-          $Res Function(LoadingIssuesListState) then) =
-      _$LoadingIssuesListStateCopyWithImpl<$Res>;
+abstract class _$$LoadingIssuesListStateImplCopyWith<$Res> {
+  factory _$$LoadingIssuesListStateImplCopyWith(
+          _$LoadingIssuesListStateImpl value,
+          $Res Function(_$LoadingIssuesListStateImpl) then) =
+      __$$LoadingIssuesListStateImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$LoadingIssuesListStateCopyWithImpl<$Res>
-    extends _$IssuesListStateCopyWithImpl<$Res>
-    implements $LoadingIssuesListStateCopyWith<$Res> {
-  _$LoadingIssuesListStateCopyWithImpl(LoadingIssuesListState _value,
-      $Res Function(LoadingIssuesListState) _then)
-      : super(_value, (v) => _then(v as LoadingIssuesListState));
+class __$$LoadingIssuesListStateImplCopyWithImpl<$Res>
+    extends _$IssuesListStateCopyWithImpl<$Res, _$LoadingIssuesListStateImpl>
+    implements _$$LoadingIssuesListStateImplCopyWith<$Res> {
+  __$$LoadingIssuesListStateImplCopyWithImpl(
+      _$LoadingIssuesListStateImpl _value,
+      $Res Function(_$LoadingIssuesListStateImpl) _then)
+      : super(_value, _then);
 
-  @override
-  LoadingIssuesListState get _value => super._value as LoadingIssuesListState;
+  /// Create a copy of IssuesListState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$LoadingIssuesListState implements LoadingIssuesListState {
-  const _$LoadingIssuesListState();
+class _$LoadingIssuesListStateImpl implements LoadingIssuesListState {
+  const _$LoadingIssuesListStateImpl();
 
   @override
   String toString() {
@@ -144,9 +121,10 @@ class _$LoadingIssuesListState implements LoadingIssuesListState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is LoadingIssuesListState);
+        (other.runtimeType == runtimeType &&
+            other is _$LoadingIssuesListStateImpl);
   }
 
   @override
@@ -167,11 +145,11 @@ class _$LoadingIssuesListState implements LoadingIssuesListState {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? loading,
-    TResult Function(List<Issue> issues, bool hasReachedEnd,
+    TResult? Function()? loading,
+    TResult? Function(List<Issue> issues, bool hasReachedEnd,
             IssuesListSortType sortType)?
         content,
-    TResult Function(Exception? exception)? error,
+    TResult? Function(Exception? exception)? error,
   }) {
     return loading?.call();
   }
@@ -205,9 +183,9 @@ class _$LoadingIssuesListState implements LoadingIssuesListState {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(LoadingIssuesListState value)? loading,
-    TResult Function(ContentIssuesListState value)? content,
-    TResult Function(ErrorIssuesListState value)? error,
+    TResult? Function(LoadingIssuesListState value)? loading,
+    TResult? Function(ContentIssuesListState value)? content,
+    TResult? Function(ErrorIssuesListState value)? error,
   }) {
     return loading?.call(this);
   }
@@ -228,45 +206,48 @@ class _$LoadingIssuesListState implements LoadingIssuesListState {
 }
 
 abstract class LoadingIssuesListState implements IssuesListState {
-  const factory LoadingIssuesListState() = _$LoadingIssuesListState;
+  const factory LoadingIssuesListState() = _$LoadingIssuesListStateImpl;
 }
 
 /// @nodoc
-abstract class $ContentIssuesListStateCopyWith<$Res> {
-  factory $ContentIssuesListStateCopyWith(ContentIssuesListState value,
-          $Res Function(ContentIssuesListState) then) =
-      _$ContentIssuesListStateCopyWithImpl<$Res>;
+abstract class _$$ContentIssuesListStateImplCopyWith<$Res> {
+  factory _$$ContentIssuesListStateImplCopyWith(
+          _$ContentIssuesListStateImpl value,
+          $Res Function(_$ContentIssuesListStateImpl) then) =
+      __$$ContentIssuesListStateImplCopyWithImpl<$Res>;
+  @useResult
   $Res call(
       {List<Issue> issues, bool hasReachedEnd, IssuesListSortType sortType});
 }
 
 /// @nodoc
-class _$ContentIssuesListStateCopyWithImpl<$Res>
-    extends _$IssuesListStateCopyWithImpl<$Res>
-    implements $ContentIssuesListStateCopyWith<$Res> {
-  _$ContentIssuesListStateCopyWithImpl(ContentIssuesListState _value,
-      $Res Function(ContentIssuesListState) _then)
-      : super(_value, (v) => _then(v as ContentIssuesListState));
+class __$$ContentIssuesListStateImplCopyWithImpl<$Res>
+    extends _$IssuesListStateCopyWithImpl<$Res, _$ContentIssuesListStateImpl>
+    implements _$$ContentIssuesListStateImplCopyWith<$Res> {
+  __$$ContentIssuesListStateImplCopyWithImpl(
+      _$ContentIssuesListStateImpl _value,
+      $Res Function(_$ContentIssuesListStateImpl) _then)
+      : super(_value, _then);
 
-  @override
-  ContentIssuesListState get _value => super._value as ContentIssuesListState;
-
+  /// Create a copy of IssuesListState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? issues = freezed,
-    Object? hasReachedEnd = freezed,
-    Object? sortType = freezed,
+    Object? issues = null,
+    Object? hasReachedEnd = null,
+    Object? sortType = null,
   }) {
-    return _then(ContentIssuesListState(
-      issues: issues == freezed
-          ? _value.issues
+    return _then(_$ContentIssuesListStateImpl(
+      issues: null == issues
+          ? _value._issues
           : issues // ignore: cast_nullable_to_non_nullable
               as List<Issue>,
-      hasReachedEnd: hasReachedEnd == freezed
+      hasReachedEnd: null == hasReachedEnd
           ? _value.hasReachedEnd
           : hasReachedEnd // ignore: cast_nullable_to_non_nullable
               as bool,
-      sortType: sortType == freezed
+      sortType: null == sortType
           ? _value.sortType
           : sortType // ignore: cast_nullable_to_non_nullable
               as IssuesListSortType,
@@ -276,14 +257,21 @@ class _$ContentIssuesListStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ContentIssuesListState implements ContentIssuesListState {
-  const _$ContentIssuesListState(
-      {required this.issues,
+class _$ContentIssuesListStateImpl implements ContentIssuesListState {
+  const _$ContentIssuesListStateImpl(
+      {required final List<Issue> issues,
       required this.hasReachedEnd,
-      required this.sortType});
+      required this.sortType})
+      : _issues = issues;
 
+  final List<Issue> _issues;
   @override
-  final List<Issue> issues;
+  List<Issue> get issues {
+    if (_issues is EqualUnmodifiableListView) return _issues;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_issues);
+  }
+
   @override
   final bool hasReachedEnd;
   @override
@@ -295,28 +283,29 @@ class _$ContentIssuesListState implements ContentIssuesListState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is ContentIssuesListState &&
-            const DeepCollectionEquality().equals(other.issues, issues) &&
-            const DeepCollectionEquality()
-                .equals(other.hasReachedEnd, hasReachedEnd) &&
-            const DeepCollectionEquality().equals(other.sortType, sortType));
+            other is _$ContentIssuesListStateImpl &&
+            const DeepCollectionEquality().equals(other._issues, _issues) &&
+            (identical(other.hasReachedEnd, hasReachedEnd) ||
+                other.hasReachedEnd == hasReachedEnd) &&
+            (identical(other.sortType, sortType) ||
+                other.sortType == sortType));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(issues),
-      const DeepCollectionEquality().hash(hasReachedEnd),
-      const DeepCollectionEquality().hash(sortType));
+  int get hashCode => Object.hash(runtimeType,
+      const DeepCollectionEquality().hash(_issues), hasReachedEnd, sortType);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of IssuesListState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  $ContentIssuesListStateCopyWith<ContentIssuesListState> get copyWith =>
-      _$ContentIssuesListStateCopyWithImpl<ContentIssuesListState>(
-          this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$ContentIssuesListStateImplCopyWith<_$ContentIssuesListStateImpl>
+      get copyWith => __$$ContentIssuesListStateImplCopyWithImpl<
+          _$ContentIssuesListStateImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -333,11 +322,11 @@ class _$ContentIssuesListState implements ContentIssuesListState {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? loading,
-    TResult Function(List<Issue> issues, bool hasReachedEnd,
+    TResult? Function()? loading,
+    TResult? Function(List<Issue> issues, bool hasReachedEnd,
             IssuesListSortType sortType)?
         content,
-    TResult Function(Exception? exception)? error,
+    TResult? Function(Exception? exception)? error,
   }) {
     return content?.call(issues, hasReachedEnd, sortType);
   }
@@ -371,9 +360,9 @@ class _$ContentIssuesListState implements ContentIssuesListState {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(LoadingIssuesListState value)? loading,
-    TResult Function(ContentIssuesListState value)? content,
-    TResult Function(ErrorIssuesListState value)? error,
+    TResult? Function(LoadingIssuesListState value)? loading,
+    TResult? Function(ContentIssuesListState value)? content,
+    TResult? Function(ErrorIssuesListState value)? error,
   }) {
     return content?.call(this);
   }
@@ -395,43 +384,48 @@ class _$ContentIssuesListState implements ContentIssuesListState {
 
 abstract class ContentIssuesListState implements IssuesListState {
   const factory ContentIssuesListState(
-      {required List<Issue> issues,
-      required bool hasReachedEnd,
-      required IssuesListSortType sortType}) = _$ContentIssuesListState;
+          {required final List<Issue> issues,
+          required final bool hasReachedEnd,
+          required final IssuesListSortType sortType}) =
+      _$ContentIssuesListStateImpl;
 
   List<Issue> get issues;
   bool get hasReachedEnd;
   IssuesListSortType get sortType;
-  @JsonKey(ignore: true)
-  $ContentIssuesListStateCopyWith<ContentIssuesListState> get copyWith =>
-      throw _privateConstructorUsedError;
+
+  /// Create a copy of IssuesListState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ContentIssuesListStateImplCopyWith<_$ContentIssuesListStateImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ErrorIssuesListStateCopyWith<$Res> {
-  factory $ErrorIssuesListStateCopyWith(ErrorIssuesListState value,
-          $Res Function(ErrorIssuesListState) then) =
-      _$ErrorIssuesListStateCopyWithImpl<$Res>;
+abstract class _$$ErrorIssuesListStateImplCopyWith<$Res> {
+  factory _$$ErrorIssuesListStateImplCopyWith(_$ErrorIssuesListStateImpl value,
+          $Res Function(_$ErrorIssuesListStateImpl) then) =
+      __$$ErrorIssuesListStateImplCopyWithImpl<$Res>;
+  @useResult
   $Res call({Exception? exception});
 }
 
 /// @nodoc
-class _$ErrorIssuesListStateCopyWithImpl<$Res>
-    extends _$IssuesListStateCopyWithImpl<$Res>
-    implements $ErrorIssuesListStateCopyWith<$Res> {
-  _$ErrorIssuesListStateCopyWithImpl(
-      ErrorIssuesListState _value, $Res Function(ErrorIssuesListState) _then)
-      : super(_value, (v) => _then(v as ErrorIssuesListState));
+class __$$ErrorIssuesListStateImplCopyWithImpl<$Res>
+    extends _$IssuesListStateCopyWithImpl<$Res, _$ErrorIssuesListStateImpl>
+    implements _$$ErrorIssuesListStateImplCopyWith<$Res> {
+  __$$ErrorIssuesListStateImplCopyWithImpl(_$ErrorIssuesListStateImpl _value,
+      $Res Function(_$ErrorIssuesListStateImpl) _then)
+      : super(_value, _then);
 
-  @override
-  ErrorIssuesListState get _value => super._value as ErrorIssuesListState;
-
+  /// Create a copy of IssuesListState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? exception = freezed,
   }) {
-    return _then(ErrorIssuesListState(
-      exception: exception == freezed
+    return _then(_$ErrorIssuesListStateImpl(
+      exception: freezed == exception
           ? _value.exception
           : exception // ignore: cast_nullable_to_non_nullable
               as Exception?,
@@ -441,8 +435,8 @@ class _$ErrorIssuesListStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ErrorIssuesListState implements ErrorIssuesListState {
-  const _$ErrorIssuesListState({this.exception});
+class _$ErrorIssuesListStateImpl implements ErrorIssuesListState {
+  const _$ErrorIssuesListStateImpl({this.exception});
 
   @override
   final Exception? exception;
@@ -453,22 +447,26 @@ class _$ErrorIssuesListState implements ErrorIssuesListState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is ErrorIssuesListState &&
-            const DeepCollectionEquality().equals(other.exception, exception));
+            other is _$ErrorIssuesListStateImpl &&
+            (identical(other.exception, exception) ||
+                other.exception == exception));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(exception));
+  int get hashCode => Object.hash(runtimeType, exception);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of IssuesListState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  $ErrorIssuesListStateCopyWith<ErrorIssuesListState> get copyWith =>
-      _$ErrorIssuesListStateCopyWithImpl<ErrorIssuesListState>(
-          this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$ErrorIssuesListStateImplCopyWith<_$ErrorIssuesListStateImpl>
+      get copyWith =>
+          __$$ErrorIssuesListStateImplCopyWithImpl<_$ErrorIssuesListStateImpl>(
+              this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -485,11 +483,11 @@ class _$ErrorIssuesListState implements ErrorIssuesListState {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? loading,
-    TResult Function(List<Issue> issues, bool hasReachedEnd,
+    TResult? Function()? loading,
+    TResult? Function(List<Issue> issues, bool hasReachedEnd,
             IssuesListSortType sortType)?
         content,
-    TResult Function(Exception? exception)? error,
+    TResult? Function(Exception? exception)? error,
   }) {
     return error?.call(exception);
   }
@@ -523,9 +521,9 @@ class _$ErrorIssuesListState implements ErrorIssuesListState {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(LoadingIssuesListState value)? loading,
-    TResult Function(ContentIssuesListState value)? content,
-    TResult Function(ErrorIssuesListState value)? error,
+    TResult? Function(LoadingIssuesListState value)? loading,
+    TResult? Function(ContentIssuesListState value)? content,
+    TResult? Function(ErrorIssuesListState value)? error,
   }) {
     return error?.call(this);
   }
@@ -546,11 +544,14 @@ class _$ErrorIssuesListState implements ErrorIssuesListState {
 }
 
 abstract class ErrorIssuesListState implements IssuesListState {
-  const factory ErrorIssuesListState({Exception? exception}) =
-      _$ErrorIssuesListState;
+  const factory ErrorIssuesListState({final Exception? exception}) =
+      _$ErrorIssuesListStateImpl;
 
   Exception? get exception;
-  @JsonKey(ignore: true)
-  $ErrorIssuesListStateCopyWith<ErrorIssuesListState> get copyWith =>
-      throw _privateConstructorUsedError;
+
+  /// Create a copy of IssuesListState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ErrorIssuesListStateImplCopyWith<_$ErrorIssuesListStateImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
