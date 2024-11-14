@@ -12,12 +12,12 @@ import 'package:mocktail/mocktail.dart';
 import 'mocks.dart';
 
 void main() {
-  AppState _defualtState = AppState.state(
+  AppState defualtState = AppState.state(
       sortType: IssuesListSortType.created,
       filterType: IssuesListFilterType.open);
   final Issue issue = Issue(id: 11);
-  final MockRepository _mockRepo = MockRepository();
-  IssuesListBloc _buildBloc() => IssuesListBloc(repository: _mockRepo);
+  final MockRepository mockRepo = MockRepository();
+  IssuesListBloc buildBloc() => IssuesListBloc(repository: mockRepo);
 
   setUp(() {
     registerFallbackValue(IssuesListSortType.created);
@@ -27,18 +27,18 @@ void main() {
   group("IssuesListBloc", () {
     blocTest<IssuesListBloc, IssuesListState>(
       "emits nothing when no events are added",
-      build: _buildBloc,
+      build: buildBloc,
       expect: () => <IssuesListState>[],
     );
 
     blocTest<IssuesListBloc, IssuesListState>(
       "emits content when first page event is added",
       setUp: () => when(() =>
-              _mockRepo.getAllIssuesByPage(any(), any(), any(), any(), any()))
+              mockRepo.getAllIssuesByPage(any(), any(), any(), any(), any()))
           .thenAnswer((_) async => [issue, issue]),
-      build: _buildBloc,
+      build: buildBloc,
       act: (bloc) =>
-          bloc.add(FetchFirstPageIssuesListEvent(appState: _defualtState)),
+          bloc.add(FetchFirstPageIssuesListEvent(appState: defualtState)),
       expect: () => [
         isA<LoadingIssuesListState>(),
         isA<ContentIssuesListState>(),

@@ -11,18 +11,18 @@ import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class IssueDetailsScreen extends StatelessWidget {
-  const IssueDetailsScreen({Key? key}) : super(key: key);
+  const IssueDetailsScreen({super.key});
   static const routeName = '/issue_details';
 
   @override
   Widget build(BuildContext context) {
-    final _args = ModalRoute.of(context)?.settings.arguments as String?;
+    final args = ModalRoute.of(context)?.settings.arguments as String?;
 
     return BlocProvider(
       create: (context) =>
           IssueDetailsBloc(repository: getIt<GithubIssuesRepository>())
             ..add(
-              IssueDetailsEvent.load(_args),
+              IssueDetailsEvent.load(args),
             ),
       child: const _IssueDetailsScreenWidget(),
     );
@@ -30,9 +30,7 @@ class IssueDetailsScreen extends StatelessWidget {
 }
 
 class _IssueDetailsScreenWidget extends StatelessWidget {
-  const _IssueDetailsScreenWidget({
-    Key? key,
-  }) : super(key: key);
+  const _IssueDetailsScreenWidget();
 
   @override
   Widget build(BuildContext context) {
@@ -61,9 +59,8 @@ class _IssueDetailsScreenWidget extends StatelessWidget {
 
 class _IssueDetailsWidget extends StatelessWidget {
   const _IssueDetailsWidget({
-    Key? key,
     required this.issue,
-  }) : super(key: key);
+  });
 
   final Issue issue;
 
@@ -74,27 +71,27 @@ class _IssueDetailsWidget extends StatelessWidget {
       children: [
         Text(
           issue.title ?? "",
-          style: Theme.of(context).textTheme.headline6,
+          style: Theme.of(context).textTheme.titleLarge,
         ),
         Container(height: 8.0),
         Text(
           issue.user?.login ?? "",
-          style: Theme.of(context).textTheme.subtitle1,
+          style: Theme.of(context).textTheme.titleMedium,
         ),
         Container(height: 4.0),
         Text(
           "Created: ${issue.createdAt != null ? issue.createdAt!.format() : ""}",
-          style: Theme.of(context).textTheme.subtitle2,
+          style: Theme.of(context).textTheme.titleSmall,
         ),
         Container(height: 8.0),
         Text(
           "${issue.comments} comments",
-          style: Theme.of(context).textTheme.caption,
+          style: Theme.of(context).textTheme.bodySmall,
         ),
         Container(height: 8.0),
         Text(
           "${issue.labels?.length ?? 0} labels",
-          style: Theme.of(context).textTheme.caption,
+          style: Theme.of(context).textTheme.bodySmall,
         ),
         Container(height: 16.0),
         Markdown(
@@ -106,8 +103,8 @@ class _IssueDetailsWidget extends StatelessWidget {
             onTapLink: (String text, String? href, String title) async {
               if (href != null) {
                 try {
-                  await canLaunch(href)
-                      ? await launch(href)
+                  await canLaunchUrl(Uri.parse(href))
+                      ? await launchUrl(Uri.parse(href))
                       : _cannotLaunchUrl(context);
                 } on Exception catch (_) {
                   _cannotLaunchUrl(context);

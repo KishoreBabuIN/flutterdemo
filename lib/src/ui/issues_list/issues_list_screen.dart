@@ -14,7 +14,7 @@ import 'package:flutter_demo/src/ui/utils/datetime_utils.dart';
 
 class IssuesListScreen extends StatelessWidget {
   static const routeName = '/';
-  const IssuesListScreen({Key? key}) : super(key: key);
+  const IssuesListScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -107,7 +107,7 @@ class IssuesListScreen extends StatelessWidget {
 }
 
 class _IssuesListScreenWidget extends StatefulWidget {
-  const _IssuesListScreenWidget({Key? key}) : super(key: key);
+  const _IssuesListScreenWidget();
 
   @override
   State<_IssuesListScreenWidget> createState() =>
@@ -195,10 +195,9 @@ class _IssuesListScreenWidgetState extends State<_IssuesListScreenWidget> {
 
 class _IssueListViewBuilderWidget extends StatelessWidget {
   const _IssueListViewBuilderWidget({
-    Key? key,
     required this.contentState,
     required this.scrollController,
-  }) : super(key: key);
+  });
   final ContentIssuesListState contentState;
 
   final ScrollController scrollController;
@@ -227,10 +226,9 @@ class _IssueListViewBuilderWidget extends StatelessWidget {
 
 class _IssueListItemWidget extends StatelessWidget {
   const _IssueListItemWidget({
-    Key? key,
     required this.issue,
     required this.currentSortType,
-  }) : super(key: key);
+  });
 
   final Issue issue;
   final IssuesListSortType currentSortType;
@@ -277,7 +275,7 @@ class _IssueListItemWidget extends StatelessWidget {
 }
 
 class _BottomLoaderWidget extends StatelessWidget {
-  const _BottomLoaderWidget({Key? key}) : super(key: key);
+  const _BottomLoaderWidget();
 
   @override
   Widget build(BuildContext context) {
